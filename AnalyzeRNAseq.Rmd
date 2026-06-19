@@ -1,0 +1,1642 @@
+---
+title: "T1D_RNAseq"
+output: html_document
+date: "2026-02-04"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+This document is for the analysis of TCR gene usage in RNAseq data from individuals with RNA seq. We will pull raw data from ___ RNA seq datasets and then process them to extract sequencing info, raw counts including TCR genes, HLA genotypes, and MixCR clones (probably very few)
+
+Datasets:
+- Dufort et al., https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124400
+    Large dataset containing a compilation of four other studies with similar collection methdologies, the study is based on treated patients but we can probably ignore that. The dataset contains 138 subjects, all with T1D confirmed at 4 different sample points. It also contains information on age, ethnicity/race, c peptide and 
+- DAISY, https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE230370
+    Large dataset containing the 
+
+
+```{r,eval=FALSE}
+#Code for running from raw sequencing data
+#usage
+#Process.sh   name_to_file.tsv                    Raw_dir                     Outdir                TmpDir
+#-p paired end dataset
+# bash ./src/Process.sh ./Data/Dufort/Dufort.tsv /data/Raw/T1D/RNAseq/Dufort/ ./Data/Dufort/ /data/Temp/robben/RNA/dufort/
+# bash ./src/Process.sh ./Data/Daisy/Daisy.tsv /data/Raw/T1D/RNAseq/Daisy/ ./Data/Daisy/ /data/Temp/robben/RNA/daisy/ --p
+# ###
+# bash ./src/Process.sh ./Data/Codazzi/Codazzi.tsv /data/Raw/T1D/RNAseq/Codazzi/ ./Data/Codazzi/ /data/Temp/robben/RNA/codazzi/ 
+# bash ./src/Process.sh ./Data/Lorenzon/Lorenzon.tsv /data/Raw/T1D/RNAseq/Lorenzon/ ./Data/Lorenzon/ /data/Temp/robben/RNA/lorenzon/ --p
+
+```
+
+
+#Set up
+
+```{r}
+setwd("~/Projects/RNAseq/") #Change to actual directory
+```
+
+```{r}
+require(ggplot2)
+require(dplyr)
+require(plyr)
+require(pheatmap)
+require(umap)
+require(tidyr)
+require(data.table)
+require(cowplot)
+require(Matrix)
+require(EDASeq)
+require(DESeq2)
+library(ggheatmap)
+require(ComplexHeatmap)
+require(sva)
+library(ggrepel)
+require(ggpubr)
+library(EnhancedVolcano)
+require(clusterProfiler)
+require(DOSE)
+library(DGEobj.utils)
+library(rtracklayer)
+require(glmnet)
+require(lme4)
+require(caret)
+require(SCGLR)
+require(pROC)
+require(enrichplot)
+require(Seurat)
+# install.packages("remotes")
+# remotes::install_github("icbi-lab/immunedeconv")
+
+
+# BiocManager::install("org.Hs.eg.db", character.only = TRUE)
+library("org.Hs.eg.db", character.only = TRUE)
+
+pub <- theme(text = element_text(size = 20))
+pubrot <-theme(text = element_text(size = 20),axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+#Metadata
+
+```{r read in meta}
+#######################
+#####Daisy
+daisymeta <- read.table(".//Data/Daisy/DaisyMeta.csv",header = T,sep = ",") #Age (age_ia), 
+head(daisymeta)
+
+dim(daisymeta) #551 files
+length(unique(daisymeta$ID))#143 patients #21 control patients
+table(daisymeta$ID) #Looks like 2-7 samples (mean of 4)
+table(daisymeta$ID,daisymeta$Group)
+rownames(daisymeta) <- daisymeta$Run
+daisysex <- rep("male", nrow(daisymeta))
+daisysex[daisymeta$female_yn == 1] <- "female"
+daisysex[is.na(daisymeta$female_yn)] <- NA
+daisydisease <- rep("T1D",nrow(daisymeta))
+# daisydisease[daisymeta$Group == "Progressor"] <- "T1D"
+daisydisease[daisymeta$Group %in% c("Maintainer","Reverter")] <- "Pre-Diab"
+daisydisease[daisymeta$Group %in% c("","Control")] <- "Healthy"
+
+daisyaab <- rep("Pos",nrow(daisymeta))
+daisyaab[daisymeta$Group %in% c("Control")] <- "Neg"
+
+
+hist(unique(daisymeta$age_ia)) #Average age of 7 looks like for initial?
+ggplot(daisymeta[daisymeta$Group != "",],aes(y = ID,x = AGE,color = Group)) +
+  geom_point() +
+  geom_line(aes(group = ID)) 
+
+#Maintainer is AAB+, no T1D
+#Reverter loses AAB+, no T1D
+#Progresser is AAB+, goes T1D
+# daisymeta[daisymeta$Group %in% c('',]$Group <- "Control"
+T1D <- rep("control",nrow(daisymeta))
+T1D[daisymeta$Group %in% c("Progressor","Maintainer")] <- "case"
+daisymeta <- within(daisymeta,Status <- T1D)
+
+#######################
+#####Dufort
+
+dufort <- read.table(".//Data/Dufort/DufortMetaData.csv",header = T,sep = ",")
+head(dufort)
+#age_at_enrollment, Race, rate_of_c.peptide_change, sex, source_name, subject, visit_day (age+visit?), lymphocyte percent (if want to predict t cell amount)
+table(dufort$subject) #about 4 per subject
+#all t1d?
+
+########################
+####codazzi
+codazzi <- read.table(".//Data/Codazzi/CodazziMeta.csv",header = T,sep = ",")
+head(codazzi)
+table(codazzi$genotype) #all diab
+# cell_type, Center.Name, tissue, Bases
+
+
+######################
+#####Lorenzon
+lorenzon <- read.table(".//Data/Lorenzon/LorenzonMetadata.csv",header = T,sep = ",")
+head(lorenzon)
+table(lorenzon$patient_diagnosis) #43 healthy, 39 t1d
+#age, Bases, sex, tissue, 
+lorenzondiag <- lorenzon$patient_diagnosis
+lorenzondiag[lorenzondiag == "healthy"] <- "Healthy"
+lorenzondiag[lorenzondiag == "type 1 diabetes"] <- "T1D"
+lorenstatus <- rep("case",nrow(lorenzon))
+lorenstatus[lorenzon$patient_diagnosis == "healthy"] <- "control"
+#######################
+####Get a common table
+#Features: 
+#ID (need a unique ID per patient)
+#Age
+#Geo
+#Sex
+#Tissue (allblood?)
+#Replicate (not super important)
+#Disease
+#AAB (def not in every)
+#Seq depth
+metadata <- rbindlist(
+list(
+  Daisy = data.frame(Run = daisymeta$Run, ID = daisymeta$ID, Age_at_pos = daisymeta$age_ia, 
+                     Age_at_collection = daisymeta$AGE, Sex = daisysex,Geo_country = rep("USA",nrow(daisymeta)),
+                     Geo_state = rep("CO",nrow(daisymeta)),Tissue = daisymeta$tissue,Clinical_status = daisydisease,
+                     AAB = daisyaab, depth = daisymeta$Bases,Status = T1D),
+  Dufort = data.frame(Run = dufort$Run, ID = dufort$subject, Age_at_pos = dufort$age_at_enrollment, 
+                      Age_at_collection = dufort$age_at_enrollment + (dufort$visit_day/365), Sex = dufort$sex,Geo_country = rep("USA",nrow(dufort)),
+                      Geo_state = rep("WA",nrow(dufort)),Tissue = rep("blood",nrow(dufort)),Clinical_status = rep("T1D",),
+                      AAB = rep("Pos",nrow(dufort)), depth = dufort$Bases, Status = rep("case",nrow(dufort))),
+  Codazzi = data.frame(Run = codazzi$Run, ID = codazzi$BioSample, Age_at_pos = rep(NA,nrow(codazzi)), 
+                      Age_at_collection = rep(NA,nrow(codazzi)), Sex = rep(NA,nrow(codazzi)),Geo_country = rep("Italy",nrow(codazzi)),
+                      Geo_state = rep("Milano",nrow(codazzi)),Tissue = rep("blood",nrow(codazzi)),Clinical_status = rep("T1D",nrow(codazzi)),
+                      AAB = rep("Pos",nrow(codazzi)), depth = codazzi$Bases,Status = rep("case",nrow(codazzi))),
+  Lorenzon = data.frame(Run = lorenzon$Run, ID = lorenzon$Sample.Name, Age_at_pos = rep(NA,nrow(lorenzon)), 
+                      Age_at_collection = lorenzon$age, Sex = lorenzon$sex,Geo_country = rep("France",nrow(lorenzon)),
+                      Geo_state = rep("Paris",nrow(lorenzon)),Tissue = rep("blood",nrow(lorenzon)),Clinical_status = lorenzondiag,
+                      AAB = rep(NA,nrow(lorenzon)), depth = lorenzon$Bases, Status = lorenstatus)
+  
+),idcol = "Study")
+
+head(metadata)
+table(metadata[!duplicated(metadata$ID)]$Study,metadata[!duplicated(metadata$ID)]$Clinical_status)
+metadata <- as.data.frame(metadata)
+rownames(metadata) <- metadata$Run
+#Plot out the studies
+ggplot(metadata[!is.na(metadata$Age_at_collection),],aes(x = Age_at_collection,y = ID,colour = Clinical_status)) +
+  geom_point() +
+  geom_line() +
+  ylab("Patient ID") +
+  theme(axis.text.y = element_blank()) +
+  pub
+ggsave(filename = ".//Results/Fig/Fig4StudyAge.pdf",device = "pdf",width = 5,height = 20,limitsize = F)
+
+stats <- rep("control",nrow(metadata))
+stats[metadata$Clinical_status == "T1D" | (metadata$Clinical_status == "Pre-Diab" & metadata$AAB == "Pos")] <- "case"
+metadata <- within(metadata,Status <- stats)
+metadata <- as.data.frame(metadata)
+rownames(metadata) <- metadata$Run
+
+meta <- metadata[!duplicated(metadata$ID),]
+table(meta$Sex)
+table(meta$Geo_country)
+table(meta$Clinical_status,meta$Status)
+table(metadata$AAB,metadata$Status)
+
+#Finally make the metadata plot to show how many patients in each study are of contition and status
+ggplot(metadata,aes(x = Study,fill = Status)) +
+  geom_bar() +
+  ylab("# of samples") +
+  xlab("Study") +
+  pubrot
+
+#Plot age
+ggplot(metadata,aes(x = Age_at_collection,fill = Study))+
+  geom_density(alpha = 0.5) +
+  facet_wrap(~Status,ncol = 1) +
+  geom_vline(xintercept = 12,linetype = "dashed") +
+  xlab("Age") +
+  pub
+
+write.table(metadata,file = ".//Data/metadata.tsv")
+```
+
+
+#Expression Data
+
+Read in the expression data, which is in a different file per sample.
+
+```{r Read in expression data}
+#We need to write a function that will get the data into a basic matrix (probably don't need an expr set)
+dirs <- as.list(c(".//Data/Daisy/Counts/",".//Data/Dufort/Counts/",".//Data/Codazzi/Counts/",".//Data/Lorenzon/Counts/"))
+files <- unlist(lapply(dirs,function(x) paste(x,list.files(x),sep="")))
+
+readExpr <- function(files){
+  # files <- paste(dir,list.files(dir),sep = "")
+  i <- 1
+  for (f in files){
+    name <- unlist(lapply(strsplit(basename(f),"_"),function(x) x[[1]]))
+    df <- read.table(f,row.names = 1,header = F,sep = "\t")
+    colnames(df) <- name
+    if(i == 1){
+      expr <- df
+    } else {
+      expr <- cbind(expr,df)
+    }
+    i <- i+1
+  }
+  print(paste("Read ",i," files",sep=""))
+  return(expr)
+}
+exp <- readExpr(files)
+head(exp)
+dim(exp)
+exp <- exp[rowSums(exp) > 1,]
+dim(exp) #Filtered 34773 genes
+depth <- colSums(exp)
+plot(depth)
+metadata <- cbind(metadata,data.frame(Sum_Count = depth[metadata$Run]))
+exp <- exp[,metadata$Run]
+# ggplot(metadata,aes(x = Run,y = Sum_Count,color = Study)) +
+#   geom_point()
+
+
+
+#Data exploration
+samped <- unlist(lapply(split(metadata,metadata$Study),function(x) rownames(x)[1:10]))
+plotRLE(as.matrix(exp)[,samped])
+norm <-  vst(as.matrix(exp))
+plotRLE(as.matrix(norm)[,samped])
+
+#PCA
+pca <- prcomp(t(norm))
+tmp <- cbind(metadata,pca$x[,1:2])
+ggplot(tmp[,!colnames(tmp) == "Sum_Count"],aes(x = PC1,y = PC2, colour = Status, shape = Study)) +
+  geom_point(size = 2,alpha = 0.5) +
+  scale_x_continuous(limits = c(-50,100)) +
+  scale_y_continuous(limits = c(-50,50)) +
+  pub
+
+#TCR genes
+Tgenes <- rownames(exp)[grep(c("^TR[A|B|G|D][V|D|J|C][0-9]"),rownames(norm))]
+TCRgenes <- norm[Tgenes,]
+TCRgenes <- TCRgenes[rowSums(TCRgenes) > 0,] #removed about 50 not expressed genes
+TCRgenes <- TCRgenes[,colSums(TCRgenes) > 0] #removed about 50 not expressed genes
+dim(TCRgenes) #243 genes all 1430 patients
+
+boxplot(TCRgenes)
+plotRLE(as.matrix(TCRgenes))
+
+#Plot TCR genes
+sorder <- rev(order(apply(TCRgenes,1,mean)))
+genecol <- factor(substr(rownames(TCRgenes)[sorder],1,4))
+library(RColorBrewer)
+num_levels <- nlevels(genecol)
+factor_colors <- brewer.pal(num_levels, "Set3")
+
+boxplot(t(TCRgenes)[,sorder],col = factor_colors[genecol])
+legend("topright", legend = levels(genecol), col = factor_colors, pch = 15)
+
+# #Save the expression data
+write.table(TCRgenes,file = ".//Data/TCRexp.tsv",sep = "\t",row.names = T)
+```
+
+
+#HLA Data
+
+```{r read in HLA function}
+readHLA <- function(x) {
+  files <- list.files(x)
+  f <- files[grep("genotype",files)]
+  f <- paste(x,f,sep="/")
+  df <- read.csv(f,header = F,sep = "\t")
+  colnames(df) <- c("gene_name","num_diff_alleles","allele_1","abundance_1","quality_1",
+                    "allele_2","abundance_2","quality_2","secondary_alleles")
+  return(df)
+}
+dirs <- as.list(c(list.dirs(".//Data/Daisy/HLA/")[-1],list.dirs(".//Data/Dufort/HLA/")[-1],list.dirs(".//Data/Codazzi/HLA/")[-1],list.dirs(".//Data/Lorenzon/HLA/")[-1]))
+hla.ls <- lapply(dirs,function(x) readHLA(x))
+#Now write a function that will get them all out
+uniqueHLA <- unlist(lapply(hla.ls,function(x) strsplit(c(x$allele_1,x$allele_2),",")))
+uniqueHLA <- unique(uniqueHLA[uniqueHLA != "."])
+getHLAtable <- function(x,hlas){
+  mat <- matrix(0,ncol=length(hlas))
+  colnames(mat) <- hlas
+  rep <- matrix(0,ncol = nrow(x))
+  colnames(rep) <- x[,1]
+  for(i in 1:nrow(x)){
+    row <- x[i,]
+    detalleles <- row[2]
+    allele1 <- row[3:5]
+    a1name <- gsub(",*","",allele1[1])
+    allele2 <- row[6:8]
+    a2name <- gsub(",*","",allele2[1])
+    if (detalleles == 0) {
+      next
+    } else if(detalleles == 1) {
+      rep[,i] <- 1
+      if(allele1[3] > 5 & a1name %in% hlas) {
+        mat[,a1name] <- 2
+      }
+    } else {
+      rep[,i] <- 2
+      if(allele1[3] > 5 & a1name %in% hlas ) {
+        mat[,a1name] <- 1
+      }
+      if(allele2[3] > 5 & a2name %in% hlas) {
+        mat[,a2name] <- 1
+      }
+    }
+  }
+  return(list(mat,rep))
+}
+hla.mat <- lapply(hla.ls,function(x) getHLAtable(x,uniqueHLA))
+
+hla <- do.call(rbind,lapply(hla.mat,function(x) x[[1]]))
+rep <- do.call(rbind,lapply(hla.mat,function(x) x[[2]]))
+names <- basename(unlist(dirs))
+rownames(hla) <- names
+rownames(rep) <- names
+dim(hla)
+hla <- hla[,colSums(hla) > 0]
+hla <- hla[rowSums(hla) > 0,]
+dim(hla) # Lost about half of hlas and 3 patients who had no predicted for some reason
+rep <- rep[rowSums(rep) > 0,]
+write.table(x = hla,file = ".//Data/HLA.tsv",sep = "\t")
+#Allele completion by sequencing depth
+
+complete <- rep/rep
+complete[is.nan(complete)] <- 0
+complete <- rowSums(complete)
+
+plot(complete,depth[names(complete)],ylab = "Sequencing depth (reads)",xlab = "Number of HLA detected")
+mean(complete)
+sd(complete)
+#Let's make sure there is consistency of samples by ID since allele should not change
+calcError <- function(x,df){
+  # print(dim(df[x,]))
+  # print(x)
+  test <- colSums(df[x,])
+  return(1 - sum(tmp[x,test < length(x)])/sum(df))
+}
+
+patientfiles <- split(metadata$Run,metadata$ID)
+patientfiles <- patientfiles[unlist(lapply(patientfiles,length)) > 1]
+ptdepth <- unlist(lapply(patientfiles,function(x) sum(depth[x])))
+lapply(patientfiles,function(x) length(x))
+tmp <- hla/hla
+tmp[is.nan(tmp)] <- 0
+error <- do.call(cbind,lapply(patientfiles,function(x) tryCatch(calcError(x,tmp),error = function(e) { return(tmp[1]/0)})))
+enames <- colnames(error)[!error == Inf]
+error <- error[!error == Inf]
+names(error) <- enames
+plot(error,ptdepth[enames],xlab = "Error",ylab = "Sequencing depth (reads)")
+mean(error)
+sd(error)
+
+#Look at the effect of HLA on different categories
+hla_merge <- cbind(hla,metadata[rownames(hla),]) #466 which matches the IDs
+
+#Get a per patient HLA or else we are artificially increasing OR
+pthla <- hla[!duplicated(metadata[rownames(hla),]$ID),]
+
+sum.df <- data.frame(NULL)
+for (x in colnames(pthla)){
+  tmp <- pthla[,colnames(pthla) == x]
+  tmp <- metadata[rownames(pthla)[tmp > 0],]
+  sum.df <- rbind(sum.df,data.frame(Total = nrow(tmp), Case = nrow(tmp[tmp$Status == "case",]),Control = nrow(tmp[tmp$Status == "control",])))
+}
+rownames(sum.df) <- colnames(pthla)
+
+
+
+calcOR <- function(x,row){
+  #         allele  rest
+  # health  a      b
+  #   t1d      c      d
+  allele <- as.numeric(x[row,])
+  notallele <- as.numeric(colSums(x[-row,]))
+  # print(allele)
+  # print(notallele)
+  
+  data_table <- matrix(c(allele[2], notallele[2], allele[3], notallele[3]), ncol = 2, byrow = TRUE)
+  # print(data_table)
+  # Calculate the odds ratio using fisher.test()
+  fisher_result <- fisher.test(data_table)
+  odds_ratio_value <- fisher_result$estimate
+  clneg <- fisher_result$conf.int[1]
+  clpos <- fisher_result$conf.int[2]
+  return(data.frame(OR = odds_ratio_value,Min = clneg, Max = clpos))
+}
+
+ORsum <- cbind(sum.df,rbindlist(lapply(as.list(1:nrow(sum.df)),function(x) calcOR(sum.df,x))))
+ORsum[rev(order(summary$OR)),]
+```
+
+
+Figure out if calcualted OR is equal to predicted OR
+
+```{r Known vs Calc OR}
+
+#Finally use the defined protective and risk alleles
+riskalleles <- read.table(file = ".//HLA/Risk_Alleles.txt",header = T,sep = "\t")
+riskalleles <- riskalleles[-58,]
+riskalleles <- riskalleles[!riskalleles$Allele.Haplotype == "",]
+riskalleles$Allele <- paste("HLA-",riskalleles$Allele,sep="")
+
+extractOR <- function(x){
+  # print(x)
+  string <- iconv(as.character(x[4]), from = "ISO-8859-1", to = "UTF-8")
+  split <- unlist(strsplit(string,"\\\n"))
+  split <- gsub("OR ","",split)
+  OR <- as.numeric(unlist(lapply(strsplit(split," "),function(x) x[[1]])))
+  range <- unlist(lapply(strsplit(split," "),function(x) x[[2]]))
+  min <- NULL
+  max <- NULL
+  for (r in range){
+    if (r == "specified") {
+      min <- c(min,NA)
+      max <- c(max,NA)
+    }else if (substr(r,1,2) == "(P"){
+      min <- c(min,NA)
+      max <- c(max,NA)
+    } else {
+      min <- c(min,as.numeric(gsub("\\(","",unlist(lapply(strsplit(r,"-",fixed = T),function(x) x[[1]])))))
+      max <- c(max,as.numeric(gsub("\\)*","",unlist(lapply(strsplit(r,"-",fixed = T),function(x) x[[2]])))))
+    }
+  }
+  return(cbind(as.data.frame(x[c(1,3,5,6,7)][rep(1,length(OR)),]),data.frame(OR = OR, min = min, max = max)))
+}
+allelelist <- rbindlist(lapply(split(riskalleles,riskalleles$Allele),function(x) extractOR(x)))
+
+
+#Compare to calculated
+
+ORsum <- within(ORsum, Base <- lapply(strsplit(rownames(ORsum),":"),function(x) paste(x[1:min(length(x),2)],collapse=":")))
+tsum <- ORsum[!unlist(apply(ORsum,1,function(x) any(is.infinite(x$OR)))),]
+tsum <- tsum[!tsum$OR == 0,]
+tsum <- rbind(within(tsum,Set <- rep("Calculated",nrow(tsum))),
+              data.frame(Total = rep(NA,nrow(allelelist)),Case = rep(NA,nrow(allelelist)),Control = rep(NA,nrow(allelelist)), 
+               OR = allelelist$OR,Min = allelelist$min, Max = allelelist$max,Base = allelelist$Allele,Set = rep("Known",nrow(allelelist)))
+)
+tsum <- tsum[!is.na(tsum$OR),]
+tmp <- split(tsum,as.character(tsum$Base))
+tmp <- lapply(tmp,function(x) rbindlist(lapply(split(x,x$Set),function(y) y[rev(order(y$OR)),])))
+tsum <- rbindlist(tmp[rev(order(unlist(lapply(tmp,function(x) mean(x$OR)))))])
+tsum <- within(tsum,Name <- rev(c(1:nrow(tsum))))
+tdf <- tsum
+tdf$OR <- (sign(log2(tsum$OR))* (2^(abs(log2(tsum$OR)))))#log2(tdf$OR) * 2
+tdf$Min <- (sign(log2(tsum$Min))* (2^(abs(log2(tsum$Min)))))
+tdf$Max <- (sign(log2(tsum$Max))* (2^(abs(log2(tsum$Max)))))
+tdf$Base <- as.character(tdf$Base)
+
+hack <- data.frame(Gene = unique(tdf$Base), Sig = unlist(lapply(split(tdf,tdf$Base),function(x) mean(x$OR) > 2 | mean(x$OR) < -2)), cols = rep("black",length(unique(tdf$Base))))
+
+hack[!hack$Sig,3] <- "blue"
+
+p <- ggplot(tdf,aes(y = Name,color = Set)) +
+  geom_vline(xintercept = 0,linetype = "dashed",color = "grey",alpha = 1) +
+  geom_point(aes(x=OR),size = 2) +
+  # geom_linerange(aes(xmin=sapply(Min,function(x) max(-40,x)), xmax=sapply(Max,function(x) min(40,x)))) +
+  geom_linerange(aes(xmin=Min, xmax=Max),linewidth = 1) +
+  facet_wrap(~factor(Base,levels = unique(Base)),ncol = 1,strip.position = "left",space = "free_y",scales = "free_y") +
+  scale_y_discrete(expand = c(0, 1)) +
+  
+  scale_x_continuous(limits = c(-15,15)) +
+  xlab("Log2 normalized OR") +
+  theme(strip.clip = "off",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),panel.spacing.y = unit(0.7, "lines"),
+        strip.text.y.left = element_text(angle = 0),
+        axis.line = element_line(colour = "black"),
+        strip.text = element_text(color = hack$cols)
+        )
+ggsave(filename = ".//Results/Fig/HLA_OR_small.pdf",device = "pdf",width = 5,height = 100,limitsize = F)
+
+#Also plot the best and worst
+ggplot(tdf[tdf$Base %in% unique(tdf$Base)[c(1:10,276:286)],],aes(y = Name,color = Set)) +
+  geom_vline(xintercept = 0,linetype = "dashed",color = "grey",alpha = 1) +
+  geom_point(aes(x=OR),size = 2) +
+  geom_linerange(aes(xmin=Min, xmax=Max),linewidth = 1) +
+  facet_wrap(~factor(Base,levels = unique(Base)),ncol = 1,strip.position = "left",space = "free_y",scales = "free_y") +
+  scale_y_discrete(expand = c(0, 1)) +
+  
+  scale_x_continuous(limits = c(-25,25)) +
+  xlab("Log2 normalized OR") +
+  theme(strip.clip = "off",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),panel.spacing.y = unit(0.7, "lines"),
+        strip.text.y.left = element_text(angle = 0),
+        axis.line = element_line(colour = "black")
+        )
+
+write.table(tdf,file = ".//Results/Table/Supptable_HLA_risk.tsv",sep = "\t",quote = F)
+```
+
+Categorize the alleles
+
+```{r Categorize}
+
+agg_OR <- aggregate(OR ~ Base,data = tdf, FUN = mean)
+#Classify each individual by HLA risk
+or <- 6
+risk <- agg_OR[agg_OR$OR > or,]$Base#unique(allelelist[allelelist$OR > 5,]$Allele)
+prot <- agg_OR[agg_OR$OR < -or,]$Base#unique(allelelist[allelelist$OR < 0.1,]$Allele)
+
+#Using 2 is 95 prot, 10 risk most both
+#Using 3 is 221 prot, 435 risk 694 both
+#Using 4 is 332 prot, 321 risk, 454 both
+#Using 5 is 300 prot, 364 risk, 366 both #This gives the greatest spread
+
+has_risk <- rowSums(hla[,unlist(lapply(risk,function(x) which(x == substr(colnames(hla),1,nchar(x)))))]) >= 1
+has_prot <- rowSums(hla[,unlist(lapply(prot,function(x) which(x == substr(colnames(hla),1,nchar(x)))))]) >= 1
+risk.df <- data.frame(has_risk,has_prot)
+risky <- rep("Neither",nrow(risk.df))
+risky[has_risk] <- "Risk"
+risky[has_prot] <- "Protective"
+risky[has_prot & has_risk] <- "Both"
+table(risky)
+risk.df <- within(risk.df, Risk <- risky)
+
+metadata <- within(metadata,Risk <- risk.df[rownames(metadata),]$Risk)
+table(metadata$Risk,metadata$Status)
+submeta <- metadata[!duplicated(metadata$ID),]
+table(submeta$Risk,submeta$Status)
+
+#Plot the OR > 4
+ggplot(tdf[tdf$Base %in% c(prot,risk),],aes(y = Name,color = Set)) +
+  geom_vline(xintercept = 0,linetype = "dashed",color = "grey",alpha = 1) +
+  geom_point(aes(x=OR),size = 2) +
+  geom_linerange(aes(xmin=Min, xmax=Max),linewidth = 1) +
+  facet_wrap(~factor(Base,levels = unique(Base)),ncol = 1,strip.position = "left",space = "free_y",scales = "free_y") +
+  scale_y_discrete(expand = c(0, 1)) +
+  scale_x_continuous(limits = c(-25,25)) +
+  xlab("Log2 normalized OR") +
+  theme(strip.clip = "off",
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.spacing.y = unit(0.1, "lines"),
+        strip.text.y.left = element_text(angle = 0),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 10)
+        )
+
+orplot <- data.frame(OR = 1:5,
+           Both = c(1424,1317,694,454,366), 
+           Risk = c(2,10,435,320,364), 
+           Prot = c(1,95,221,332,300), 
+           Neither = c(0,5,77,321,397)) %>% pivot_longer(cols = c("Both","Risk","Prot","Neither"))
+ggplot(orplot,aes(x = OR,y = value,color = name,group = name)) +
+  geom_line(size = 2) +
+  xlab("OR greater than") +
+  ylab("# of samples") +
+  pub
+
+write.table(metadata,file = ".//Data/metadata.tsv")
+```
+
+
+
+#MixCR
+
+Lets load in the CDR3 data from each patient, likely it will be low and heavily influenced by sequencing depth
+
+```{r read in CDR3}
+#Read in the cdr3 from each
+dirs <- c(list.dirs(".//Data/Daisy/MixCR/")[-1],list.dirs(".//Data/Dufort/MixCR/")[-1],
+          list.dirs(".//Data/Codazzi/MixCR/")[-1],list.dirs(".//Data/Lorenzon/MixCR/")[-1])
+dirlist <- as.list(dirs)
+names(dirlist) <- basename(dirs)
+# getCDR3 <- function(x) {
+#   # dirs <- list.dirs(x)[-1]
+#   # dirlist <- as.list(dirs)
+#   # names(dirlist) <- basename(dirs)
+#   flist <- lapply(dirlist,readCDR3)
+#   return(rbindlist(flist,idcol = "ID",fill = T))
+# }
+
+readCDR3 <- function(y){
+  ls <- as.list(paste(y,"/clones_",c("IGH","IGK","IGL","TRA","TRB","TRD","TRG"),".tsv",sep = ""))
+  names(ls) <- c("IGH","IGK","IGL","TRA","TRB","TRD","TRG")
+  ls <- lapply(ls,function(x) if (file.exists(x)){ read.csv(x,header = T,sep = "\t") })
+  ls <- lapply(ls,function(x) x[,colnames(x) %in% c("cloneId","readCount","aaSeqCDR3",
+                                                    "allVAlignments","allDAlignments","allJAlignments","allCAlignments")])
+  df <- rbindlist(ls,idcol = "Type")
+  return(df)
+}
+
+# studies <- list(Daisy = ".//Data/Daisy/MixCR/")
+
+mix <- rbindlist(lapply(dirlist,readCDR3),idcol = "ID",fill = T)
+
+# cdr3 <- mix[[1]]
+```
+
+Analyze the CDR3
+
+```{r analyze CDR3}
+dim(mix) #2.2 million entries
+table(mix$Type)
+tcr <- cdr3[cdr3$Type %in% c("TRA","TRB","TRD","TRG")]
+tcr_table <- as.data.frame(table(tcr$ID,tcr$Type))
+ggplot(tcr_table,aes(x = Var2, y = Freq,fill = Var2)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.5) +
+  xlab("TCR gene class") +
+  ylab("# of detected CDR3") +
+  guides(fill = F) +
+  pub
+#Average of 200-300 clones per sample
+
+trab <- cdr3[cdr3$Type %in% c("TRA","TRB")]
+seqs <- unique(trab$aaSeqCDR3)
+samplenames <- unique(trab$ID)
+seqmat <- sparseMatrix(i = as.numeric(as.factor(trab$aaSeqCDR3)),j = as.numeric(as.factor(trab$ID)),x = trab$readCount)
+dimnames(seqmat) <- list(levels(as.factor(trab$aaSeqCDR3)),levels(as.factor(trab$ID)))
+total <- colSums(seqmat)
+ggplot(data.frame(TCR = total,depth = depth[colnames(seqmat)]),aes(y = total,x = depth)) +
+  geom_point() +
+  geom_smooth(method = "lm",se = F)+
+  xlab("Sequencing Depth (reads)") +
+  ylab("Total RNA-seq CDR3 sequences") +
+  pubrot
+ggsave(filename = ".//Results/Fig/mixcr_sd.svg",width = 4,height = 4)
+
+###############################################
+#######
+
+#So obviously this is not enough CDR3 sequences to even do anything, let's check the VDJdb annotations
+
+```
+
+
+#Differential expression
+
+Lets first test the differential expression between disease affected individuals to see if there is a difference
+
+```{r}
+dds <- DESeqDataSetFromMatrix(countData = exp,
+                              colData = metadata,
+                              design= ~ Status)
+dds
+dds <- DESeq(dds)
+dds
+resultsNames(dds)
+res <- results(dds, name="Status_control_vs_case")
+write.table(res,".//Results/Table/SupptableDEGres.tsv",sep = "\t")
+plotMA(res)
+EnhancedVolcano(res,
+    lab = rownames(res),
+    x = 'log2FoldChange',
+    y = 'pvalue')
+sigres <- res[res$padj < 0.01 & abs(res$log2FoldChange) > 2,]
+# or to shrink log fold changes association with condition:
+# res <- lfcShrink(dds, coef="condition_trt_vs_untrt", type="apeglm")
+
+#Try to set random intercept for Study and sex
+dds <- DESeqDataSetFromMatrix(countData = exp,
+                              colData = metadata,
+                              design= ~Status+(1|Study))
+dds
+dds <- DESeq(dds)
+dds
+resultsNames(dds)
+res <- results(dds, name="Status_control_vs_case")
+write.table(res,".//Results/Table/SupptableDEGadjres.tsv",sep = "\t")
+plotMA(res)
+EnhancedVolcano(res,
+    lab = rownames(res),
+    x = 'log2FoldChange',
+    y = 'pvalue')
+sigres <- res[res$padj < 0.01 & abs(res$log2FoldChange) > 2,]
+
+```
+
+Take a look at the gsea
+
+```{r}
+
+original_gene_list <- sigres$log2FoldChange
+names(original_gene_list) <- rownames(sigres)
+gene_list<-na.omit(original_gene_list)
+gene_list = sort(gene_list, decreasing = TRUE)
+gse <- gseGO(geneList=gene_list, 
+             ont ="ALL", 
+             keyType = "SYMBOL", 
+             minGSSize = 3, 
+             maxGSSize = 800, 
+             pvalueCutoff = 0.05, 
+             verbose = TRUE, 
+             OrgDb = "org.Hs.eg.db", 
+             pAdjustMethod = "none")
+gse@result
+
+dotplot(gse, split=".sign") + facet_grid(.~.sign)
+dotplot(gse)#, split=".sign") + facet_grid(.~.sign)
+```
+
+#Deconvolution
+
+```{r}
+library(GenomicFeatures)
+# gff_data <- import("/data/Databases/Genomes/GRCh38_p14/genomic.gtf")
+txdb <- txdbmaker::makeTxDbFromGFF("/data/Databases/Genomes/GRCh38_p14/genomic.gtf", format = "gtf")
+exons <- exonsBy(txdb, by = "tx")
+gene_lengths <- sum(width(reduce(exons)))
+
+TPM <- convertCounts(countsMatrix = counts_df, 
+                      unit = "tpm", 
+                      geneLength = gene_lengths, 
+                      log = FALSE, 
+                      normalize = "none")
+decon <- immunedeconv::deconvolute(exp, "quantiseq",tumor = F)
+
+```
+
+
+
+#TCR Normalization
+
+We want to take a look at the general differences in the TCR gene expression
+
+```{r Normalize TCR genes}
+TCRraw <- exp[Tgenes,]
+dim(TCRraw) #243 genes all 1430 patients
+
+plot(colSums(matrix(TCRraw > 0,nrow(TCRraw),ncol(TCRraw))))
+
+plotRLE(as.matrix(TCRraw)[,samped],main = "Raw")
+plotRLE(as.matrix(TCRgenes)[,samped],main = "vst")
+#Are C genes normal?
+
+means <- colMeans(TCRgenes[grep("C",rownames(TCRgenes)),])
+sds <- colSds(TCRgenes[grep("C",rownames(TCRgenes)),])
+plot(means, pch=19, xlab="Run", ylab="Expression", xaxt="n", 
+     main="TCR vst constant expression", col="red", cex=.3)
+segments(x0 = 1:length(means),y0 = means - sds, x1 = 1:length(means),y1 = means + sds, 
+       col="black",lwd = 0.1)
+#Looks like there is some variation in C gene expression, can we normalize against it like a housekeeping gene?
+#Maybe just do SCT transformation which uses a negative binomial to estimate factors including C genes
+
+
+TCRsct <- sctransform::vst(as.matrix(TCRraw),cell_attr = metadata,batch_var = "Study")$y
+plotRLE(as.matrix(TCRsct)[,samped],main = "SCT")
+
+
+means <- colMeans(TCRsct[grep("C",rownames(TCRsct)),])
+sds <- colSds(as.matrix(TCRsct[grep("C",rownames(TCRsct)),]))
+plot(means, pch=19, xlab="Run", ylab="Expression", xaxt="n", 
+     main="TCRsct constant expression", col="red", cex=.3)
+segments(x0 = 1:length(means),y0 = means - sds, x1 = 1:length(means),y1 = means + sds, 
+       col="black",lwd = 0.1)
+
+sctorder <- rev(order(apply(TCRsct,1,mean)))
+genecol <- factor(substr(rownames(TCRsct)[sctorder],1,4))
+library(RColorBrewer)
+num_levels <- nlevels(genecol)
+factor_colors <- brewer.pal(num_levels, "Set3")
+boxplot(t(TCRsct)[,sctorder],col = factor_colors[genecol],main = "SCT TCR normalization")
+legend("topright", legend = levels(genecol), col = factor_colors, pch = 15)
+############Looks like the best will be to use the VST (variance is normalized across batch) and then norm against mean expression of C genes)
+means <- colMeans(TCRgenes[grep("C",rownames(TCRgenes)),])
+sds <- colSds(TCRgenes[grep("C",rownames(TCRgenes)),])
+TCRnorm <- sweep(TCRgenes, 2, means, "-")
+
+means <- colMeans(TCRnorm[grep("C",rownames(TCRnorm)),])
+sds <- colSds(as.matrix(TCRnorm[grep("C",rownames(TCRnorm)),]))
+plot(means, pch=19, xlab="Run", ylab="Expression", xaxt="n", 
+     main="TCRnorm constant expression", col="red", cex=.3,ylim = c(-0.5, 0.5))
+segments(x0 = 1:length(means),y0 = means - sds, x1 = 1:length(means),y1 = means + sds, 
+       col="black",lwd = 0.1)
+
+plotRLE(as.matrix(TCRnorm)[,samped],main = "c gene norm")
+boxplot(t(TCRnorm)[,sorder],col = factor_colors[genecol])
+legend("topright", legend = levels(genecol), col = factor_colors, pch = 15)
+
+#ComBat normalization
+mod <- model.matrix(~as.factor(Status), data=metadata)
+TCRclean <- ComBat(dat=TCRraw, batch=as.factor(metadata$Study), mod=mod)
+means <- colMeans(TCRclean[grep("C",rownames(TCRgenes)),])
+sds <- colSds(TCRclean[grep("C",rownames(TCRgenes)),])
+plot(means, pch=19, xlab="Run", ylab="Expression", xaxt="n", 
+     main="TCR ComBat constant expression", col="red", cex=.3)
+segments(x0 = 1:length(means),y0 = means - sds, x1 = 1:length(means),y1 = means + sds, 
+       col="black",lwd = 0.1)
+plotRLE(as.matrix(TCRclean)[,samped],main = "ComBat norm")
+boxplot((t(TCRclean)[,sorder]),col = factor_colors[genecol])
+legend("topright", legend = levels(genecol), col = factor_colors, pch = 15)
+
+#Compare SCT to sequencing depth
+plot(colMeans(TCRraw),metadata$depth,col = factor(metadata$Study),xlab = "Mean TCR gene",ylab = "Sequencing depth")
+plot(colMeans(TCRsct),metadata$depth,col = factor(metadata$Study),xlab = "Mean TCR SCT",ylab = "Sequencing depth")
+
+write.table(x = TCRsct,file = ".//Data/TCRnorm.tsv",sep = "\t",quote = F)
+```
+
+#TCR Exploration
+
+```{r exploring TCR genes}
+
+###heatmap
+# ggheatmap(TCRgenes,cluster_cols = T,cluster_rows = T,
+#           annotation_cols = metadata[,c(1,6,10,11,13,15)],annotation_color = )
+TCRscaled <- t(apply(TCRsct, 1, scale))
+Heatmap(TCRscaled,top_annotation = HeatmapAnnotation(Status = metadata$Clinical_status,Study = metadata$Study, Sex = metadata$Sex,
+                                                     Age = anno_barplot(metadata$Age_at_collection)))
+
+
+#Do basic Dimensionality reduction
+umap <- umap(t(TCRsct))
+umap <- umap$layout
+colnames(umap) <- c("umap1","umap2")
+metadata <- within(within(metadata,umap1 <- umap[rownames(metadata),1]),umap2 <- umap[rownames(metadata),2])
+
+ggplot(metadata,aes(x = umap1,y = umap2,color = Study,group = ID)) +
+  geom_point() +
+  ggtitle("TCR SCT")
+ggplot(metadata,aes(x = umap1,y = umap2,color = Clinical_status,group = ID,shape = AAB)) +
+  geom_point()
+ggplot(metadata,aes(x = umap1,y = umap2,color = Risk,group = ID)) +
+  geom_point()
+
+
+
+#Let's initially just look at differences in each based on status
+combined <- cbind(metadata, t(TCRsct)[rownames(metadata),])
+long <- combined %>% pivot_longer(grep("TR",colnames(combined),value = T),names_to = "TCRgene",values_to = "Exp")
+
+ggplot(long,aes(x = TCRgene,y = Exp,fill = Status)) +
+  stat_summary(fun = "mean",geom = "bar",position = "dodge") + 
+  pubrot
+
+
+```
+
+
+#TCR Differential
+
+```{r}
+#We can't look at differential expression modeled by a negative binomial because the data has been transformed to a negative binomial and variance stabilized
+#or can we?
+#Make a function that will t.test based on the TCR gene per subject based on status
+performTest <- function(dat, col, adjust = 1){
+  x <- dat[dat$Status == "case",]$Exp
+  y <- dat[dat$Status == "control",]$Exp
+  if ((length(x) < 2) | length(y) < 2){
+    return(NA)
+  } 
+  logfc <- log2(mean(x)/mean(y))
+  pval <- t.test(x,y)$p.value
+  padj <- pval * adjust
+  return(data.frame(LogFC = logfc, case = mean(x), control = mean(y), pvalue = pval, p.adj = padj))
+}
+
+sp <- split(long, long$TCRgene)
+dif <- rbindlist(lapply(sp,function(x) performTest(x,1,length(sp))),idcol = "TCRgene")
+sig <- dif[abs(dif$LogFC) > 1 & dif$p.adj < 0.05,]
+write.table(dif,".//Results/Table/Suppfig9DiffDET.tsv",sep="\t")
+
+#Volcano plot
+cols <- rep("black",nrow(dif))
+cols[abs(dif$LogFC) > 1] <- "blue"
+cols[dif$p.adj < 0.05] <- "orange"
+cols[abs(dif$LogFC) > 1 & dif$p.adj < 0.05] <- "red"
+
+p1 <- ggplot(within(dif,col <- cols),aes(x = LogFC,y = -log10(p.adj))) +
+  geom_point(color = cols) +
+  geom_hline(yintercept = 1.3) +
+  geom_vline(xintercept = c(-1,1)) +
+  geom_text_repel(data = dif[cols == "red",], # Subset the data for the text layer
+            aes(label = dif[cols == "red",]$TCRgene)) +
+  pub
+
+#####Terminal diff expression
+Termdif <- rbindlist(lapply(sp,function(x) performTest(x[x$Age_at_collection > 12,],1,length(sp))),idcol = "TCRgene")
+
+#Now create a plot with just the significant and status
+# p2 <- ggplot(long[long$TCRgene == sig$TCRgene,],aes(x = TCRgene,y = Exp,fill = Status)) +
+#   geom_boxplot() +
+#   pubrot
+
+p2 <- ggplot(long[long$TCRgene %in% sig$TCRgene & !is.na(long$Age_at_collection),],aes(x = TCRgene,y = Exp,fill = Status)) +
+  geom_boxplot() +
+  facet_wrap(~Age_at_collection > 11,labeller = as_labeller(c(
+    `FALSE` = "Age < 12",
+    `TRUE`   = "Age > 12"
+  )))+
+  scale_y_continuous(limits = c(0,10))+
+  pubrot
+p2
+ggarrange(p1,p2,widths = c(0.5,1))
+ggsave(filename = ".//Results/Fig/Fig4TCRdet.svg",width = 10,height = 5,limitsize = F)
+
+############################Also split by risk?
+sp_risk<- split(long, paste(long$TCRgene,long$Risk,sep=" "))
+dif_risk <- lapply(sp_risk,function(x) performTest(x,1,length(sp_risk)))
+dif_risk <- rbindlist(dif_risk[!is.na(dif_risk)],idcol = "Gene_Risk")
+dif_risk <- within(dif_risk, TCRgene <- unlist(lapply(strsplit(dif_risk$Gene_Risk," "),function(x) x[[1]])))
+dif_risk <- within(dif_risk, Risk_group <- unlist(lapply(strsplit(dif_risk$Gene_Risk," "),function(x) x[[2]])))
+
+sig_risk <- dif_risk[abs(dif_risk$LogFC) > 1 & dif_risk$p.adj < 0.01,]
+print(sig_risk)
+write.table(dif_risk,".//Results/Table/Suppfig10RiskDETDiff.tsv",sep="\t")
+
+cols <- rep("black",nrow(dif_risk))
+cols[abs(dif_risk$LogFC) > 1] <- "blue"
+cols[dif_risk$p.adj < 0.05] <- "orange"
+cols[abs(dif_risk$LogFC) > 1 & dif_risk$p.adj < 0.05] <- "red"
+p1 <- ggplot(within(dif_risk,col <- cols),aes(x = LogFC,y = -log10(p.adj))) +
+  geom_hline(yintercept = 1.3,colour = "grey") +
+  geom_vline(xintercept = c(-1,1),colour = "grey") +
+  geom_point(color = cols) +
+  geom_text_repel(data = dif_risk[cols == "red",], # Subset the data for the text layer
+            aes(label = dif_risk[cols == "red",]$TCRgene)) +
+  facet_wrap(~Risk_group,ncol = 1,scales = "free") +
+  pub
+p1
+#Now create a plot with just the significant and status
+# p2 <- ggplot(long[long$TCRgene == sig$TCRgene,],aes(x = TCRgene,y = Exp,fill = Status)) +
+#   geom_boxplot() +
+#   pubrot
+
+p2 <- ggplot(long[long$TCRgene %in% sig_risk$TCRgene,],aes(x = TCRgene,y = Exp,fill = Status)) +
+  geom_boxplot() +
+  facet_wrap(~Risk,ncol = 1)+
+  pubrot
+p2
+ggarrange(p1,p2,widths = c(0.5,1))
+
+
+#Plot some of the interesting over time
+ggplot(long[long$TCRgene %in% sig$TCRgene,],aes(x = Age_at_collection,y = Exp,colour = Status,group = Status)) +
+  geom_smooth(method = "loess") +
+  facet_wrap(~TCRgene)
+
+ggplot(long[long$TCRgene == "TRBV7-6",],aes(x = Age_at_collection,y = Exp,colour = Status,group = Status)) +
+  geom_smooth(method = "loess") +
+  ylab("Expression") +
+  xlab("Age") +
+  ggtitle("TRBV7-6 Expression") +
+  pub
+
+```
+
+
+
+
+#TCR Model
+
+Lets simply ask is there any TCR gene that change over time in any groups specific
+
+```{r Allele affect}
+allele <-  "Protective"
+names <- rownames(risk.df[risk.df$Risk == allele,])
+# names <- colnames(TCRsct)
+umap <- umap(t(TCRsct[,names]))
+umap_data <- data.frame(
+  UMAP1 = umap$layout[, 1],
+  UMAP2 = umap$layout[, 2],
+  metadata[names,]
+)
+a <- ggplot(umap_data[umap_data$Age_at_collection < 12,], aes(x = UMAP1, y = UMAP2, color = Status)) +
+  geom_point(size = 5,alpha = 0.8) + # Adjust point size as needed
+  labs(title = paste("Expression in",allele,"Alleles",sep=" "),subtitle = "under 12") +
+  theme_minimal() + pub
+b <- ggplot(umap_data[umap_data$Age_at_collection > 12,], aes(x = UMAP1, y = UMAP2, color = Status)) +
+  geom_point(size = 5,alpha = 0.8) + # Adjust point size as needed
+  labs(title = paste("Expression in",allele,"Alleles",sep=" "),subtitle = "over 12" ) +
+  theme_minimal() + pub
+ggarrange(a,b,ncol = 1)
+# umap_data <- within(umap_data, strange <- umap_data$UMAP2 < -5)
+
+
+```
+
+Not really any affect by allele unfortunate lets model the genes we know
+
+```{r}
+ggplot(long[long$TCRgene %in% sig$TCRgene,],aes(x = Age_at_collection, y = Exp,color = Status,group = Status ))+
+  # geom_point() +
+  geom_smooth() +
+  facet_wrap(~TCRgene,nrow = 1) +
+  ggtitle("Significant TCR genes by status") +
+  ylab("TCR expression") +
+  xlab("Age") +
+  scale_x_continuous(labels = c(10,50),breaks = c(10,50)) +
+  pub
+
+#Compare to 5 random TCR genes
+ggplot(long[long$TCRgene %in% Tgenes[runif(5,0,200)],],aes(x = Age_at_collection, y = Exp,color = Status,group = Status ))+
+  # geom_point() +
+  geom_smooth() +
+  facet_wrap(~TCRgene,nrow = 1) +
+  ggtitle("Random TCR genes by status") +
+  pub
+
+
+#Take a look at the risk group individuals
+ggplot(long[long$TCRgene %in% sig_risk$TCRgene & long$Risk %in% c("Both","Protective","Risk"),],aes(x = Age_at_collection, y = Exp,color = Status,group = Status ))+
+  # geom_point() +
+  geom_smooth() +
+  scale_x_continuous(limits = c(0,20),breaks = c(5,20)) +
+  facet_grid(TCRgene~Risk,scales = "free") +
+  ggtitle("Allele Significant TCR genes by status") +
+  xlab("Age") +
+  ylab("TCR relative expression") +
+  theme(strip.text.y.right = element_text(angle = 0),
+        axis.text.y = element_blank()) +
+  pub
+```
+
+
+
+
+```{r}
+# #Now plot by age and TCR gene
+# merge <- cbind(umap_data,t(TCRsct))
+# merge_long <- merge %>%
+#   pivot_longer(rownames(TCRsct),names_to = "TCR_gene",values_to = "Expression")
+# 
+# names <- unique(merge_long$TCR_gene)
+# j <- 10
+# ggplot(merge_long[merge_long$TCR_gene == names[j],],aes(x = Age,y = Expression,color = strange)) +
+#   geom_smooth() +
+#   ggtitle(names[j]) 
+#   
+# 
+# #So we want to maybe make a stacked barplot of TCR genes with the average or number in the y and interpolated over age make a function that will pull from a set and #interpolate over age
+# 
+# 
+# interpTCR <- function(x,df,ages){
+#   sub <- df[df$TCR_gene == x,]
+#   if(nrow(sub) < 1){
+#     return(NA)
+#   }
+#   loess_fit <- loess(Expression ~ Age, data = sub[!is.na(sub$Age),], span = 0.5)
+#   preds <- predict(loess_fit,newdata = ages,se = T)
+#   return(data.frame(Age = ages,Interp = preds$fit, SE = preds$se.fit))
+# }
+# 
+# genelist <- as.list(rownames(TCRnorm))
+# names(genelist) <- rownames(TCRnorm)
+# inter <- rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long,seq(from = 3, to = 20, by = 1))),idcol = "TCRgene")
+# 
+# ggplot(inter, aes(x=Age, y=Interp, fill=TCRgene)) + 
+#     geom_area() +
+#   guides(fill = FALSE)
+# 
+# 
+# #Separate by Group
+# group_inter <- rbindlist(
+# list(
+#   # control = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Control",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   maintainer = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Maintainer",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   reverter = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Reverter",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   progressor = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Progressor",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene")
+# ),idcol = "Group"
+# )
+# 
+# ggplot(group_inter, aes(x=Age, y=Interp, fill=TCRgene)) + 
+#   geom_area() +
+#   facet_wrap(~Group,ncol = 3) +
+#   guides(fill = F) +
+#   ylab("Interpolated Count") +
+#   pub 
+# ggsave(".//Results/Fig/age_tcrcount.pdf",width = 5,height = 3)
+# 
+# 
+# ggplot(group_inter,aes(x = Age, y = Interp,color = Group,group = Group)) +
+#   stat_summary(fun = "mean",geom = "line") +
+#   stat_summary(fun = "mean",geom = "point") +
+#   stat_summary(fun.data = "mean_se",geom = "errorbar")+
+#   ggtitle("Average normalized TCR clonality") +
+#   pub
+# 
+# #by strange
+# group_inter <- rbindlist(
+# list(
+#   # control = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Control",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   strange = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$strange == T,],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   normal = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$strange == F,],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene")
+# ),idcol = "Strange"
+# )
+# 
+# ggplot(group_inter, aes(x=Age, y=Interp, fill=TCRgene)) + 
+#   geom_area() +
+#   facet_wrap(~Strange,ncol = 1) +
+#   guides(fill = F)
+# 
+# #By status
+# group_inter <- rbindlist(
+# list(
+#   # control = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Control",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   maintainer = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Group == "Maintainer",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+# ),idcol = "Status"
+# )
+# 
+# #By risk
+# 
+# group_inter <- rbindlist(
+# list(
+#   risk = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Risk == "Risk",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   protective = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Risk == "Protective",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene"),
+#   both = rbindlist(lapply(genelist,function(x) interpTCR(x,merge_long[merge_long$Risk == "Both",],seq(from = 3, to = 20, by = 1))),idcol = "TCRgene")
+# ),idcol = "Risk"
+# )
+# 
+# ggplot(group_inter, aes(x=Age, y=Interp, fill=TCRgene)) + 
+#   geom_area() +
+#   facet_wrap(~Risk,ncol = 1) +
+#   guides(fill = FALSE)
+# 
+# ggplot(group_inter,aes(x = Age, y = Interp,color = Risk,group = Risk)) +
+#   stat_summary(fun = "mean",geom = "line") +
+#   stat_summary(fun = "mean",geom = "point") +
+#   stat_summary(fun.data = "mean_se",geom = "errorbar")+
+#   ggtitle("Average normalized TCR clonality") +
+#   pub
+# 
+# #Check which TCR are different between 
+# model <- aov(lm(Expression ~ Risk + Age,data = merge_long))
+# summary(model)
+# TukeyHSD(model)
+# #perform wilcox at each time point between protective and risk
+# ager <- as.numeric(cut(merge_long$Age, breaks = 20,1:20))
+# results <- data.frame(NULL)
+# i <- 1
+# for (y in unique(merge_long$TCR_gene)){
+#   print(i)
+#   for (x in 1:20){
+#     sub <- merge_long[ager == x & merge_long$TCR_gene == y,]
+#     sub <- sub[!is.na(sub$ID),]
+#     risk <- sub[sub$Risk == "Risk",]
+#     prot <- sub[sub$Risk == "Protective",]
+#     if (nrow(risk) == 0 | nrow(prot) == 0) {
+#       next
+#     }
+#     riskmean <- mean(risk$Expression)
+#     protmean <- mean(prot$Expression)
+#     p <- wilcox.test(risk$Expression,prot$Expression)$p.value
+#     lfc <- log2( riskmean / protmean ) #risk over prot
+#     results <- rbind(results,data.frame(Age = x, TCRgene = y, rmean = riskmean, pmean = protmean,LogFC = lfc,p = p, padj = p*length(TCRgenes))) 
+#   }
+#   i <- i+1
+# }
+# sig <- unique(results[abs(results$LogFC) > 1 & results$p < 0.05, ]$TCRgene)
+# sig <- sig[!is.na(sig)]
+# #specific
+# plot.ls <- list()
+# for (s in sig){
+#   res <- results[results$TCRgene == s,]
+#   res <- res[res$p < 0.05,]
+#   sub <- group_inter[group_inter$TCRgene == s & group_inter$Risk != "both",]
+#   maxes <- max(sub[sub$Age %in% res$Age,]$Interp,na.rm = T)
+#   plot.ls[[s]] <-  ggplot(sub,aes(x = Age, y = Interp,color = factor(Risk,levels = c("risk","protective")),group = factor(Risk,levels = c("risk","protective")))) +
+#     # stat_summary(fun = "mean",geom = "line") +
+#     # stat_summary(fun = "mean",geom = "point") +
+#     # stat_summary(,geom = "errorbar") +
+#     geom_line() +
+#     geom_point() +
+#     geom_errorbar(aes(ymin = Interp - SE,ymax = Interp + SE)) +
+#     annotate("text",label = "*",x = res$Age,y = maxes + 0.5 ,size = 7) +
+#     pub +
+#     theme(legend.title = element_blank())+
+#     ggtitle(s)
+# }
+# 
+# #Previous identified important
+# plot.ls['TRBV23-1']
+# plot.ls['TRBV12-1']
+```
+
+
+```{r old list}
+# prot <- c(
+#   "HLA-A*11:01",
+#   "HLA-A*66:01",
+#   "HLA-A*32:01",
+#   "HLA-B*35:02",
+#   "HLA-B*46:01",
+#   "HLA-B*57:01",
+#   "HLA-B*07:02",
+#   "HLA-B*44:03",
+#   "HLA-B*57:03",
+#   "HLA-DRB1*03:02",
+#   "HLA-DRB1*04:03",
+#   "HLA-DRB1*08:04",
+#   "HLA-DRB1*11:01",
+#   "HLA-DRB1*11:04",
+#   "HLA-DRB1*13:03",
+#   "HLA-DRB1*14:01",
+#   "HLA-DRB1*15:01",
+#   "HLA-DRB1*15:03",
+#   "HLA-DRB1*16:02",
+#   "HLA-DQA1*01:03",
+#   "HLA-DQA1*02:01",
+#   "HLA-DQA1*04:01",
+#   "HLA-DQA1*05:05",
+#   "HLA-DQB1*03:01",
+#   "HLA-DQB1*04:02",
+#   "HLA-DQB1*05:01",
+#   "HLA-DQB1*05:03",
+#   "HLA-DQB1*06:01",
+#   "HLA-DQB1*06:02",
+#   "HLA-DPB1*04:01",
+#   "HLA-DPB1*04:02"
+# )
+#  
+# risk <- c(
+#   "HLA-A*02:01",
+#   "HLA-A*24:02",
+#   "HLA-A*33:03",
+#   "HLA-B*08:01",
+#   "HLA-B*15:10",
+#   "HLA-B*18:01",
+#   "HLA-B*39:06",
+#   "HLA-B*54:01",
+#   "HLA-C*03:03",
+#   "HLA-C*03:04",
+#   "HLA-C*15:02",
+#   "HLA-DRB1*03:01",
+#   "HLA-DRB1*04:01",
+#   "HLA-DRB1*04:02",
+#   "HLA-DRB1*04:04",
+#   "HLA-DRB1*04:05",
+#   "HLA-DRB1*09:01",
+#   "HLA-DPB1*02:02",
+#   "HLA-DPB1*03:01"
+# )
+
+```
+
+
+
+
+
+
+
+
+
+#Linear Modelling (as in TCR profiling)
+
+```{r}
+##############Functions
+getCoefs <- function(l){
+  best_coefs <- coef(l)#, s = lim$lambda.min) #min lambda
+  coef_df <- data.frame(Term = rownames(best_coefs),Coef = as.numeric(best_coefs))
+  coef_df <- coef_df[rev(order(coef_df$Coef)),]
+  coef_df$Term <- factor(coef_df$Term,levels = coef_df$Term)
+  return(coef_df)
+}
+get_ROC <- function(x,y){
+  proc_obj <- roc(predictor = x,response = y,ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                  plot=F, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                  print.auc=TRUE, show.thres=TRUE,quiet = TRUE)
+  net_roc <- data.frame(y = rev(proc_obj$sensitivities),x = rev(proc_obj$specificities))
+  return(net_roc)
+}
+get_AUC <- function(y,x){
+  if (length(levels(factor(y))) < 2){
+    return(NA)
+  }
+  proc_obj <- roc(predictor = x,response = y,ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                  plot=F, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                  print.auc=TRUE, show.thres=TRUE,quiet= TRUE)
+  net_auc <- auc(proc_obj)
+  return(net_auc)
+}
+tjurs <- function(y,pred){ #Uses the Tjurs psuedo R2 to calculate an error
+  probs_failure <- pred[y == 0]
+  probs_failure[is.na(probs_failure)] <- 1
+  probs_success <- pred[y == 1]
+  probs_success[is.na(probs_success)] <- 0
+  mean_failure <- mean(probs_failure,na.rm = T)
+  mean_success <- mean(probs_success,na.rm = T)
+  if (is.nan(mean_failure)){ mean_failure <- 0 }
+  if (is.nan(mean_success)){ mean_success <- 0 }
+  return(mean_success - mean_failure)
+}
+zap <- function(x, y){
+  stopifnot(length(x) == length(y))
+  z <- list()
+  for (i in seq_along(x)){
+    z[[i]] <- list(x[[i]], y[[i]])
+  }
+  return(z)
+}
+getPredictors <- function(y,pred,hla){
+  # print(data.frame(y = y, pred = pred))
+  acc <- sum(y == (pred > 0.5),na.rm = T)/length(y)
+  auc_all <- get_AUC(pred,y)
+  r2 <- tjurs(y,pred)
+  accuracies <- NULL
+  r2s <- NULL
+  rocs <- NULL
+  aucs <- NULL
+  n <- NULL
+  for (i in 1:ncol(hla)) {
+    rows <- which(hla[,i] == 1)
+    # print(rows)
+    # print(data.frame(y = y[rows], pred = pred[rows]))
+    n <- c(n,length(rows))
+    trues <- y[rows] == (pred[rows] > 0.5)
+    trues[is.na(trues)] <- FALSE
+    #Calc accuracy for hla only
+    accs <- sum(trues)/length(rows)
+    if(is.nan(accs)) { accs <- 0 }
+    accuracies <- c(accuracies,accs)
+    #Calc ROC and AUC for hla only
+    auc <- get_AUC(y[rows],pred[rows])
+    aucs <- c(aucs,auc)
+    #Calc R2 for hla only
+    r2s <- c(r2s,tjurs(y[rows],pred[rows]))
+  }
+  return(data.frame(Allele = c('All',colnames(hla)),n = c(length(y),n),Acc = c(acc,accuracies),R2 = c(r2,r2s),AUC = c(auc_all,aucs)))
+}
+prepFeatures <- function(samp,tcr,alleles,ids){
+  ids <- ids[ids %in% colnames(tcr)]
+  sub <- samp[ids,]
+  response <- ifelse(factor(sub$Status) == "case", 1, 0)
+  df <- data.frame(response = response,
+                        Age = sub$age_max,
+                        alleles[sub$subject_id,],
+                        t(scaleTCR)[ids,])
+  rownames(df) <- ids
+  df <- df[!apply(df,1,function(x) any(is.na(x))),]
+  return(df)
+}
+log.regress <- function(train,test,hla){
+  #Train on train
+  hla <- hla[rownames(test),]
+  lim <- cv.glmnet(as.matrix(train[,2:ncol(train)]),train[,1],family = "binomial",alpha = 1)
+  pred <- predict(lim,as.matrix(test[,2:ncol(test)]),s = "lambda.1se",type = "response")
+  lim_res <- list(Coefs = getCoefs(lim),Results = getPredictors(test[,1],pred,hla))
+  return(lim_res)
+}
+mv.regress <- function(train,test,hla){
+  train_hla <- hla[rownames(train),]
+  hla <- hla[rownames(test),]
+  k <- t(t(train_hla) * train[,1])
+  hla_index <- grep("HLA",colnames(train))
+  mv <- multivariateGlm.fit(k,train[,-c(1,hla_index)],family = rep("binomial",ncol(k)),size = NULL)
+  coefs <- sapply(mv,coef)
+  colnames(coefs) <- colnames(k)
+  mvpred <- predict(mv,test[,-c(1,hla_index)],type = "response")
+  mvlist <- lapply(mvpred,function(x) getPredictors(test[,1],x,hla))
+  allacc <- do.call(cbind,lapply(mvlist,function(x) x$Acc))
+  allr2 <- do.call(cbind,lapply(mvlist,function(x) x$R2))
+  allauc <- do.call(cbind,lapply(mvlist,function(x) x$AUC))
+  mv_res <- list(Coefs = coefs,
+                 Inter = data.frame(Term = colnames(coefs),Intercept = coefs[1,]),
+                 #as.data.frame(t(data.frame(apply(coefs,1,function(x) t.test(x)$conf.int),row.names = c("CImin","CImax"))))),
+                 Results = cbind(mvlist[[1]][,1:2],
+                                 data.frame(Acc = apply(allacc,1,mean),
+                                            R2 = apply(allr2,1,mean), 
+                                            AUC = apply(allauc,1,function(x) mean(x,na.rm=T)))))
+  return(mv_res)
+  # mv_res <- list(Coefs = coefs,Results = data.frame(Allele = c('All',colnames(hla)),n = c(length(y),n),Acc = c(acc,accuracies),R2 = c(r2,r2s),ROC = c(roc_all,rocs),AUC = c(auc_all,aucs))))
+}
+make_long <- function(df){
+  df <- within(df,sample <- rownames(df))  %>%
+    pivot_longer(cols = colnames(df)[grep("HLA",colnames(df))],names_to = "HLA",values_to = "Contains")
+  df <- df[df$Contains >= 1,]
+  df <- df[,!colnames(df) == "Contains"]
+  tmp <- as.data.frame(df)
+  colnames(tmp) <- gsub("\\.","_",colnames(tmp))
+  tmp[,1] <- as.factor(tmp[,1])
+  tcrindex <- grep("TR",colnames(df))
+  tmp[,tcrindex] <- apply(tmp[,tcrindex],1,function(x) as.numeric(x)*100000)
+  return(tmp)
+}
+lmm.regress <- function(train,test,hla){
+  train.df <- make_long(train)
+  test.df <- make_long(test)
+  matchhla <- intersect(unique(train.df$HLA),unique(test.df$HLA))
+  train.df <- train.df[train.df$HLA %in% matchhla,]
+  test.df <- test.df[test.df$HLA %in% matchhla,]
+  
+  form <- as.formula(paste("response ~", paste(colnames(train.df)[4:ncol(train.df)-2], collapse = " + ")," + (1 | HLA) "))#+ (1 | Age)" )) #Make this on the test set?
+  lmm <- glmer(form,data = train.df,
+               family = binomial,control = glmerControl(optimizer = "nloptwrap",calc.derivs = FALSE,optCtrl=list(maxfun=2e5)),nAGQ = 0)
+  coefs <- coef(lmm)
+  coef_table <- summary(lmm)$coefficients
+  #Predict
+  lmm_pred <- predict(lmm,test.df,type = "response")
+  lmm_pred <- split(lmm_pred,test.df$sample)#Get the median prediction 
+  lmm_pred <- unlist(lapply(lmm_pred,function(x) mean(as.numeric(x))))
+  lmm_res <- list(Coef = data.frame(Term = rownames(coef_table),Coef = coef_table[,1], Error = coef_table[,2],pvalue = coef_table[,4]),
+                  Inter = data.frame(Term = rownames(coefs$HLA),Intercept = coefs$HLA[,1]),
+                  Results = getPredictors(test[names(lmm_pred),]$response,lmm_pred,hla[names(lmm_pred),]))
+  return(lmm_res)
+}
+###############Normalize and scale dataset
+#######################Prep the TCR features
+scaleTCR <- apply(TCRnorm,2,scale)
+rownames(scaleTCR) <- rownames(TCRnorm)
+boxplot(scaleTCR) #Check that scaleTCR is correctly normalized (remove outliers)
+plot(apply(scaleTCR,2,median),col = c("red","blue")[d.df[colnames(scaleTCR),]$response + 1])
+abline(h = c(-0.24,-0.36), col = "red", lty = 2)
+outliers <- which(apply(scaleTCR,2,median) > -0.24 | apply(scaleTCR,2,median) < -0.37)
+norm_scaleTCR <- scaleTCR[,-outliers]
+################Train test split
+d.df <- prepFeatures(subsample,norm_scaleTCR,alleles,rownames(subsample))
+hla <- d.df[,grep("HLA",colnames(d.df))]
+term.df <- prepFeatures(subsample,norm_scaleTCR,alleles,term_ids)
+nterm.df <- prepFeatures(subsample,norm_scaleTCR,alleles,non_term_ids)
+equal.df <- prepFeatures(subsample,norm_scaleTCR,alleles,equal_ids)
+###############Test lists
+runStatTests <- function(train,test,ls,hla){
+  hla_index <- ls$hla
+  tcr_index <- ls$tcr
+  return(list(
+    GLM = log.regress(train,test,hla),
+    GLM_HLA = log.regress(train[,-tcr_index],test[,-tcr_index],hla),
+    GLM_TCR = log.regress(train[,-hla_index],test[,-hla_index],hla),
+    MV = mv.regress(train,test,hla),
+    LMM = lmm.regress(train,test,hla)
+  ))
+}
+
+Full_list <- runStatTests(Full$train,Full$test,Full,hla) 
+Full_list_noage <- runStatTests(Fullnoage$train,Fullnoage$test,Fullnoage,hla)
+Term_list <- runStatTests(Term$train,Term$test,Term,hla) 
+nTerm_list <- runStatTests(nTerm$train,nTerm$test,nTerm,hla) 
+
+Term_nTerm_list <- runStatTests(Term$train,nTerm$train,Term,hla) 
+nTerm_Term_list <- runStatTests(nTerm$train,Term$train,nTerm,hla) 
+
+Equal_list <- runStatTests(Equal$train,Equal$test,Equal,hla)
+Equal_noage <- runStatTests(Equalnoage$train,Equalnoage$test,Equal,hla)
+```
+
+#Machine learning
+
+```{r}
+
+##############################################
+#### Machine Learning ########################
+##############################################
+
+#The problem is that some patients have 0 recorded HLA so we remove those patient files first
+features <- data.frame(response = metadata[userows,]$Status, 
+                   Age = metadata[userows,]$Age_at_collection,
+                   hla[userows,],
+                   t(scaleTCR)[userows,])
+# features <- d.df
+#Now use machine learning code to develop multiple models predicting the response based on TCR and allele usage
+#Make a train test set
+set.seed(12345)
+train_index <- createDataPartition(1:nrow(features), p=0.70, list=FALSE)
+train <- features[train_index,]
+validation <- features[-train_index,]
+
+trainModels <- function(train,validation){
+  train_age <- train$Age
+  val_age <- validation$Age
+  train <- train[,!colnames(train) == "Age"]
+  validation <- validation[,!colnames(validation) == "Age"]
+  
+  #Iterate through models
+  
+  control <- trainControl(method="repeatedcv", number=10, repeats=3,classProbs = T)
+  
+  m_bag <- train(as.factor(response) ~ ., data=train, method="cforest", metric="ROC", 
+                 trControl=control, preProcess = c("center", "scale") )
+  m_sda <- train(as.factor(response)~., data=train, method="sda", metric="ROC", 
+                 trControl=control, preProcess = c("center", "scale") )
+  m_mlp <- train(as.factor(response)~., data=train, method="mlp", metric="ROC", 
+                 trControl=control, preProcess = c("center", "scale") )
+  m_glm <- train(as.factor(response)~., data=train, method="glm", metric="ROC", 
+                 trControl=control, preProcess = c("center", "scale") )
+  m_boost <- train(as.factor(response)~., data=train, method="gbm", metric="ROC", 
+                   trControl=control, preProcess = c("center", "scale") )
+  m_svm <- train(as.factor(response)~., data=train, method="svmLinear2", metric="ROC", 
+                 trControl=control, preProcess = c("center", "scale") )
+  
+  # resample_results <- resamples(list(Bag=m_bag,SDA=m_sda, 
+                                     # MLP=m_mlp, GLM=m_glm, Boost=m_boost, SVM=m_svm))
+  model_list <- list(Bag=m_bag,SDA=m_sda, 
+                 MLP=m_mlp, GLM=m_glm, Boost=m_boost, SVM=m_svm)
+  # summary(resample_results,metric = c("Kappa","Accuracy"))
+  # bwplot(resample_results , metric = c("Accuracy","ROC"))
+  
+  #Then predict on the validation set 
+  y <- rep(0,nrow(validation))#as.character(validation$encoding)
+  y[validation$response == "case"] <- 1
+  
+  p1 <- predict(m_bag, validation, preProcess = c("center", "scale"),type = "prob")
+  p2 <- predict(m_sda, validation, preProcess = c("center", "scale"),type = "prob")
+  p3 <- predict(m_mlp, validation, preProcess = c("center", "scale"),type = "prob")
+  p4 <- predict(m_glm, validation, preProcess = c("center", "scale"),type = "prob")
+  p5 <- predict(m_boost, validation, preProcess = c("center", "scale"),type = "prob")
+  p6 <- predict(m_svm, validation, preProcess = c("center", "scale"),type = "prob")
+  models <- c("Bagging","SDA","MLP","GLM","Boost","SVM")
+  accuracies <- c(calcAcc(p1$case,y),calcAcc(p2$case,y),calcAcc(p3$case,y),calcAcc(p4$case,y),calcAcc(p5$case,y),calcAcc(p6$case,y))
+  pos_accuracies <- unlist(lapply(list(p1,p2,p3,p4,p5,p6),function(x) calcAcc(x = x$case[y == 1],y = y[y==1])))
+  neg_accuracies <- unlist(lapply(list(p1,p2,p3,p4,p5,p6),function(x) calcAcc(x = x$case[y == 0],y = y[y==0])))
+  
+  plist <- list(bag = p1,sda = p2,mlp = p3,glm = p4,boost = p5,svm = p6)
+  plist <- lapply(plist,function(x) within(cbind(validation[,1],val_age,x),acc <- (x$case > 0.05) == (validation$response == "case")))
+  
+  #ROC
+  
+  
+  predlist <- list(p1,p2,p3,p4,p5,p6)
+  names(predlist) <- models
+  roclist <- lapply(predlist,function(x) list(roc = get_ROC(x$case,y), auc = get_AUC(x$case,y)))
+  names(roclist) <- models
+  roc.df <- rbindlist(lapply(roclist,function(x) x[[1]]),idcol = "Model")
+  
+  a <- ggplot(roc.df,aes(x = x,y = y, colour = Model)) +
+    geom_line(linewidth = 1.2) +
+    geom_abline(slope = 1, intercept = 1,linetype = "dashed") +
+    scale_x_reverse() +
+    # scale_x_continuous(expand = c(0,0)) +
+    scale_y_continuous(expand = c(0,0)) +
+    xlab("Specificity") +
+    ylab("Sensitivity") +
+    pub
+  
+  df <- data.frame(Model = models,Accuracy = accuracies,AUC = unlist(lapply(roclist,function(x) x[[2]])),Pos_acc = pos_accuracies, Neg_acc = neg_accuracies)
+  return(list(models = model_list,AUC = a,data = df,plist = plist))
+}
+
+#Now train for different feature levels
+#May need to hide age
+hlaonly <- trainModels(train[,-grep("TR",colnames(features))],validation[,-grep("TR",colnames(features))])
+tcronly <- trainModels(train[,-grep("HLA",colnames(features))],validation[,-grep("HLA",colnames(features))])
+both <- trainModels(train,validation)
+
+#Plot
+resample_results <- resamples(hlaonly[[1]])
+hla_plot <- bwplot(resample_results , metric = c("Accuracy","ROC"),main = "HLA only")
+
+resample_results <- resamples(tcronly[[1]])
+tcr_plot <- bwplot(resample_results , metric = c("Accuracy","ROC"),main = "TCR only")
+
+
+resample_results <- resamples(both[[1]])
+both_plot <- bwplot(resample_results , metric = c("Accuracy","ROC"),main = "HLA + TCR")
+
+par(mfrow = c(1, 3))
+hla_plot
+tcr_plot
+both_plot
+par(mfrow = c(1, 1))
+
+#Feature importance 
+
+hlafeatures <- varImp(hlaonly$models$GLM,scale = F)
+tcrfeatures <- varImp(tcronly$models$GLM,scale = F)
+bothfeatures <- varImp(both$models$GLM,scale = F)
+
+plot(hlafeatures,top=20,main = "HLA features")
+plot(tcrfeatures,top=20,main = "TCR features")
+plot(bothfeatures,top=20,main = "HLA + TCR features")
+```
+
+
+
+#Summarization
+
+```{r}
+getSummary <- function(x,y) {
+  df <- data.frame(Study = x$Study[1],n = length(x$ID), 
+                   Female = sum(x$Sex == "female"),
+                   Male = sum(x$Sex == "male"),
+                  as.data.frame(t(matrix(table(x$Clinical_status)))),
+                  as.data.frame(t(matrix(table(x$AAB)))),
+                  as.data.frame(t(matrix(table(x$Status)))),
+                  age_mean = mean(x$Age_at_collection,na.rm = T), 
+                  age_sd = sd(x$Age_at_collection,na.rm = T),
+                  depth = mean(y$depth), depthsd = sd(y$depth))
+  # colnames(df) <- c("Study","n","female","male","Healthy","PD","D","Neg","Pos","Case","Control",
+                    # "age_mean","age_sd","depth","depth_sd")
+  return(df)
+}
+
+getSummary(meta,metadata)
+lapply(split(metadata,metadata$Study),function(x) getSummary(x[!duplicated(x$ID),],x))
+
+getSummaryHT <- function(x,hla,tcr) {
+  hlacols <- colnames(hla)[colnames(hla) %in% rownames(x)]
+  tcrcols <- colnames(tcr)[colnames(tcr) %in% rownames(x)]
+  return(data.frame(meanHLA = mean(colSums(hla[,hlacols],na.rm = T),na.rm = T),
+                    sdHLA = sd(colSums(hla[,hlacols],na.rm = T),na.rm = T),
+                    meanTCR = mean(colSums(tcr[,tcrcols],na.rm = T),na.rm = T),
+                    sdTCR = sd(colSums(tcr[,tcrcols],na.rm = T),na.rm = T)))
+}
+
+getSummaryHT(metadata,t(hla),TCRraw > 1)
+lapply(split(metadata,metadata$Study),function(x) getSummaryHT(x,t(hla),TCRraw > 1))
+```
+
+
+
+
+
+
+

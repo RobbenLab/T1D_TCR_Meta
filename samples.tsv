@@ -1,0 +1,994 @@
+"Study_Short"	"subject_id"	"sex"	"age_max"	"race_norm"	"cell_number"	"Status"	"tissue"	"cells"	"locus"	"Unique"	"Total"
+"656b934c190f680f22dc210a"	"Anderson"	"AFCA420"	"female"	28	"nr"	NA	"case"	"Islets"	"CD4"	"TRA"	30	61606
+"656b934c190f680f22dc210b"	"Anderson"	"AFCA420"	"female"	28	"nr"	NA	"case"	"Islets"	"CD4"	"TRB"	35	63410
+"656b934c190f680f22dc210c"	"Anderson"	"AFCA420"	"female"	28	"nr"	NA	"case"	"Islets"	"CD8"	"TRA"	163	373434
+"656b934c190f680f22dc210d"	"Anderson"	"AFCA420"	"female"	28	"nr"	NA	"case"	"Islets"	"CD8"	"TRB"	204	320743
+"656b934d190f680f22dc210e"	"Anderson"	"iidp1726"	"male"	21	"White"	NA	"control"	"Islets"	"CD4"	"TRA"	17	77534
+"656b934d190f680f22dc210f"	"Anderson"	"iidp1726"	"male"	21	"White"	NA	"control"	"Islets"	"CD4"	"TRB"	24	170795
+"656b934d190f680f22dc2110"	"Anderson"	"iidp1726"	"male"	21	"White"	NA	"control"	"Islets"	"CD8"	"TRA"	182	1171465
+"656b934d190f680f22dc2111"	"Anderson"	"iidp1726"	"male"	21	"White"	NA	"control"	"Islets"	"CD8"	"TRB"	176	809765
+"656b934d190f680f22dc2112"	"Anderson"	"iidp5642"	"male"	30	"Hispanic"	NA	"control"	"Islets"	"CD8"	"TRA"	82	547726
+"656b934d190f680f22dc2113"	"Anderson"	"iidp5642"	"male"	30	"Hispanic"	NA	"control"	"Islets"	"CD8"	"TRB"	83	548794
+"656b934d190f680f22dc2114"	"Anderson"	"iidp7400"	"female"	30	"White"	NA	"control"	"Islets"	"CD4"	"TRA"	20	136465
+"656b934e190f680f22dc2115"	"Anderson"	"iidp7400"	"female"	30	"White"	NA	"control"	"Islets"	"CD4"	"TRB"	15	66890
+"656b934e190f680f22dc2116"	"Anderson"	"iidp7400"	"female"	30	"White"	NA	"control"	"Islets"	"CD8"	"TRA"	231	1117402
+"656b934e190f680f22dc2117"	"Anderson"	"iidp7400"	"female"	30	"White"	NA	"control"	"Islets"	"CD8"	"TRB"	211	839983
+"656b934e190f680f22dc2118"	"Anderson"	"iidp9657"	"female"	34	"White"	NA	"control"	"Islets"	"CD4"	"TRA"	65	358027
+"656b934e190f680f22dc2119"	"Anderson"	"iidp9657"	"female"	34	"White"	NA	"control"	"Islets"	"CD4"	"TRB"	51	279982
+"656b934e190f680f22dc211a"	"Anderson"	"iidp9657"	"female"	34	"White"	NA	"control"	"Islets"	"CD8"	"TRA"	183	966995
+"656b934e190f680f22dc211b"	"Anderson"	"iidp9657"	"female"	34	"White"	NA	"control"	"Islets"	"CD8"	"TRB"	171	1245810
+"656b934f190f680f22dc211c"	"Anderson"	"nPOD6323"	"female"	22	"White"	NA	"case"	"Islets"	"CD4"	"TRA"	301	2635307
+"656b934f190f680f22dc211d"	"Anderson"	"nPOD6323"	"female"	22	"White"	NA	"case"	"Islets"	"CD4"	"TRB"	301	2690390
+"656b934f190f680f22dc211e"	"Anderson"	"nPOD6323"	"female"	22	"White"	NA	"case"	"Islets"	"CD8"	"TRA"	145	1186681
+"656b934f190f680f22dc211f"	"Anderson"	"nPOD6323"	"female"	22	"White"	NA	"case"	"Islets"	"CD8"	"TRB"	147	1401552
+"656b934f190f680f22dc2120"	"Anderson"	"nPOD6342"	"female"	14	"White"	NA	"case"	"Islets"	"CD4"	"TRA"	406	1150589
+"656b934f190f680f22dc2121"	"Anderson"	"nPOD6342"	"female"	14	"White"	NA	"case"	"Islets"	"CD4"	"TRB"	449	1478673
+"656b934f190f680f22dc2122"	"Anderson"	"nPOD6342"	"female"	14	"White"	NA	"case"	"Islets"	"CD8"	"TRA"	205	554959
+"656b9350190f680f22dc2123"	"Anderson"	"nPOD6342"	"female"	14	"White"	NA	"case"	"Islets"	"CD8"	"TRB"	193	609069
+"656b9350190f680f22dc2124"	"Anderson"	"nPOD6367"	"male"	24	"White"	NA	"case"	"Islets"	"CD4"	"TRA"	192	572921
+"656b9350190f680f22dc2125"	"Anderson"	"nPOD6367"	"male"	24	"White"	NA	"case"	"Islets"	"CD4"	"TRB"	167	728389
+"656b9350190f680f22dc2126"	"Anderson"	"nPOD6367"	"male"	24	"White"	NA	"case"	"Islets"	"CD8"	"TRA"	206	912883
+"656b9350190f680f22dc2127"	"Anderson"	"nPOD6367"	"male"	24	"White"	NA	"case"	"Islets"	"CD8"	"TRB"	191	1066046
+"656b9350190f680f22dc2128"	"Anderson"	"nPOD6414"	"male"	23.1	"Black"	NA	"case"	"Islets"	"CD4"	"TRA"	253	1078191
+"656b9350190f680f22dc2129"	"Anderson"	"nPOD6414"	"male"	23.1	"Black"	NA	"case"	"Islets"	"CD4"	"TRB"	216	3025407
+"656b9351190f680f22dc212a"	"Anderson"	"nPOD6414"	"male"	23.1	"Black"	NA	"case"	"Islets"	"CD8"	"TRA"	124	553589
+"656b9351190f680f22dc212b"	"Anderson"	"nPOD6414"	"male"	23.1	"Black"	NA	"case"	"Islets"	"CD8"	"TRB"	129	1868734
+"656b9351190f680f22dc212c"	"Anderson"	"nPOD6472"	"female"	10.25	"White"	NA	"case"	"Islets"	"CD4"	"TRA"	89	475480
+"656b9351190f680f22dc212d"	"Anderson"	"nPOD6472"	"female"	10.25	"White"	NA	"case"	"Islets"	"CD4"	"TRB"	102	627024
+"656b9351190f680f22dc212e"	"Anderson"	"nPOD6472"	"female"	10.25	"White"	NA	"case"	"Islets"	"CD8"	"TRA"	232	1298937
+"656b9351190f680f22dc212f"	"Anderson"	"nPOD6472"	"female"	10.25	"White"	NA	"case"	"Islets"	"CD8"	"TRB"	228	1382100
+"656b9351190f680f22dc2130"	"Anderson"	"nPOD69"	"female"	6	"nr"	NA	"case"	"Islets"	"CD4"	"TRA"	13	0
+"656b9352190f680f22dc2131"	"Anderson"	"nPOD69"	"female"	6	"nr"	NA	"case"	"Islets"	"CD4"	"TRB"	8	0
+"656b9352190f680f22dc2132"	"Anderson"	"nPOD69"	"female"	6	"nr"	NA	"case"	"Islets"	"CD8"	"TRA"	53	0
+"656b9352190f680f22dc2133"	"Anderson"	"nPOD69"	"female"	6	"nr"	NA	"case"	"Islets"	"CD8"	"TRB"	42	0
+"656b9352190f680f22dc2134"	"Anderson"	"R300"	"female"	30	"nr"	NA	"control"	"Islets"	"CD4"	"TRA"	15	101221
+"656b9352190f680f22dc2135"	"Anderson"	"R300"	"female"	30	"nr"	NA	"control"	"Islets"	"CD4"	"TRB"	18	84872
+"656b9352190f680f22dc2136"	"Anderson"	"R300"	"female"	30	"nr"	NA	"control"	"Islets"	"CD8"	"TRA"	61	382693
+"656b9352190f680f22dc2137"	"Anderson"	"R300"	"female"	30	"nr"	NA	"control"	"Islets"	"CD8"	"TRB"	57	233746
+"656b9353190f680f22dc2138"	"Anderson"	"R301"	"male"	18	"nr"	NA	"control"	"Islets"	"CD4"	"TRA"	64	295524
+"656b9353190f680f22dc2139"	"Anderson"	"R301"	"male"	18	"nr"	NA	"control"	"Islets"	"CD4"	"TRB"	47	289212
+"656b9353190f680f22dc213a"	"Anderson"	"R301"	"male"	18	"nr"	NA	"control"	"Islets"	"CD8"	"TRA"	178	865320
+"656b9353190f680f22dc213b"	"Anderson"	"R301"	"male"	18	"nr"	NA	"control"	"Islets"	"CD8"	"TRB"	156	947163
+"65b80973866f210a329b2010"	"Gomez-Tourino"	"HD1"	"female"	47	"White"	1200000	"control"	"Blood"	"CD4"	"TRB"	274921	1594088
+"65b80973866f210a329b2011"	"Gomez-Tourino"	"HD1"	"female"	47	"White"	1100000	"control"	"Blood"	"CD4"	"TRB"	480568	1651663
+"65b80973866f210a329b2012"	"Gomez-Tourino"	"HD1"	"female"	47	"White"	408600	"control"	"Blood"	"CD4"	"TRB"	47439	81106
+"65b80973866f210a329b2013"	"Gomez-Tourino"	"HD1"	"female"	47	"White"	52600	"control"	"Blood"	"CD4"	"TRB"	29908	70699
+"65b80974866f210a329b2014"	"Gomez-Tourino"	"HD2"	"female"	28	"Asian"	1400000	"control"	"Blood"	"CD4"	"TRB"	284358	1424172
+"65b80974866f210a329b2015"	"Gomez-Tourino"	"HD2"	"female"	28	"Asian"	2300000	"control"	"Blood"	"CD4"	"TRB"	641395	1554645
+"65b80974866f210a329b2016"	"Gomez-Tourino"	"HD2"	"female"	28	"Asian"	450700	"control"	"Blood"	"CD4"	"TRB"	111948	218565
+"65b80975866f210a329b2017"	"Gomez-Tourino"	"HD2"	"female"	28	"Asian"	259000	"control"	"Blood"	"CD4"	"TRB"	154198	401909
+"65b80975866f210a329b2018"	"Gomez-Tourino"	"HD3"	"female"	32	"White"	838100	"control"	"Blood"	"CD4"	"TRB"	249831	1720057
+"65b80975866f210a329b2019"	"Gomez-Tourino"	"HD3"	"female"	32	"White"	1500000	"control"	"Blood"	"CD4"	"TRB"	584598	1832401
+"65b80976866f210a329b201a"	"Gomez-Tourino"	"HD3"	"female"	32	"White"	431900	"control"	"Blood"	"CD4"	"TRB"	70074	126368
+"65b80976866f210a329b201b"	"Gomez-Tourino"	"HD3"	"female"	32	"White"	142700	"control"	"Blood"	"CD4"	"TRB"	75155	146953
+"65b80976866f210a329b201c"	"Gomez-Tourino"	"HD4"	"male"	26	"White"	1500000	"control"	"Blood"	"CD4"	"TRB"	278679	1851292
+"65b80976866f210a329b201d"	"Gomez-Tourino"	"HD4"	"male"	26	"White"	1500000	"control"	"Blood"	"CD4"	"TRB"	655030	2161793
+"65b80977866f210a329b201e"	"Gomez-Tourino"	"HD4"	"male"	26	"White"	640300	"control"	"Blood"	"CD4"	"TRB"	271935	510400
+"65b80977866f210a329b201f"	"Gomez-Tourino"	"HD4"	"male"	26	"White"	75300	"control"	"Blood"	"CD4"	"TRB"	34904	69865
+"65b80977866f210a329b2020"	"Gomez-Tourino"	"HD5"	"female"	26	"White"	363600	"control"	"Blood"	"CD4"	"TRB"	74564	158928
+"65b80978866f210a329b2021"	"Gomez-Tourino"	"HD5"	"female"	26	"White"	1000000	"control"	"Blood"	"CD4"	"TRB"	416280	1598457
+"65b80978866f210a329b2022"	"Gomez-Tourino"	"HD5"	"female"	26	"White"	221300	"control"	"Blood"	"CD4"	"TRB"	17743	22689
+"65b80978866f210a329b2023"	"Gomez-Tourino"	"HD5"	"female"	26	"White"	88300	"control"	"Blood"	"CD4"	"TRB"	28795	51632
+"65b80979866f210a329b2024"	"Gomez-Tourino"	"HD6"	"female"	26	"White"	2300000	"control"	"Blood"	"CD4"	"TRB"	337848	1357026
+"65b80979866f210a329b2025"	"Gomez-Tourino"	"HD6"	"female"	26	"White"	2900000	"control"	"Blood"	"CD4"	"TRB"	676760	1717770
+"65b80979866f210a329b2026"	"Gomez-Tourino"	"HD6"	"female"	26	"White"	432700	"control"	"Blood"	"CD4"	"TRB"	79604	172297
+"65b80979866f210a329b2027"	"Gomez-Tourino"	"HD6"	"female"	26	"White"	370200	"control"	"Blood"	"CD4"	"TRB"	205310	448506
+"65b8097a866f210a329b2028"	"Gomez-Tourino"	"HD7"	"male"	30	"Hispanic"	1400000	"control"	"Blood"	"CD4"	"TRB"	317511	1911138
+"65b8097a866f210a329b2029"	"Gomez-Tourino"	"HD7"	"male"	30	"Hispanic"	1400000	"control"	"Blood"	"CD4"	"TRB"	559254	1692069
+"65b8097a866f210a329b202a"	"Gomez-Tourino"	"HD7"	"male"	30	"Hispanic"	485700	"control"	"Blood"	"CD4"	"TRB"	52715	82499
+"65b8097b866f210a329b202b"	"Gomez-Tourino"	"HD7"	"male"	30	"Hispanic"	481100	"control"	"Blood"	"CD4"	"TRB"	166255	417984
+"65b8097b866f210a329b202c"	"Gomez-Tourino"	"HD8"	"male"	29	"White"	848400	"control"	"Blood"	"CD4"	"TRB"	254035	1255036
+"65b8097b866f210a329b202d"	"Gomez-Tourino"	"HD8"	"male"	29	"White"	1400000	"control"	"Blood"	"CD4"	"TRB"	277870	1348295
+"65b8097c866f210a329b202e"	"Gomez-Tourino"	"HD8"	"male"	29	"White"	210100	"control"	"Blood"	"CD4"	"TRB"	11437	15679
+"65b8097c866f210a329b202f"	"Gomez-Tourino"	"HD8"	"male"	29	"White"	112500	"control"	"Blood"	"CD4"	"TRB"	24682	53015
+"65b8097c866f210a329b2030"	"Gomez-Tourino"	"HD9"	"female"	26	"nr"	1792700	"control"	"Blood"	"CD4"	"TRB"	437823	3343646
+"65b8097c866f210a329b2031"	"Gomez-Tourino"	"HD9"	"female"	26	"nr"	2000000	"control"	"Blood"	"CD4"	"TRB"	713041	2158106
+"65b8097d866f210a329b2032"	"Gomez-Tourino"	"HD10"	"female"	26	"White"	11950600	"control"	"Blood"	"CD4"	"TRB"	526211	3523046
+"65b8097d866f210a329b2033"	"Gomez-Tourino"	"HD10"	"female"	26	"White"	2000000	"control"	"Blood"	"CD4"	"TRB"	1375643	3849659
+"65b8097d866f210a329b2034"	"Gomez-Tourino"	"HD11"	"male"	29	"Mixed"	1600000	"control"	"Blood"	"CD4"	"TRB"	265653	1307320
+"65b8097e866f210a329b2035"	"Gomez-Tourino"	"HD11"	"male"	29	"Mixed"	1731400	"control"	"Blood"	"CD4"	"TRB"	937378	2695559
+"65b8097e866f210a329b2036"	"Gomez-Tourino"	"HD12"	"male"	34	"White"	2322300	"control"	"Blood"	"CD4"	"TRB"	446843	1773579
+"65b8097e866f210a329b2037"	"Gomez-Tourino"	"HD12"	"male"	34	"White"	2917100	"control"	"Blood"	"CD4"	"TRB"	347228	459930
+"65b8097f866f210a329b2038"	"Gomez-Tourino"	"HD13"	"male"	28	"White"	1895000	"control"	"Blood"	"CD4"	"TRB"	406648	2609549
+"65b8097f866f210a329b2039"	"Gomez-Tourino"	"HD13"	"male"	28	"White"	2828700	"control"	"Blood"	"CD4"	"TRB"	701779	1408754
+"65b8097f866f210a329b203a"	"Gomez-Tourino"	"HD14"	"male"	31	"nr"	1747000	"control"	"Blood"	"CD4"	"TRB"	495830	3656727
+"65b8097f866f210a329b203b"	"Gomez-Tourino"	"HD14"	"male"	31	"nr"	2000000	"control"	"Blood"	"CD4"	"TRB"	671134	1968927
+"65b80980866f210a329b203c"	"Gomez-Tourino"	"T1D1"	"male"	22	"White"	1600000	"case"	"Blood"	"CD4"	"TRB"	317546	1544877
+"65b80980866f210a329b203d"	"Gomez-Tourino"	"T1D1"	"male"	22	"White"	1900000	"case"	"Blood"	"CD4"	"TRB"	513211	1429317
+"65b80980866f210a329b203e"	"Gomez-Tourino"	"T1D1"	"male"	22	"White"	300900	"case"	"Blood"	"CD4"	"TRB"	43146	70671
+"65b80981866f210a329b203f"	"Gomez-Tourino"	"T1D1"	"male"	22	"White"	86700	"case"	"Blood"	"CD4"	"TRB"	41069	66466
+"65b80981866f210a329b2040"	"Gomez-Tourino"	"T1D2"	"female"	27	"White"	455100	"case"	"Blood"	"CD4"	"TRB"	193631	560430
+"65b80981866f210a329b2041"	"Gomez-Tourino"	"T1D2"	"female"	27	"White"	1400000	"case"	"Blood"	"CD4"	"TRB"	650172	1933488
+"65b80981866f210a329b2042"	"Gomez-Tourino"	"T1D2"	"female"	27	"White"	249200	"case"	"Blood"	"CD4"	"TRB"	50426	96807
+"65b80982866f210a329b2043"	"Gomez-Tourino"	"T1D2"	"female"	27	"White"	66800	"case"	"Blood"	"CD4"	"TRB"	28446	35919
+"65b80982866f210a329b2044"	"Gomez-Tourino"	"T1D3"	"female"	46	"White"	2100000	"case"	"Blood"	"CD4"	"TRB"	312515	1733299
+"65b80982866f210a329b2045"	"Gomez-Tourino"	"T1D3"	"female"	46	"White"	2500000	"case"	"Blood"	"CD4"	"TRB"	468898	1064624
+"65b80983866f210a329b2046"	"Gomez-Tourino"	"T1D3"	"female"	46	"White"	501500	"case"	"Blood"	"CD4"	"TRB"	101073	244265
+"65b80983866f210a329b2047"	"Gomez-Tourino"	"T1D3"	"female"	46	"White"	108000	"case"	"Blood"	"CD4"	"TRB"	44588	61196
+"65b80983866f210a329b2048"	"Gomez-Tourino"	"T1D4"	"female"	36	"White"	1400000	"case"	"Blood"	"CD4"	"TRB"	282528	1141350
+"65b80984866f210a329b2049"	"Gomez-Tourino"	"T1D4"	"female"	36	"White"	2600000	"case"	"Blood"	"CD4"	"TRB"	481749	1062645
+"65b80984866f210a329b204a"	"Gomez-Tourino"	"T1D4"	"female"	36	"White"	315500	"case"	"Blood"	"CD4"	"TRB"	50482	86101
+"65b80984866f210a329b204b"	"Gomez-Tourino"	"T1D4"	"female"	36	"White"	213000	"case"	"Blood"	"CD4"	"TRB"	94192	142249
+"65b80984866f210a329b204c"	"Gomez-Tourino"	"T1D5"	"male"	34	"White"	1800000	"case"	"Blood"	"CD4"	"TRB"	244343	1068887
+"65b80985866f210a329b204d"	"Gomez-Tourino"	"T1D5"	"male"	34	"White"	1800000	"case"	"Blood"	"CD4"	"TRB"	461401	1464181
+"65b80985866f210a329b204e"	"Gomez-Tourino"	"T1D5"	"male"	34	"White"	476700	"case"	"Blood"	"CD4"	"TRB"	77293	122812
+"65b80985866f210a329b204f"	"Gomez-Tourino"	"T1D5"	"male"	34	"White"	118300	"case"	"Blood"	"CD4"	"TRB"	29331	40181
+"65b80986866f210a329b2050"	"Gomez-Tourino"	"T1D6"	"female"	19	"White"	1700000	"case"	"Blood"	"CD4"	"TRB"	296043	1296895
+"65b80986866f210a329b2051"	"Gomez-Tourino"	"T1D6"	"female"	19	"White"	2400000	"case"	"Blood"	"CD4"	"TRB"	678492	1804959
+"65b80986866f210a329b2052"	"Gomez-Tourino"	"T1D6"	"female"	19	"White"	392500	"case"	"Blood"	"CD4"	"TRB"	82455	142464
+"65b80986866f210a329b2053"	"Gomez-Tourino"	"T1D6"	"female"	19	"White"	65800	"case"	"Blood"	"CD4"	"TRB"	25408	36802
+"65b80987866f210a329b2054"	"Gomez-Tourino"	"T1D7"	"male"	30	"White"	1400000	"case"	"Blood"	"CD4"	"TRB"	274765	992785
+"65b80987866f210a329b2055"	"Gomez-Tourino"	"T1D7"	"male"	30	"White"	1900000	"case"	"Blood"	"CD4"	"TRB"	499490	1392311
+"65b80987866f210a329b2056"	"Gomez-Tourino"	"T1D7"	"male"	30	"White"	345900	"case"	"Blood"	"CD4"	"TRB"	95849	246078
+"65b80988866f210a329b2057"	"Gomez-Tourino"	"T1D7"	"male"	30	"White"	162900	"case"	"Blood"	"CD4"	"TRB"	85545	158020
+"65b80988866f210a329b2058"	"Gomez-Tourino"	"T1D8"	"male"	32	"White"	600000	"case"	"Blood"	"CD4"	"TRB"	123713	253730
+"65b80988866f210a329b2059"	"Gomez-Tourino"	"T1D8"	"male"	32	"White"	1500000	"case"	"Blood"	"CD4"	"TRB"	426408	1184587
+"65b80989866f210a329b205a"	"Gomez-Tourino"	"T1D8"	"male"	32	"White"	210500	"case"	"Blood"	"CD4"	"TRB"	28212	44585
+"65b80989866f210a329b205b"	"Gomez-Tourino"	"T1D8"	"male"	32	"White"	85000	"case"	"Blood"	"CD4"	"TRB"	45470	82130
+"65b80989866f210a329b205c"	"Gomez-Tourino"	"T1D9"	"male"	21	"White"	1417500	"case"	"Blood"	"CD4"	"TRB"	403329	3092918
+"65b80989866f210a329b205d"	"Gomez-Tourino"	"T1D9"	"male"	21	"White"	2507800	"case"	"Blood"	"CD4"	"TRB"	358353	562005
+"65b8098a866f210a329b205e"	"Gomez-Tourino"	"T1D10"	"male"	21	"White"	1778700	"case"	"Blood"	"CD4"	"TRB"	566493	4155244
+"65b8098a866f210a329b205f"	"Gomez-Tourino"	"T1D10"	"male"	21	"White"	2000000	"case"	"Blood"	"CD4"	"TRB"	342090	773013
+"65b8098a866f210a329b2060"	"Gomez-Tourino"	"T1D11"	"male"	35	"White"	2584500	"case"	"Blood"	"CD4"	"TRB"	532729	2887302
+"65b8098b866f210a329b2061"	"Gomez-Tourino"	"T1D11"	"male"	35	"White"	2761300	"case"	"Blood"	"CD4"	"TRB"	245050	340453
+"65b8098b866f210a329b2062"	"Gomez-Tourino"	"T1D12"	"male"	32	"White"	2286900	"case"	"Blood"	"CD4"	"TRB"	222411	1050881
+"65b8098b866f210a329b2063"	"Gomez-Tourino"	"T1D12"	"male"	32	"White"	2310600	"case"	"Blood"	"CD4"	"TRB"	942045	2613876
+"65b8098b866f210a329b2064"	"Gomez-Tourino"	"T1D13"	"male"	22	"nr"	1321500	"case"	"Blood"	"CD4"	"TRB"	226865	1190286
+"65b8098c866f210a329b2065"	"Gomez-Tourino"	"T1D13"	"male"	22	"nr"	2338400	"case"	"Blood"	"CD4"	"TRB"	951678	2542611
+"65b8098c866f210a329b2066"	"Gomez-Tourino"	"T1D14"	"male"	29	"White"	886200	"case"	"Blood"	"CD4"	"TRB"	264587	1135514
+"65b8098c866f210a329b2067"	"Gomez-Tourino"	"T1D14"	"male"	29	"White"	2469700	"case"	"Blood"	"CD4"	"TRB"	1024327	2728101
+"65b8098d866f210a329b2068"	"Gomez-Tourino"	"HD15"	"male"	30	"nr"	698153	"control"	"Blood"	"CD4"	"TRB"	178120	1908399
+"65b8098d866f210a329b2069"	"Gomez-Tourino"	"HD15"	"male"	30	"nr"	3137083	"control"	"Blood"	"CD4"	"TRB"	990726	5208280
+"65b8098d866f210a329b206a"	"Gomez-Tourino"	"HD16"	"female"	25	"nr"	2138070	"control"	"Blood"	"CD4"	"TRB"	502579	6385373
+"65b8098e866f210a329b206b"	"Gomez-Tourino"	"HD16"	"female"	25	"nr"	3409198	"control"	"Blood"	"CD4"	"TRB"	1877448	12302400
+"65b8098e866f210a329b206c"	"Gomez-Tourino"	"HD17"	"female"	23	"nr"	1600000	"control"	"Blood"	"CD4"	"TRB"	291397	2299722
+"65b8098e866f210a329b206d"	"Gomez-Tourino"	"HD17"	"female"	23	"nr"	3150651	"control"	"Blood"	"CD4"	"TRB"	1099640	5790891
+"65b8098e866f210a329b206e"	"Gomez-Tourino"	"HD15"	"male"	30	"nr"	698153	"control"	"Blood"	"CD4"	"TRB"	93082	6621234
+"65b8098f866f210a329b206f"	"Gomez-Tourino"	"HD15"	"male"	30	"nr"	3137083	"control"	"Blood"	"CD4"	"TRB"	260760	4909303
+"65b8098f866f210a329b2070"	"Gomez-Tourino"	"HD16"	"female"	25	"nr"	2138070	"control"	"Blood"	"CD4"	"TRB"	192659	9715356
+"65b8098f866f210a329b2071"	"Gomez-Tourino"	"HD16"	"female"	25	"nr"	3409198	"control"	"Blood"	"CD4"	"TRB"	257243	5750730
+"65b80990866f210a329b2072"	"Gomez-Tourino"	"HD17"	"female"	23	"nr"	1600000	"control"	"Blood"	"CD4"	"TRB"	186560	4982359
+"65b80990866f210a329b2073"	"Gomez-Tourino"	"HD17"	"female"	23	"nr"	3150651	"control"	"Blood"	"CD4"	"TRB"	266207	9790529
+"64189b187c7dc3feb341f92a"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	21662	27122
+"64189b187c7dc3feb341f92b"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	5058	5198
+"64189b187c7dc3feb341f92c"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	4231	6866
+"64189b197c7dc3feb341f92d"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	31772	33789
+"64189b197c7dc3feb341f92e"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Blood"	"CD4"	"TRB"	8844	9153
+"64189b197c7dc3feb341f92f"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Blood"	"CD4"	"TRB"	13882	14504
+"64189b197c7dc3feb341f930"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Blood"	"CD8"	"TRB"	33196	48290
+"64189b1a7c7dc3feb341f931"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Islets"	"CD8"	"TRB"	587	24303
+"64189b1a7c7dc3feb341f932"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Islets"	"CD4"	"TRB"	819	32628
+"64189b1a7c7dc3feb341f933"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	26417	27849
+"64189b1b7c7dc3feb341f934"	"Seay"	"6323"	"female"	22	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	10850	13841
+"64189b1b7c7dc3feb341f935"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Spleen"	NA	"IGH"	30153	31424
+"64189b1b7c7dc3feb341f936"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	109861	126358
+"64189b1c7c7dc3feb341f937"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Spleen"	NA	"IGH"	35290	37219
+"64189b1c7c7dc3feb341f938"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Lymph Node"	NA	"IGH"	66725	70951
+"64189b1c7c7dc3feb341f939"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Spleen"	NA	"IGH"	70911	74102
+"64189b1d7c7dc3feb341f93a"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	72622	80375
+"64189b1d7c7dc3feb341f93b"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Blood"	NA	"IGH"	26097	27683
+"64189b1d7c7dc3feb341f93c"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Lymph Node"	NA	"IGH"	6876	7131
+"64189b1e7c7dc3feb341f93d"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Spleen"	NA	"IGH"	3163	3478
+"64189b1e7c7dc3feb341f93e"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Lymph Node"	NA	"IGH"	119510	128170
+"64189b1e7c7dc3feb341f93f"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Spleen"	NA	"IGH"	37338	39505
+"64189b1e7c7dc3feb341f940"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	31644	32785
+"64189b1f7c7dc3feb341f941"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Spleen"	NA	"IGH"	148460	168410
+"64189b1f7c7dc3feb341f942"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	46734	48639
+"64189b1f7c7dc3feb341f943"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Spleen"	NA	"IGH"	28905	30443
+"64189b207c7dc3feb341f944"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Lymph Node"	NA	"IGH"	88638	91300
+"64189b207c7dc3feb341f945"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Spleen"	NA	"IGH"	22821	23886
+"64189b207c7dc3feb341f946"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Lymph Node"	NA	"IGH"	26620	27662
+"64189b217c7dc3feb341f947"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	34048	36971
+"64189b217c7dc3feb341f948"	"Seay"	"6211"	"female"	24	"Black"	NA	"case"	"Spleen"	"CD4"	"TRB"	35157	41058
+"64189b217c7dc3feb341f949"	"Seay"	"6211"	"female"	24	"Black"	NA	"case"	"Spleen"	"CD4"	"TRB"	8557	9627
+"64189b227c7dc3feb341f94a"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	27541	29225
+"64189b227c7dc3feb341f94b"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Lymph Node"	NA	"IGH"	106704	113861
+"64189b227c7dc3feb341f94c"	"Seay"	"6211"	"female"	24	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	85056	99631
+"64189b237c7dc3feb341f94d"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	5808	5958
+"64189b237c7dc3feb341f94e"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	66262	71676
+"64189b237c7dc3feb341f94f"	"Seay"	"6208"	"female"	32.6	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	45915	58927
+"64189b237c7dc3feb341f950"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Lymph Node"	NA	"IGH"	23515	25209
+"64189b247c7dc3feb341f951"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Spleen"	NA	"IGH"	15006	15523
+"64189b247c7dc3feb341f952"	"Seay"	"6208"	"female"	32.6	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	150200	167513
+"64189b247c7dc3feb341f953"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	81281	86620
+"64189b257c7dc3feb341f954"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Spleen"	NA	"IGH"	42106	45228
+"64189b257c7dc3feb341f955"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	64719	69449
+"64189b257c7dc3feb341f956"	"Seay"	"6208"	"female"	32.6	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	32354	35133
+"64189b267c7dc3feb341f957"	"Seay"	"6208"	"female"	32.6	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	184	191
+"64189b267c7dc3feb341f958"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Spleen"	NA	"IGH"	91765	94728
+"64189b267c7dc3feb341f959"	"Seay"	"6208"	"female"	32.6	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	92279	117591
+"64189b277c7dc3feb341f95a"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	145851	156078
+"64189b277c7dc3feb341f95b"	"Seay"	"6211"	"female"	24	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	68540	80091
+"64189b277c7dc3feb341f95c"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Spleen"	NA	"IGH"	127106	143944
+"64189b287c7dc3feb341f95d"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	41856	43435
+"64189b287c7dc3feb341f95e"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	15780	18741
+"64189b287c7dc3feb341f95f"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	15931	17132
+"64189b287c7dc3feb341f960"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Blood"	"CD4"	"TRB"	19928	21240
+"64189b297c7dc3feb341f961"	"Seay"	"6211"	"female"	24	"Black"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	66382	106011
+"64189b297c7dc3feb341f962"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	21791	24589
+"64189b297c7dc3feb341f963"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	49903	81895
+"64189b2a7c7dc3feb341f964"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	2763	2865
+"64189b2a7c7dc3feb341f965"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	19647	20832
+"64189b2a7c7dc3feb341f966"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Spleen"	"CD4"	"TRB"	10036	11239
+"64189b2b7c7dc3feb341f967"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Spleen"	"CD8"	"TRB"	30344	49526
+"64189b2b7c7dc3feb341f968"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	32599	44981
+"64189b2b7c7dc3feb341f969"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	26703	28299
+"64189b2c7c7dc3feb341f96a"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	81171	92393
+"64189b2c7c7dc3feb341f96b"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	18872	19868
+"64189b2c7c7dc3feb341f96c"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	121696	135139
+"64189b2d7c7dc3feb341f96d"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	8344	10445
+"64189b2d7c7dc3feb341f96e"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	95800	108684
+"64189b2d7c7dc3feb341f96f"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	159847	171368
+"64189b2e7c7dc3feb341f970"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	66264	79482
+"64189b2e7c7dc3feb341f971"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	43777	59497
+"64189b2e7c7dc3feb341f972"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	110037	148084
+"64189b2e7c7dc3feb341f973"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	30692	59810
+"64189b2f7c7dc3feb341f974"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	38983	42518
+"64189b2f7c7dc3feb341f975"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	60663	65676
+"64189b2f7c7dc3feb341f976"	"Seay"	"6195"	"male"	19.3	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	153348	178132
+"64189b307c7dc3feb341f977"	"Seay"	"6193"	"male"	26.9	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	21157	24150
+"64189b307c7dc3feb341f978"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	191621	213062
+"64189b307c7dc3feb341f979"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	24490	35654
+"64189b317c7dc3feb341f97a"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	69047	73744
+"64189b317c7dc3feb341f97b"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	117036	129913
+"64189b317c7dc3feb341f97c"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Spleen"	"CD8"	"TRB"	14156	58351
+"64189b327c7dc3feb341f97d"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	12778	13709
+"64189b327c7dc3feb341f97e"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Blood"	"CD8"	"TRB"	11959	13659
+"64189b327c7dc3feb341f97f"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	30137	32730
+"64189b337c7dc3feb341f980"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	44253	64721
+"64189b337c7dc3feb341f981"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	936	988
+"64189b337c7dc3feb341f982"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Spleen"	"CD8"	"TRB"	51396	64102
+"64189b337c7dc3feb341f983"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	59894	65820
+"64189b347c7dc3feb341f984"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Spleen"	"CD4"	"TRB"	50483	70046
+"64189b347c7dc3feb341f985"	"Seay"	"6193"	"male"	26.9	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	142255	172712
+"64189b347c7dc3feb341f986"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	29917	41892
+"64189b357c7dc3feb341f987"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	84417	90868
+"64189b357c7dc3feb341f988"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	114216	133386
+"64189b357c7dc3feb341f989"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	50494	84743
+"64189b367c7dc3feb341f98a"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	57642	90409
+"64189b367c7dc3feb341f98b"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	27680	30894
+"64189b367c7dc3feb341f98c"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	15289	17156
+"64189b377c7dc3feb341f98d"	"Seay"	"6207"	"female"	16.7	"Black"	NA	"case"	"Spleen"	"CD4"	"TRB"	60276	69962
+"64189b377c7dc3feb341f98e"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Spleen"	"CD4"	"TRB"	15765	24824
+"64189b377c7dc3feb341f98f"	"Seay"	"6278"	"female"	12	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	949	1009
+"64189b387c7dc3feb341f990"	"Seay"	"6285"	"female"	22	"Hispanic"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	34612	71080
+"64189b387c7dc3feb341f991"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Spleen"	"CD8"	"TRB"	14945	84120
+"64189b387c7dc3feb341f992"	"Seay"	"6287"	"female"	57	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	22048	23095
+"64189b397c7dc3feb341f993"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Spleen"	"CD4"	"TRB"	26577	48876
+"64189b397c7dc3feb341f994"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Spleen"	"CD8"	"TRB"	17325	20488
+"64189b397c7dc3feb341f995"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	73121	76311
+"64189b397c7dc3feb341f996"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Blood"	"CD4"	"TRB"	9535	10350
+"64189b3a7c7dc3feb341f997"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	5611	5961
+"64189b3a7c7dc3feb341f998"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	8857	16834
+"64189b3a7c7dc3feb341f999"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Spleen"	"CD8"	"TRB"	21701	56659
+"64189b3b7c7dc3feb341f99a"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	80401	87141
+"64189b3b7c7dc3feb341f99b"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Blood"	"CD4"	"TRB"	11365	12843
+"64189b3b7c7dc3feb341f99c"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	19087	21350
+"64189b3c7c7dc3feb341f99d"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	9037	10766
+"64189b3c7c7dc3feb341f99e"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Spleen"	"CD4"	"TRB"	30974	54413
+"64189b3c7c7dc3feb341f99f"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	55313	64262
+"64189b3d7c7dc3feb341f9a0"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	5292	13389
+"64189b3d7c7dc3feb341f9a1"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Spleen"	"CD4"	"TRB"	14445	19538
+"64189b3d7c7dc3feb341f9a2"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	34597	40809
+"64189b3e7c7dc3feb341f9a3"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	6287	7205
+"64189b3e7c7dc3feb341f9a4"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	35930	52279
+"64189b3e7c7dc3feb341f9a5"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	13221	16269
+"64189b3e7c7dc3feb341f9a6"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	60794	66419
+"64189b3f7c7dc3feb341f9a7"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	12863	13747
+"64189b3f7c7dc3feb341f9a8"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	56695	76702
+"64189b3f7c7dc3feb341f9a9"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	48289	53627
+"64189b407c7dc3feb341f9aa"	"Seay"	"6279"	"male"	19	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	79385	109520
+"64189b407c7dc3feb341f9ab"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	35809	40657
+"64189b407c7dc3feb341f9ac"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	15955	22821
+"64189b417c7dc3feb341f9ad"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	136438	170152
+"64189b417c7dc3feb341f9ae"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	8780	13744
+"64189b417c7dc3feb341f9af"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	6469	7427
+"64189b427c7dc3feb341f9b0"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	5431	6295
+"64189b427c7dc3feb341f9b1"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	35663	40311
+"64189b427c7dc3feb341f9b2"	"Seay"	"6264"	"female"	12	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	16557	17440
+"64189b437c7dc3feb341f9b3"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Blood"	"CD4"	"TRB"	989	1074
+"64189b437c7dc3feb341f9b4"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Spleen"	"CD4"	"TRB"	4583	6280
+"64189b437c7dc3feb341f9b5"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	3099	3335
+"64189b437c7dc3feb341f9b6"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Blood"	"CD8"	"TRB"	24898	42427
+"64189b447c7dc3feb341f9b7"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Spleen"	"CD4"	"TRB"	15928	18583
+"64189b447c7dc3feb341f9b8"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	83707	138524
+"64189b447c7dc3feb341f9b9"	"Seay"	"6243"	"male"	13	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	81124	120897
+"64189b457c7dc3feb341f9ba"	"Seay"	"6254"	"male"	38	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	70450	87075
+"64189b457c7dc3feb341f9bb"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	33984	37638
+"64189b457c7dc3feb341f9bc"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	19099	22072
+"64189b467c7dc3feb341f9bd"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	55439	117684
+"64189b467c7dc3feb341f9be"	"Seay"	"6242"	"male"	39	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	81330	117915
+"64189b467c7dc3feb341f9bf"	"Seay"	"6242"	"male"	39	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	74744	91032
+"64189b477c7dc3feb341f9c0"	"Seay"	"6242"	"male"	39	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	13189	117574
+"64189b477c7dc3feb341f9c1"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	31569	44543
+"64189b477c7dc3feb341f9c2"	"Seay"	"6254"	"male"	38	"White"	NA	"control"	"Spleen"	"CD8"	"TRB"	16428	50306
+"64189b487c7dc3feb341f9c3"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	44325	56874
+"64189b487c7dc3feb341f9c4"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	52494	62987
+"64189b487c7dc3feb341f9c5"	"Seay"	"6254"	"male"	38	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	44288	51653
+"64189b487c7dc3feb341f9c6"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	58610	95622
+"64189b497c7dc3feb341f9c7"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	61689	68409
+"64189b497c7dc3feb341f9c8"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Spleen"	"CD8"	"TRB"	18066	100903
+"64189b497c7dc3feb341f9c9"	"Seay"	"6196"	"female"	26.5	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	49545	59079
+"64189b4a7c7dc3feb341f9ca"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	114233	141381
+"64189b4a7c7dc3feb341f9cb"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	8541	9397
+"64189b4a7c7dc3feb341f9cc"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	80551	89338
+"64189b4b7c7dc3feb341f9cd"	"Seay"	"6254"	"male"	38	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	39667	51051
+"64189b4b7c7dc3feb341f9ce"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	65531	86187
+"64189b4b7c7dc3feb341f9cf"	"Seay"	"6242"	"male"	39	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	147075	179407
+"64189b4c7c7dc3feb341f9d0"	"Seay"	"6196"	"female"	26.5	"Black"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	68210	92894
+"64189b4c7c7dc3feb341f9d1"	"Seay"	"6242"	"male"	39	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	50033	82290
+"64189b4c7c7dc3feb341f9d2"	"Seay"	"6282"	"male"	14	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	32840	36483
+"64189b4d7c7dc3feb341f9d3"	"Seay"	"6242"	"male"	39	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	67315	169825
+"64189b4d7c7dc3feb341f9d4"	"Seay"	"6174"	"male"	20.9	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	128213	173785
+"64189b4d7c7dc3feb341f9d5"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	69787	76958
+"64189b4e7c7dc3feb341f9d6"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	1674	1765
+"64189b4e7c7dc3feb341f9d7"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	40835	79036
+"64189b4e7c7dc3feb341f9d8"	"Seay"	"6254"	"male"	38	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	13620	18654
+"64189b4e7c7dc3feb341f9d9"	"Seay"	"6254"	"male"	38	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	55220	74942
+"64189b4f7c7dc3feb341f9da"	"Seay"	"6271"	"male"	17	"White"	NA	"control"	"Spleen"	"CD8"	"TRB"	18720	61471
+"64189b4f7c7dc3feb341f9db"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	94184	138077
+"64189b4f7c7dc3feb341f9dc"	"Seay"	"6265"	"male"	11	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	29821	31701
+"64189b507c7dc3feb341f9dd"	"Seay"	"6289"	"male"	19	"Black"	NA	"control"	"Spleen"	"CD8"	"TRB"	20432	55586
+"64189b507c7dc3feb341f9de"	"Seay"	"6174"	"male"	20.9	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	66235	160067
+"64189b507c7dc3feb341f9df"	"Seay"	"6220"	"female"	35	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	12863	14118
+"64189b517c7dc3feb341f9e0"	"Seay"	"6220"	"female"	35	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	27164	31139
+"64189b517c7dc3feb341f9e1"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	6384	7546
+"64189b517c7dc3feb341f9e2"	"Seay"	"6220"	"female"	35	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	5090	6807
+"64189b527c7dc3feb341f9e3"	"Seay"	"6193"	"male"	26.9	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	186404	211110
+"64189b527c7dc3feb341f9e4"	"Seay"	"6266"	"male"	30	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	889	998
+"64189b527c7dc3feb341f9e5"	"Seay"	"6263"	"male"	34	"Hispanic"	NA	"control"	"Spleen"	"CD8"	"TRB"	7857	31952
+"64189b537c7dc3feb341f9e6"	"Seay"	"6288"	"male"	55	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	39441	71493
+"64189b537c7dc3feb341f9e7"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Blood"	"CD8"	"TRB"	18958	21614
+"64189b537c7dc3feb341f9e8"	"Seay"	"6262"	"male"	44	"Black"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	30322	38877
+"64189b537c7dc3feb341f9e9"	"Seay"	"6212"	"male"	20	"White"	NA	"case"	"Lymph Node"	"CD8"	"TRB"	49950	58701
+"64189b547c7dc3feb341f9ea"	"Seay"	"6161"	"female"	19.2	"White"	NA	"case"	"Spleen"	"CD8"	"TRB"	7691	11712
+"64189b547c7dc3feb341f9eb"	"Seay"	"6220"	"female"	35	"White"	NA	"case"	"Lymph Node"	"CD4"	"TRB"	108451	122062
+"64189b547c7dc3feb341f9ec"	"Seay"	"6220"	"female"	35	"White"	NA	"case"	"Spleen"	"CD4"	"TRB"	18514	24201
+"64189b557c7dc3feb341f9ed"	"Seay"	"6197"	"male"	22	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	195851	225561
+"64189b557c7dc3feb341f9ee"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Blood"	NA	"IGH"	92339	96588
+"64189b557c7dc3feb341f9ef"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Blood"	"CD8"	"TRB"	503	683
+"64189b567c7dc3feb341f9f0"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Blood"	"CD4"	"TRB"	5568	6122
+"64189b567c7dc3feb341f9f1"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	55684	58749
+"64189b567c7dc3feb341f9f2"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	17301	21650
+"64189b577c7dc3feb341f9f3"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Spleen"	NA	"IGH"	30923	32519
+"64189b577c7dc3feb341f9f4"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Spleen"	"CD8"	"TRB"	19650	51571
+"64189b577c7dc3feb341f9f5"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	1005	1080
+"64189b587c7dc3feb341f9f6"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	43468	74588
+"64189b587c7dc3feb341f9f7"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	17139	18519
+"64189b587c7dc3feb341f9f8"	"Seay"	"6284"	"female"	24	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	42165	47130
+"64189b597c7dc3feb341f9f9"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Lymph Node"	NA	"IGH"	70774	77723
+"64189b597c7dc3feb341f9fa"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	8739	13033
+"64189b597c7dc3feb341f9fb"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	8660	9324
+"64189b597c7dc3feb341f9fc"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	9014	9541
+"64189b5a7c7dc3feb341f9fd"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Spleen"	NA	"IGH"	101415	120013
+"64189b5a7c7dc3feb341f9fe"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Spleen"	"CD8"	"TRB"	5203	21797
+"64189b5a7c7dc3feb341f9ff"	"Seay"	"6274"	"female"	36	"White"	NA	"control"	"Spleen"	"CD4"	"TRB"	17512	25763
+"64189b5b7c7dc3feb341fa00"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Blood"	"CD8"	"TRB"	6053	19295
+"64189b5b7c7dc3feb341fa01"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Blood"	"CD4"	"TRB"	47510	54741
+"64189b5b7c7dc3feb341fa02"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	65951	134212
+"64189b5c7c7dc3feb341fa03"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	125262	157354
+"64189b5c7c7dc3feb341fa04"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	91045	118990
+"64189b5c7c7dc3feb341fa05"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Spleen"	"CD8"	"TRB"	9071	56914
+"64189b5d7c7dc3feb341fa06"	"Seay"	"6249"	"female"	45	"Asian"	NA	"control"	"Spleen"	"CD4"	"TRB"	34806	53726
+"64189b5d7c7dc3feb341fa07"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	67653	73209
+"64189b5d7c7dc3feb341fa08"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	60381	78613
+"64189b5e7c7dc3feb341fa09"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	66948	75690
+"64189b5e7c7dc3feb341fa0a"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	66117	84690
+"64189b5e7c7dc3feb341fa0b"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	NA	"IGH"	116663	133023
+"64189b5f7c7dc3feb341fa0c"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	45098	68332
+"64189b5f7c7dc3feb341fa0d"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	106581	128015
+"64189b5f7c7dc3feb341fa0e"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	90021	112935
+"64189b5f7c7dc3feb341fa0f"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Spleen"	NA	"IGH"	116842	132250
+"64189b607c7dc3feb341fa10"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Spleen"	"CD8"	"TRB"	9233	37194
+"64189b607c7dc3feb341fa11"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	36487	55278
+"64189b607c7dc3feb341fa12"	"Seay"	"6273"	"female"	45	"Black"	NA	"control"	"Spleen"	"CD4"	"TRB"	3734	4745
+"64189b617c7dc3feb341fa13"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	NA	"IGH"	119453	126386
+"64189b617c7dc3feb341fa14"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	4900	5993
+"64189b617c7dc3feb341fa15"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	38000	41079
+"64189b627c7dc3feb341fa16"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	71655	91267
+"64189b627c7dc3feb341fa17"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	NA	"IGH"	26973	27933
+"64189b627c7dc3feb341fa18"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	"CD8"	"TRB"	24362	38630
+"64189b637c7dc3feb341fa19"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	20017	21117
+"64189b637c7dc3feb341fa1a"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Lymph Node"	"CD4"	"TRB"	15212	16998
+"64189b637c7dc3feb341fa1b"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Spleen"	"CD8"	"TRB"	1838	4319
+"64189b647c7dc3feb341fa1c"	"Seay"	"6275"	"male"	48	"Hispanic"	NA	"control"	"Spleen"	"CD4"	"TRB"	5814	8036
+"63641ba6f5e323fae91fdf85"	"Mitchell"	"93200"	"female"	3.37	"White"	NA	"case"	"Blood"	NA	"TRB"	104514	121173
+"63641ba7f5e323fae91fdf86"	"Mitchell"	"93200"	"female"	4.36	"White"	NA	"case"	"Blood"	NA	"TRB"	118017	134537
+"63641ba7f5e323fae91fdf87"	"Mitchell"	"93200"	"female"	7.31	"White"	NA	"case"	"Blood"	NA	"TRB"	41018	48198
+"63641ba8f5e323fae91fdf88"	"Mitchell"	"93200"	"female"	12.55	"White"	NA	"case"	"Blood"	NA	"TRB"	71235	88479
+"63641ba8f5e323fae91fdf89"	"Mitchell"	"53400"	"male"	1.3	"White"	NA	"case"	"Blood"	NA	"TRB"	294744	309399
+"63641ba8f5e323fae91fdf8a"	"Mitchell"	"53400"	"male"	3.08	"White"	NA	"case"	"Blood"	NA	"TRB"	156652	167426
+"63641ba9f5e323fae91fdf8b"	"Mitchell"	"53400"	"male"	3.27	"White"	NA	"case"	"Blood"	NA	"TRB"	204296	214976
+"63641ba9f5e323fae91fdf8c"	"Mitchell"	"53400"	"male"	13.98	"White"	NA	"case"	"Blood"	NA	"TRB"	122142	138421
+"63641baaf5e323fae91fdf8d"	"Mitchell"	"29400"	"female"	0.78	"White"	NA	"case"	"Blood"	NA	"TRB"	84216	89218
+"63641baaf5e323fae91fdf8e"	"Mitchell"	"29400"	"female"	1.94	"White"	NA	"case"	"Blood"	NA	"TRB"	148859	164186
+"63641baaf5e323fae91fdf8f"	"Mitchell"	"29400"	"female"	2.39	"White"	NA	"case"	"Blood"	NA	"TRB"	137546	156072
+"63641babf5e323fae91fdf90"	"Mitchell"	"29400"	"female"	6.04	"White"	NA	"case"	"Blood"	NA	"TRB"	61437	69586
+"63641babf5e323fae91fdf91"	"Mitchell"	"18500"	"female"	0.9	"White"	NA	"case"	"Blood"	NA	"TRB"	110324	114016
+"63641bacf5e323fae91fdf92"	"Mitchell"	"18500"	"female"	2.91	"White"	NA	"case"	"Blood"	NA	"TRB"	121962	129045
+"63641bacf5e323fae91fdf93"	"Mitchell"	"18500"	"female"	3.51	"White"	NA	"case"	"Blood"	NA	"TRB"	149456	159144
+"63641bacf5e323fae91fdf94"	"Mitchell"	"18500"	"female"	10.36	"White"	NA	"case"	"Blood"	NA	"TRB"	112583	125661
+"63641badf5e323fae91fdf95"	"Mitchell"	"88500"	"male"	3.06	"White"	NA	"case"	"Blood"	NA	"TRB"	78911	83434
+"63641badf5e323fae91fdf96"	"Mitchell"	"88500"	"male"	4.6	"White"	NA	"case"	"Blood"	NA	"TRB"	138431	149910
+"63641baef5e323fae91fdf97"	"Mitchell"	"88500"	"male"	4.77	"White"	NA	"case"	"Blood"	NA	"TRB"	134579	145463
+"63641baef5e323fae91fdf98"	"Mitchell"	"88500"	"male"	11.63	"White"	NA	"case"	"Blood"	NA	"TRB"	102121	115682
+"63641baff5e323fae91fdf99"	"Mitchell"	"53600"	"female"	1.26	"White"	NA	"case"	"Blood"	NA	"TRB"	397625	418142
+"63641baff5e323fae91fdf9a"	"Mitchell"	"53600"	"female"	3.26	"White"	NA	"case"	"Blood"	NA	"TRB"	239684	260109
+"63641baff5e323fae91fdf9b"	"Mitchell"	"53600"	"female"	3.44	"White"	NA	"case"	"Blood"	NA	"TRB"	151532	161107
+"63641bb0f5e323fae91fdf9c"	"Mitchell"	"53600"	"female"	5.76	"White"	NA	"case"	"Blood"	NA	"TRB"	112729	121086
+"63641bb0f5e323fae91fdf9d"	"Mitchell"	"76600"	"female"	3.92	"White"	NA	"case"	"Blood"	NA	"TRB"	146080	160588
+"63641bb1f5e323fae91fdf9e"	"Mitchell"	"76600"	"female"	6.05	"White"	NA	"case"	"Blood"	NA	"TRB"	167979	183134
+"63641bb1f5e323fae91fdf9f"	"Mitchell"	"76600"	"female"	6.17	"White"	NA	"case"	"Blood"	NA	"TRB"	249826	279620
+"63641bb2f5e323fae91fdfa0"	"Mitchell"	"76600"	"female"	8.25	"White"	NA	"case"	"Blood"	NA	"TRB"	188510	219191
+"63641bb2f5e323fae91fdfa1"	"Mitchell"	"7600"	"male"	0.87	"White"	NA	"case"	"Blood"	NA	"TRB"	165896	173393
+"63641bb2f5e323fae91fdfa2"	"Mitchell"	"7600"	"male"	10.09	"White"	NA	"case"	"Blood"	NA	"TRB"	168114	184230
+"63641bb3f5e323fae91fdfa3"	"Mitchell"	"7600"	"male"	10.67	"White"	NA	"case"	"Blood"	NA	"TRB"	92647	105249
+"63641bb3f5e323fae91fdfa4"	"Mitchell"	"7600"	"male"	19.53	"White"	NA	"case"	"Blood"	NA	"TRB"	144852	172526
+"63641bb4f5e323fae91fdfa5"	"Mitchell"	"89600"	"female"	3.52	"White"	NA	"case"	"Blood"	NA	"TRB"	178351	187669
+"63641bb4f5e323fae91fdfa6"	"Mitchell"	"89600"	"female"	6.84	"White"	NA	"case"	"Blood"	NA	"TRB"	116719	125841
+"63641bb4f5e323fae91fdfa7"	"Mitchell"	"89600"	"female"	8.35	"White"	NA	"case"	"Blood"	NA	"TRB"	129001	140959
+"63641bb5f5e323fae91fdfa8"	"Mitchell"	"89600"	"female"	19.86	"White"	NA	"case"	"Blood"	NA	"TRB"	108680	126240
+"63641bb5f5e323fae91fdfa9"	"Mitchell"	"70700"	"male"	1.89	"White"	NA	"case"	"Blood"	NA	"TRB"	119448	125885
+"63641bb6f5e323fae91fdfaa"	"Mitchell"	"70700"	"male"	8.47	"White"	NA	"case"	"Blood"	NA	"TRB"	107538	119862
+"63641bb6f5e323fae91fdfab"	"Mitchell"	"70700"	"male"	9.68	"White"	NA	"case"	"Blood"	NA	"TRB"	68332	74985
+"63641bb7f5e323fae91fdfac"	"Mitchell"	"70700"	"male"	12.61	"White"	NA	"case"	"Blood"	NA	"TRB"	99994	117531
+"63641bb7f5e323fae91fdfad"	"Mitchell"	"23700"	"male"	1.23	"White"	NA	"case"	"Blood"	NA	"TRB"	263856	307049
+"63641bb7f5e323fae91fdfae"	"Mitchell"	"23700"	"male"	3.96	"White"	NA	"case"	"Blood"	NA	"TRB"	146528	167553
+"63641bb8f5e323fae91fdfaf"	"Mitchell"	"23700"	"male"	4.34	"White"	NA	"case"	"Blood"	NA	"TRB"	127389	140854
+"63641bb8f5e323fae91fdfb0"	"Mitchell"	"23700"	"male"	9.26	"White"	NA	"case"	"Blood"	NA	"TRB"	150330	182141
+"63641bb9f5e323fae91fdfb1"	"Mitchell"	"84700"	"male"	3.83	"White"	NA	"case"	"Blood"	NA	"TRB"	182671	199037
+"63641bb9f5e323fae91fdfb2"	"Mitchell"	"84700"	"male"	7.01	"White"	NA	"case"	"Blood"	NA	"TRB"	139825	156050
+"63641bb9f5e323fae91fdfb3"	"Mitchell"	"84700"	"male"	8.02	"White"	NA	"case"	"Blood"	NA	"TRB"	163214	182242
+"63641bbaf5e323fae91fdfb4"	"Mitchell"	"84700"	"male"	11.33	"White"	NA	"case"	"Blood"	NA	"TRB"	128211	148118
+"63641bbaf5e323fae91fdfb5"	"Mitchell"	"20010"	"male"	0.8	"White"	NA	"case"	"Blood"	NA	"TRB"	17	18
+"63641bbbf5e323fae91fdfb6"	"Mitchell"	"20010"	"male"	2.16	"White"	NA	"case"	"Blood"	NA	"TRB"	123032	132340
+"63641bbbf5e323fae91fdfb7"	"Mitchell"	"20010"	"male"	2.36	"White"	NA	"case"	"Blood"	NA	"TRB"	192400	208626
+"63641bbcf5e323fae91fdfb8"	"Mitchell"	"20010"	"male"	6.65	"White"	NA	"case"	"Blood"	NA	"TRB"	116962	129467
+"63641bbcf5e323fae91fdfb9"	"Mitchell"	"58010"	"male"	1.39	"White"	NA	"case"	"Blood"	NA	"TRB"	167562	179059
+"63641bbcf5e323fae91fdfba"	"Mitchell"	"58010"	"male"	5.82	"White"	NA	"case"	"Blood"	NA	"TRB"	107418	123605
+"63641bbdf5e323fae91fdfbb"	"Mitchell"	"58010"	"male"	6.49	"White"	NA	"case"	"Blood"	NA	"TRB"	37641	43012
+"63641bbdf5e323fae91fdfbc"	"Mitchell"	"58010"	"male"	9.95	"White"	NA	"case"	"Blood"	NA	"TRB"	125380	153348
+"63641bbef5e323fae91fdfbd"	"Mitchell"	"34421"	"female"	4.01	"White"	NA	"case"	"Blood"	NA	"TRB"	92116	109412
+"63641bbef5e323fae91fdfbe"	"Mitchell"	"34421"	"female"	7.94	"White"	NA	"case"	"Blood"	NA	"TRB"	90082	119923
+"63641bbef5e323fae91fdfbf"	"Mitchell"	"34421"	"female"	8.44	"White"	NA	"case"	"Blood"	NA	"TRB"	52356	67781
+"63641bbff5e323fae91fdfc0"	"Mitchell"	"34421"	"female"	13.57	"White"	NA	"case"	"Blood"	NA	"TRB"	184920	236357
+"63641bbff5e323fae91fdfc1"	"Mitchell"	"9521"	"female"	3.07	"White"	NA	"case"	"Blood"	NA	"TRB"	332537	345383
+"63641bc0f5e323fae91fdfc2"	"Mitchell"	"9521"	"female"	6.4	"White"	NA	"case"	"Blood"	NA	"TRB"	225445	244775
+"63641bc0f5e323fae91fdfc3"	"Mitchell"	"9521"	"female"	6.9	"White"	NA	"case"	"Blood"	NA	"TRB"	226446	240153
+"63641bc1f5e323fae91fdfc4"	"Mitchell"	"9521"	"female"	13.02	"White"	NA	"case"	"Blood"	NA	"TRB"	76670	84165
+"63641bc1f5e323fae91fdfc5"	"Mitchell"	"83881"	"male"	1.28	"White"	NA	"case"	"Blood"	NA	"TRB"	152599	163681
+"63641bc1f5e323fae91fdfc6"	"Mitchell"	"83881"	"male"	3.01	"White"	NA	"case"	"Blood"	NA	"TRB"	150923	164851
+"63641bc2f5e323fae91fdfc7"	"Mitchell"	"83881"	"male"	3.64	"White"	NA	"case"	"Blood"	NA	"TRB"	186554	201351
+"63641bc2f5e323fae91fdfc8"	"Mitchell"	"83881"	"male"	14.19	"White"	NA	"case"	"Blood"	NA	"TRB"	72572	87187
+"63641bc3f5e323fae91fdfc9"	"Mitchell"	"36981"	"male"	1.25	"White"	NA	"case"	"Blood"	NA	"TRB"	395871	419040
+"63641bc3f5e323fae91fdfca"	"Mitchell"	"36981"	"male"	5.17	"White"	NA	"case"	"Blood"	NA	"TRB"	176651	192286
+"63641bc3f5e323fae91fdfcb"	"Mitchell"	"36981"	"male"	5.67	"White"	NA	"case"	"Blood"	NA	"TRB"	120557	134016
+"63641bc4f5e323fae91fdfcc"	"Mitchell"	"36981"	"male"	11.42	"White"	NA	"case"	"Blood"	NA	"TRB"	170827	220451
+"63641bc4f5e323fae91fdfcd"	"Mitchell"	"51602"	"male"	1.26	"White"	NA	"case"	"Blood"	NA	"TRB"	212360	222762
+"63641bc5f5e323fae91fdfce"	"Mitchell"	"51602"	"male"	9.99	"White"	NA	"case"	"Blood"	NA	"TRB"	204446	225787
+"63641bc5f5e323fae91fdfcf"	"Mitchell"	"51602"	"male"	10.8	"White"	NA	"case"	"Blood"	NA	"TRB"	157468	176078
+"63641bc6f5e323fae91fdfd0"	"Mitchell"	"51602"	"male"	13.27	"White"	NA	"case"	"Blood"	NA	"TRB"	203242	224088
+"63641bc6f5e323fae91fdfd1"	"Mitchell"	"63912"	"male"	0.76	"White"	NA	"case"	"Blood"	NA	"TRB"	102966	108222
+"63641bc6f5e323fae91fdfd2"	"Mitchell"	"63912"	"male"	3.01	"White"	NA	"case"	"Blood"	NA	"TRB"	203781	219945
+"63641bc7f5e323fae91fdfd3"	"Mitchell"	"63912"	"male"	3.4	"White"	NA	"case"	"Blood"	NA	"TRB"	83450	88715
+"63641bc7f5e323fae91fdfd4"	"Mitchell"	"63912"	"male"	10.86	"White"	NA	"case"	"Blood"	NA	"TRB"	106922	134339
+"63641bc8f5e323fae91fdfd5"	"Mitchell"	"89942"	"female"	0.78	"White"	NA	"case"	"Blood"	NA	"TRB"	289719	307796
+"63641bc8f5e323fae91fdfd6"	"Mitchell"	"89942"	"female"	5.34	"White"	NA	"case"	"Blood"	NA	"TRB"	201460	218280
+"63641bc9f5e323fae91fdfd7"	"Mitchell"	"89942"	"female"	6.59	"White"	NA	"case"	"Blood"	NA	"TRB"	119141	128451
+"63641bc9f5e323fae91fdfd8"	"Mitchell"	"89942"	"female"	17.74	"White"	NA	"case"	"Blood"	NA	"TRB"	100274	131632
+"63641bc9f5e323fae91fdfd9"	"Mitchell"	"34162"	"male"	3.01	"White"	NA	"case"	"Blood"	NA	"TRB"	141924	174134
+"63641bcaf5e323fae91fdfda"	"Mitchell"	"34162"	"male"	4	"White"	NA	"case"	"Blood"	NA	"TRB"	155071	174485
+"63641bcaf5e323fae91fdfdb"	"Mitchell"	"34162"	"male"	4.23	"White"	NA	"case"	"Blood"	NA	"TRB"	179209	219656
+"63641bcbf5e323fae91fdfdc"	"Mitchell"	"34162"	"male"	6.11	"White"	NA	"case"	"Blood"	NA	"TRB"	133874	175495
+"63641bcbf5e323fae91fdfdd"	"Mitchell"	"72372"	"male"	1.24	"White"	NA	"case"	"Blood"	NA	"TRB"	134856	142681
+"63641bcbf5e323fae91fdfde"	"Mitchell"	"72372"	"male"	7.15	"White"	NA	"case"	"Blood"	NA	"TRB"	15073	16949
+"63641bccf5e323fae91fdfdf"	"Mitchell"	"72372"	"male"	7.62	"White"	NA	"case"	"Blood"	NA	"TRB"	136952	158996
+"63641bccf5e323fae91fdfe0"	"Mitchell"	"72372"	"male"	14.01	"White"	NA	"case"	"Blood"	NA	"TRB"	109848	130549
+"63641bcdf5e323fae91fdfe1"	"Mitchell"	"99282"	"male"	2	"White"	NA	"case"	"Blood"	NA	"TRB"	111965	115560
+"63641bcdf5e323fae91fdfe2"	"Mitchell"	"99282"	"male"	6.91	"White"	NA	"case"	"Blood"	NA	"TRB"	135295	156245
+"63641bcdf5e323fae91fdfe3"	"Mitchell"	"99282"	"male"	7.27	"White"	NA	"case"	"Blood"	NA	"TRB"	61927	66106
+"63641bcef5e323fae91fdfe4"	"Mitchell"	"99282"	"male"	11.03	"White"	NA	"case"	"Blood"	NA	"TRB"	65654	85254
+"63641bcef5e323fae91fdfe5"	"Mitchell"	"57000"	"male"	6.91	"White"	NA	"case"	"Blood"	NA	"TRB"	57529	62038
+"63641bcff5e323fae91fdfe6"	"Mitchell"	"57000"	"male"	7.9	"White"	NA	"case"	"Blood"	NA	"TRB"	295216	353295
+"63641bcff5e323fae91fdfe7"	"Mitchell"	"57000"	"male"	11.64	"White"	NA	"case"	"Blood"	NA	"TRB"	282336	343472
+"63641bd0f5e323fae91fdfe8"	"Mitchell"	"57000"	"male"	13.44	"White"	NA	"case"	"Blood"	NA	"TRB"	240448	275071
+"63641bd0f5e323fae91fdfe9"	"Mitchell"	"33100"	"female"	2.97	"White"	NA	"case"	"Blood"	NA	"TRB"	98912	107063
+"63641bd0f5e323fae91fdfea"	"Mitchell"	"33100"	"female"	9.39	"White"	NA	"case"	"Blood"	NA	"TRB"	297433	364273
+"63641bd1f5e323fae91fdfeb"	"Mitchell"	"33100"	"female"	13.36	"White"	NA	"case"	"Blood"	NA	"TRB"	398512	510892
+"63641bd1f5e323fae91fdfec"	"Mitchell"	"33100"	"female"	15.08	"White"	NA	"case"	"Blood"	NA	"TRB"	145073	173879
+"63641bd2f5e323fae91fdfed"	"Mitchell"	"47100"	"male"	2.45	"White"	NA	"case"	"Blood"	NA	"TRB"	425111	523436
+"63641bd2f5e323fae91fdfee"	"Mitchell"	"47100"	"male"	6.67	"White"	NA	"case"	"Blood"	NA	"TRB"	233838	281979
+"63641bd2f5e323fae91fdfef"	"Mitchell"	"47100"	"male"	10.61	"White"	NA	"case"	"Blood"	NA	"TRB"	112	140
+"63641bd3f5e323fae91fdff0"	"Mitchell"	"47100"	"male"	22.79	"White"	NA	"case"	"Blood"	NA	"TRB"	284667	353328
+"63641bd3f5e323fae91fdff1"	"Mitchell"	"4200"	"female"	1.47	"White"	NA	"case"	"Blood"	NA	"TRB"	342032	370155
+"63641bd4f5e323fae91fdff2"	"Mitchell"	"4200"	"female"	2.1	"White"	NA	"case"	"Blood"	NA	"TRB"	348129	399841
+"63641bd4f5e323fae91fdff3"	"Mitchell"	"4200"	"female"	4.9	"White"	NA	"case"	"Blood"	NA	"TRB"	161616	193604
+"63641bd4f5e323fae91fdff4"	"Mitchell"	"4200"	"female"	10.69	"White"	NA	"case"	"Blood"	NA	"TRB"	259875	349767
+"63641bd5f5e323fae91fdff5"	"Mitchell"	"80300"	"male"	0.74	"White"	NA	"case"	"Blood"	NA	"TRB"	289292	314095
+"63641bd5f5e323fae91fdff6"	"Mitchell"	"80300"	"male"	3.58	"White"	NA	"case"	"Blood"	NA	"TRB"	117977	124010
+"63641bd6f5e323fae91fdff7"	"Mitchell"	"80300"	"male"	6.86	"White"	NA	"case"	"Blood"	NA	"TRB"	262219	293166
+"63641bd6f5e323fae91fdff8"	"Mitchell"	"80300"	"male"	9.61	"White"	NA	"case"	"Blood"	NA	"TRB"	235849	273690
+"63641bd7f5e323fae91fdff9"	"Mitchell"	"36000"	"female"	2.91	"White"	NA	"control"	"Blood"	NA	"TRB"	18803	19545
+"63641bd7f5e323fae91fdffa"	"Mitchell"	"36000"	"female"	3.96	"White"	NA	"control"	"Blood"	NA	"TRB"	86886	92105
+"63641bd8f5e323fae91fdffb"	"Mitchell"	"36000"	"female"	8.57	"White"	NA	"control"	"Blood"	NA	"TRB"	159272	172456
+"63641bd8f5e323fae91fdffc"	"Mitchell"	"36000"	"female"	12.72	"White"	NA	"control"	"Blood"	NA	"TRB"	109020	118836
+"63641bd8f5e323fae91fdffd"	"Mitchell"	"24200"	"male"	1.26	"White"	NA	"control"	"Blood"	NA	"TRB"	167346	183509
+"63641bd9f5e323fae91fdffe"	"Mitchell"	"24200"	"male"	9.35	"White"	NA	"control"	"Blood"	NA	"TRB"	162175	199941
+"63641bd9f5e323fae91fdfff"	"Mitchell"	"24200"	"male"	10.35	"White"	NA	"control"	"Blood"	NA	"TRB"	193273	226684
+"63641bdaf5e323fae91fe000"	"Mitchell"	"24200"	"male"	13.49	"White"	NA	"control"	"Blood"	NA	"TRB"	108633	142022
+"63641bdaf5e323fae91fe001"	"Mitchell"	"49300"	"female"	2.97	"White"	NA	"control"	"Blood"	NA	"TRB"	245023	260200
+"63641bdbf5e323fae91fe002"	"Mitchell"	"49300"	"female"	6.37	"White"	NA	"control"	"Blood"	NA	"TRB"	129587	144832
+"63641bdbf5e323fae91fe003"	"Mitchell"	"49300"	"female"	7.44	"White"	NA	"control"	"Blood"	NA	"TRB"	53352	59418
+"63641bdbf5e323fae91fe004"	"Mitchell"	"49300"	"female"	13.78	"White"	NA	"control"	"Blood"	NA	"TRB"	141128	162632
+"63641bdcf5e323fae91fe005"	"Mitchell"	"90500"	"male"	4.22	"White"	NA	"control"	"Blood"	NA	"TRB"	227538	251050
+"63641bdcf5e323fae91fe006"	"Mitchell"	"90500"	"male"	7.29	"White"	NA	"control"	"Blood"	NA	"TRB"	180987	206444
+"63641bddf5e323fae91fe007"	"Mitchell"	"90500"	"male"	8.19	"White"	NA	"control"	"Blood"	NA	"TRB"	217628	245666
+"63641bddf5e323fae91fe008"	"Mitchell"	"90500"	"male"	11.55	"White"	NA	"control"	"Blood"	NA	"TRB"	143902	166909
+"63641bdef5e323fae91fe009"	"Mitchell"	"51500"	"male"	3.06	"White"	NA	"control"	"Blood"	NA	"TRB"	192719	230309
+"63641bdef5e323fae91fe00a"	"Mitchell"	"51500"	"male"	4.12	"White"	NA	"control"	"Blood"	NA	"TRB"	277377	305497
+"63641bdef5e323fae91fe00b"	"Mitchell"	"51500"	"male"	5.1	"White"	NA	"control"	"Blood"	NA	"TRB"	112535	127895
+"63641bdff5e323fae91fe00c"	"Mitchell"	"51500"	"male"	11.11	"White"	NA	"control"	"Blood"	NA	"TRB"	153044	177139
+"63641bdff5e323fae91fe00d"	"Mitchell"	"61500"	"female"	0.83	"White"	NA	"control"	"Blood"	NA	"TRB"	321013	336259
+"63641be0f5e323fae91fe00e"	"Mitchell"	"61500"	"female"	2.31	"White"	NA	"control"	"Blood"	NA	"TRB"	142339	154583
+"63641be0f5e323fae91fe00f"	"Mitchell"	"61500"	"female"	3.43	"White"	NA	"control"	"Blood"	NA	"TRB"	224535	240128
+"63641be0f5e323fae91fe010"	"Mitchell"	"61500"	"female"	10.49	"White"	NA	"control"	"Blood"	NA	"TRB"	109237	128395
+"63641be1f5e323fae91fe011"	"Mitchell"	"43600"	"female"	1.12	"White"	NA	"control"	"Blood"	NA	"TRB"	92256	96538
+"63641be1f5e323fae91fe012"	"Mitchell"	"43600"	"female"	3.13	"White"	NA	"control"	"Blood"	NA	"TRB"	175556	194324
+"63641be2f5e323fae91fe013"	"Mitchell"	"43600"	"female"	4.12	"White"	NA	"control"	"Blood"	NA	"TRB"	172248	185448
+"63641be2f5e323fae91fe014"	"Mitchell"	"43600"	"female"	6.2	"White"	NA	"control"	"Blood"	NA	"TRB"	212811	233650
+"63641be3f5e323fae91fe015"	"Mitchell"	"83600"	"female"	3.4	"White"	NA	"control"	"Blood"	NA	"TRB"	523907	555169
+"63641be3f5e323fae91fe016"	"Mitchell"	"83600"	"female"	7.54	"White"	NA	"control"	"Blood"	NA	"TRB"	111217	119905
+"63641be3f5e323fae91fe017"	"Mitchell"	"83600"	"female"	8.54	"White"	NA	"control"	"Blood"	NA	"TRB"	181342	193588
+"63641be4f5e323fae91fe018"	"Mitchell"	"83600"	"female"	13.6	"White"	NA	"control"	"Blood"	NA	"TRB"	214814	239458
+"63641be4f5e323fae91fe019"	"Mitchell"	"15600"	"male"	2.99	"White"	NA	"control"	"Blood"	NA	"TRB"	210246	228930
+"63641be5f5e323fae91fe01a"	"Mitchell"	"15600"	"male"	3.98	"White"	NA	"control"	"Blood"	NA	"TRB"	125153	135908
+"63641be5f5e323fae91fe01b"	"Mitchell"	"15600"	"male"	5.15	"White"	NA	"control"	"Blood"	NA	"TRB"	92466	102122
+"63641be5f5e323fae91fe01c"	"Mitchell"	"15600"	"male"	6.27	"White"	NA	"control"	"Blood"	NA	"TRB"	130086	141841
+"63641be6f5e323fae91fe01d"	"Mitchell"	"1700"	"male"	1.42	"White"	NA	"control"	"Blood"	NA	"TRB"	207703	216149
+"63641be6f5e323fae91fe01e"	"Mitchell"	"1700"	"male"	4.2	"White"	NA	"control"	"Blood"	NA	"TRB"	220151	235819
+"63641be7f5e323fae91fe01f"	"Mitchell"	"1700"	"male"	5.25	"White"	NA	"control"	"Blood"	NA	"TRB"	281324	307115
+"63641be7f5e323fae91fe020"	"Mitchell"	"1700"	"male"	9.26	"White"	NA	"control"	"Blood"	NA	"TRB"	183439	196648
+"63641be7f5e323fae91fe021"	"Mitchell"	"62700"	"female"	3.96	"White"	NA	"control"	"Blood"	NA	"TRB"	152850	163727
+"63641be8f5e323fae91fe022"	"Mitchell"	"62700"	"female"	7.2	"White"	NA	"control"	"Blood"	NA	"TRB"	127975	138601
+"63641be8f5e323fae91fe023"	"Mitchell"	"62700"	"female"	8.27	"White"	NA	"control"	"Blood"	NA	"TRB"	109587	120103
+"63641be9f5e323fae91fe024"	"Mitchell"	"62700"	"female"	19.45	"White"	NA	"control"	"Blood"	NA	"TRB"	138137	157312
+"63641be9f5e323fae91fe025"	"Mitchell"	"15700"	"male"	2.09	"White"	NA	"control"	"Blood"	NA	"TRB"	198959	221470
+"63641beaf5e323fae91fe026"	"Mitchell"	"15700"	"male"	8.41	"White"	NA	"control"	"Blood"	NA	"TRB"	156140	173511
+"63641beaf5e323fae91fe027"	"Mitchell"	"15700"	"male"	9.48	"White"	NA	"control"	"Blood"	NA	"TRB"	62098	70588
+"63641beaf5e323fae91fe028"	"Mitchell"	"15700"	"male"	12.47	"White"	NA	"control"	"Blood"	NA	"TRB"	154419	169389
+"63641bebf5e323fae91fe029"	"Mitchell"	"46800"	"male"	1.26	"White"	NA	"control"	"Blood"	NA	"TRB"	160953	170890
+"63641bebf5e323fae91fe02a"	"Mitchell"	"46800"	"male"	4.54	"White"	NA	"control"	"Blood"	NA	"TRB"	136715	154411
+"63641becf5e323fae91fe02b"	"Mitchell"	"46800"	"male"	5.67	"White"	NA	"control"	"Blood"	NA	"TRB"	133093	152480
+"63641becf5e323fae91fe02c"	"Mitchell"	"46800"	"male"	11.2	"White"	NA	"control"	"Blood"	NA	"TRB"	69039	82320
+"63641becf5e323fae91fe02d"	"Mitchell"	"2321"	"female"	4.08	"White"	NA	"control"	"Blood"	NA	"TRB"	180955	193031
+"63641bedf5e323fae91fe02e"	"Mitchell"	"2321"	"female"	6.17	"White"	NA	"control"	"Blood"	NA	"TRB"	137956	147912
+"63641bedf5e323fae91fe02f"	"Mitchell"	"2321"	"female"	7.14	"White"	NA	"control"	"Blood"	NA	"TRB"	144632	156845
+"63641beef5e323fae91fe030"	"Mitchell"	"2321"	"female"	8.13	"White"	NA	"control"	"Blood"	NA	"TRB"	87427	93055
+"63641beef5e323fae91fe031"	"Mitchell"	"77041"	"female"	0.76	"White"	NA	"control"	"Blood"	NA	"TRB"	217561	232515
+"63641beff5e323fae91fe032"	"Mitchell"	"77041"	"female"	5.2	"White"	NA	"control"	"Blood"	NA	"TRB"	171274	194883
+"63641beff5e323fae91fe033"	"Mitchell"	"77041"	"female"	6.27	"White"	NA	"control"	"Blood"	NA	"TRB"	148805	176024
+"63641beff5e323fae91fe034"	"Mitchell"	"77041"	"female"	17.43	"White"	NA	"control"	"Blood"	NA	"TRB"	167954	207696
+"63641bf0f5e323fae91fe035"	"Mitchell"	"25141"	"female"	0.75	"White"	NA	"control"	"Blood"	NA	"TRB"	193832	203115
+"63641bf0f5e323fae91fe036"	"Mitchell"	"25141"	"female"	1.99	"White"	NA	"control"	"Blood"	NA	"TRB"	207672	230017
+"63641bf1f5e323fae91fe037"	"Mitchell"	"25141"	"female"	3.08	"White"	NA	"control"	"Blood"	NA	"TRB"	81903	89072
+"63641bf1f5e323fae91fe038"	"Mitchell"	"25141"	"female"	6.66	"White"	NA	"control"	"Blood"	NA	"TRB"	190154	221862
+"63641bf1f5e323fae91fe039"	"Mitchell"	"53651"	"male"	0.72	"White"	NA	"control"	"Blood"	NA	"TRB"	108079	131726
+"63641bf2f5e323fae91fe03a"	"Mitchell"	"53651"	"male"	2.02	"White"	NA	"control"	"Blood"	NA	"TRB"	176843	199058
+"63641bf2f5e323fae91fe03b"	"Mitchell"	"53651"	"male"	3.06	"White"	NA	"control"	"Blood"	NA	"TRB"	161091	187341
+"63641bf3f5e323fae91fe03c"	"Mitchell"	"53651"	"male"	6.18	"White"	NA	"control"	"Blood"	NA	"TRB"	141136	179259
+"63641bf3f5e323fae91fe03d"	"Mitchell"	"52881"	"male"	1.24	"White"	NA	"control"	"Blood"	NA	"TRB"	240528	265930
+"63641bf3f5e323fae91fe03e"	"Mitchell"	"52881"	"male"	3.06	"White"	NA	"control"	"Blood"	NA	"TRB"	214765	237586
+"63641bf4f5e323fae91fe03f"	"Mitchell"	"52881"	"male"	4.06	"White"	NA	"control"	"Blood"	NA	"TRB"	207429	239959
+"63641bf4f5e323fae91fe040"	"Mitchell"	"52881"	"male"	14.29	"White"	NA	"control"	"Blood"	NA	"TRB"	84349	108271
+"63641bf5f5e323fae91fe041"	"Mitchell"	"68632"	"male"	1.26	"White"	NA	"control"	"Blood"	NA	"TRB"	345818	374802
+"63641bf5f5e323fae91fe042"	"Mitchell"	"68632"	"male"	7.42	"White"	NA	"control"	"Blood"	NA	"TRB"	188779	220971
+"63641bf5f5e323fae91fe043"	"Mitchell"	"68632"	"male"	8.46	"White"	NA	"control"	"Blood"	NA	"TRB"	97708	116273
+"63641bf6f5e323fae91fe044"	"Mitchell"	"68632"	"male"	14.47	"White"	NA	"control"	"Blood"	NA	"TRB"	58699	68225
+"63641bf6f5e323fae91fe045"	"Mitchell"	"32142"	"male"	1.33	"White"	NA	"control"	"Blood"	NA	"TRB"	198287	210917
+"63641bf7f5e323fae91fe046"	"Mitchell"	"32142"	"male"	2.12	"White"	NA	"control"	"Blood"	NA	"TRB"	225297	239740
+"63641bf7f5e323fae91fe047"	"Mitchell"	"32142"	"male"	3.3	"White"	NA	"control"	"Blood"	NA	"TRB"	154823	166582
+"63641bf8f5e323fae91fe048"	"Mitchell"	"32142"	"male"	14.03	"White"	NA	"control"	"Blood"	NA	"TRB"	158640	181686
+"63641bf8f5e323fae91fe049"	"Mitchell"	"54282"	"male"	1.98	"White"	NA	"control"	"Blood"	NA	"TRB"	173301	183829
+"63641bf8f5e323fae91fe04a"	"Mitchell"	"54282"	"male"	6.36	"White"	NA	"control"	"Blood"	NA	"TRB"	113282	120798
+"63641bf9f5e323fae91fe04b"	"Mitchell"	"54282"	"male"	8.4	"White"	NA	"control"	"Blood"	NA	"TRB"	203596	217416
+"63641bf9f5e323fae91fe04c"	"Mitchell"	"54282"	"male"	11.41	"White"	NA	"control"	"Blood"	NA	"TRB"	176389	190172
+"63641bfaf5e323fae91fe04d"	"Mitchell"	"18192"	"male"	2.06	"White"	NA	"control"	"Blood"	NA	"TRB"	200923	213565
+"63641bfaf5e323fae91fe04e"	"Mitchell"	"18192"	"male"	5.54	"White"	NA	"control"	"Blood"	NA	"TRB"	191540	210019
+"63641bfaf5e323fae91fe04f"	"Mitchell"	"18192"	"male"	6.62	"White"	NA	"control"	"Blood"	NA	"TRB"	202413	224872
+"63641bfbf5e323fae91fe050"	"Mitchell"	"18192"	"male"	9.61	"White"	NA	"control"	"Blood"	NA	"TRB"	192224	228212
+"63641bfbf5e323fae91fe051"	"Mitchell"	"70203"	"male"	1.21	"White"	NA	"control"	"Blood"	NA	"TRB"	165157	172605
+"63641bfcf5e323fae91fe052"	"Mitchell"	"70203"	"male"	5.08	"White"	NA	"control"	"Blood"	NA	"TRB"	109289	130973
+"63641bfcf5e323fae91fe053"	"Mitchell"	"70203"	"male"	8.11	"White"	NA	"control"	"Blood"	NA	"TRB"	41749	46207
+"63641bfcf5e323fae91fe054"	"Mitchell"	"70203"	"male"	9.11	"White"	NA	"control"	"Blood"	NA	"TRB"	64671	77403
+"63641bfdf5e323fae91fe055"	"Mitchell"	"2313"	"male"	0.76	"White"	NA	"control"	"Blood"	NA	"TRB"	102628	107554
+"63641bfdf5e323fae91fe056"	"Mitchell"	"2313"	"male"	3.48	"White"	NA	"control"	"Blood"	NA	"TRB"	41075	43037
+"63641bfef5e323fae91fe057"	"Mitchell"	"2313"	"male"	4.63	"White"	NA	"control"	"Blood"	NA	"TRB"	103016	116926
+"63641bfef5e323fae91fe058"	"Mitchell"	"2313"	"male"	10.57	"White"	NA	"control"	"Blood"	NA	"TRB"	79903	86546
+"63641bfef5e323fae91fe059"	"Mitchell"	"82193"	"male"	0.86	"White"	NA	"control"	"Blood"	NA	"TRB"	224809	238197
+"63641bfff5e323fae91fe05a"	"Mitchell"	"82193"	"male"	9.88	"White"	NA	"control"	"Blood"	NA	"TRB"	82896	93507
+"63641bfff5e323fae91fe05b"	"Mitchell"	"82193"	"male"	11.77	"White"	NA	"control"	"Blood"	NA	"TRB"	123228	150041
+"63641c00f5e323fae91fe05c"	"Mitchell"	"82193"	"male"	19.84	"White"	NA	"control"	"Blood"	NA	"TRB"	18629	25723
+"63641c00f5e323fae91fe05d"	"Mitchell"	"9"	"female"	13.5	"White"	NA	"case"	"Blood"	NA	"TRB"	33151	36862
+"63641c01f5e323fae91fe05e"	"Mitchell"	"41"	"female"	14.9	"White"	NA	"case"	"Blood"	NA	"TRB"	459783	599017
+"63641c01f5e323fae91fe05f"	"Mitchell"	"42"	"female"	9	"White"	NA	"case"	"Blood"	NA	"TRB"	363686	414187
+"63641c01f5e323fae91fe060"	"Mitchell"	"43"	"female"	5.5	"White"	NA	"case"	"Blood"	NA	"TRB"	304223	354501
+"63641c02f5e323fae91fe061"	"Mitchell"	"44"	"male"	16.5	"White"	NA	"case"	"Blood"	NA	"TRB"	103410	143502
+"63641c02f5e323fae91fe062"	"Mitchell"	"45"	"female"	15.6	"White"	NA	"case"	"Blood"	NA	"TRB"	144247	177680
+"63641c03f5e323fae91fe063"	"Mitchell"	"46"	"female"	12.5	"White"	NA	"case"	"Blood"	NA	"TRB"	163925	192344
+"63641c03f5e323fae91fe064"	"Mitchell"	"47"	"female"	5	"White"	NA	"case"	"Blood"	NA	"TRB"	116060	147726
+"63641c03f5e323fae91fe065"	"Mitchell"	"48"	"female"	27	"White"	NA	"case"	"Blood"	NA	"TRB"	177418	230391
+"63641c04f5e323fae91fe066"	"Mitchell"	"50"	"female"	9.5	"White"	NA	"case"	"Blood"	NA	"TRB"	185131	259111
+"63641c04f5e323fae91fe067"	"Mitchell"	"51"	"male"	13.1	"White"	NA	"case"	"Blood"	NA	"TRB"	162267	199793
+"63641c05f5e323fae91fe068"	"Mitchell"	"52"	"male"	10.4	"White"	NA	"case"	"Blood"	NA	"TRB"	164551	183399
+"63641c05f5e323fae91fe069"	"Mitchell"	"53"	"female"	13	"White"	NA	"case"	"Blood"	NA	"TRB"	375521	441014
+"63641c06f5e323fae91fe06a"	"Mitchell"	"54"	"male"	12.8	"White"	NA	"case"	"Blood"	NA	"TRB"	142328	174418
+"63641c06f5e323fae91fe06b"	"Mitchell"	"55"	"female"	7.5	"White"	NA	"case"	"Blood"	NA	"TRB"	170419	238889
+"63641c06f5e323fae91fe06c"	"Mitchell"	"57"	"female"	9.3	"White"	NA	"case"	"Blood"	NA	"TRB"	158208	195153
+"63641c07f5e323fae91fe06d"	"Mitchell"	"58"	"male"	16.6	"White"	NA	"case"	"Blood"	NA	"TRB"	175996	329326
+"63641c07f5e323fae91fe06e"	"Mitchell"	"60"	"male"	7.4	"White"	NA	"case"	"Blood"	NA	"TRB"	250796	310195
+"63641c08f5e323fae91fe06f"	"Mitchell"	"62"	"female"	16.4	"White"	NA	"case"	"Blood"	NA	"TRB"	177002	217266
+"63641c08f5e323fae91fe070"	"Mitchell"	"63"	"male"	4.9	"White"	NA	"case"	"Blood"	NA	"TRB"	360695	465536
+"63641c08f5e323fae91fe071"	"Mitchell"	"64"	"male"	12	"White"	NA	"case"	"Blood"	NA	"TRB"	152012	195379
+"63641c09f5e323fae91fe072"	"Mitchell"	"66"	"female"	12.5	"White"	NA	"case"	"Blood"	NA	"TRB"	297706	367416
+"63641c09f5e323fae91fe073"	"Mitchell"	"67"	"male"	6.8	"White"	NA	"case"	"Blood"	NA	"TRB"	357926	421616
+"63641c0af5e323fae91fe074"	"Mitchell"	"68"	"female"	16.5	"White"	NA	"case"	"Blood"	NA	"TRB"	103647	129144
+"63641c0af5e323fae91fe075"	"Mitchell"	"69"	"male"	18.3	"White"	NA	"case"	"Blood"	NA	"TRB"	192311	225711
+"63641c0af5e323fae91fe076"	"Mitchell"	"70"	"male"	17.4	"White"	NA	"case"	"Blood"	NA	"TRB"	315721	370002
+"63641c0bf5e323fae91fe077"	"Mitchell"	"71"	"female"	12.7	"White"	NA	"case"	"Blood"	NA	"TRB"	164194	199615
+"63641c0bf5e323fae91fe078"	"Mitchell"	"72"	"male"	14.5	"White"	NA	"case"	"Blood"	NA	"TRB"	258881	321611
+"63641c0cf5e323fae91fe079"	"Mitchell"	"73"	"female"	5.1	"White"	NA	"case"	"Blood"	NA	"TRB"	236670	261054
+"63641c0cf5e323fae91fe07a"	"Mitchell"	"75"	"male"	9.1	"White"	NA	"case"	"Blood"	NA	"TRB"	147766	205563
+"63641c0cf5e323fae91fe07b"	"Mitchell"	"77"	"male"	10.1	"White"	NA	"case"	"Blood"	NA	"TRB"	150844	187720
+"63641c0df5e323fae91fe07c"	"Mitchell"	"78"	"male"	16.8	"White"	NA	"case"	"Blood"	NA	"TRB"	151096	174336
+"63641c0df5e323fae91fe07d"	"Mitchell"	"79"	"female"	14.6	"Asian"	NA	"case"	"Blood"	NA	"TRB"	217543	258979
+"63641c0ef5e323fae91fe07e"	"Mitchell"	"80"	"female"	15.1	"White"	NA	"case"	"Blood"	NA	"TRB"	25262	40131
+"63641c0ef5e323fae91fe07f"	"Mitchell"	"81"	"female"	8.2	"White"	NA	"case"	"Blood"	NA	"TRB"	303598	346052
+"63641c0ff5e323fae91fe080"	"Mitchell"	"84"	"male"	12.1	"White"	NA	"case"	"Blood"	NA	"TRB"	45840	66384
+"63641c0ff5e323fae91fe081"	"Mitchell"	"92"	"male"	10.1	"White"	NA	"case"	"Blood"	NA	"TRB"	77395	96208
+"63641c0ff5e323fae91fe082"	"Mitchell"	"93"	"female"	9.2	"White"	NA	"case"	"Blood"	NA	"TRB"	246487	325146
+"63641c10f5e323fae91fe083"	"Mitchell"	"95"	"male"	11.1	"White"	NA	"case"	"Blood"	NA	"TRB"	381814	451919
+"63641c10f5e323fae91fe084"	"Mitchell"	"97"	"female"	21.3	"White"	NA	"case"	"Blood"	NA	"TRB"	196043	252321
+"63641c11f5e323fae91fe085"	"Mitchell"	"103"	"female"	9.2	"White"	NA	"case"	"Blood"	NA	"TRB"	123873	144958
+"63641c11f5e323fae91fe086"	"Mitchell"	"104"	"male"	9.8	"White"	NA	"case"	"Blood"	NA	"TRB"	210434	245302
+"63641c12f5e323fae91fe087"	"Mitchell"	"106"	"male"	16.4	"White"	NA	"case"	"Blood"	NA	"TRB"	120210	152986
+"63641c12f5e323fae91fe088"	"Mitchell"	"108"	"female"	4.7	"White"	NA	"case"	"Blood"	NA	"TRB"	222432	262349
+"63641c12f5e323fae91fe089"	"Mitchell"	"110"	"male"	7.1	"White"	NA	"case"	"Blood"	NA	"TRB"	241565	302094
+"63641c13f5e323fae91fe08a"	"Mitchell"	"111"	"female"	4.8	"White"	NA	"case"	"Blood"	NA	"TRB"	167891	192108
+"63641c13f5e323fae91fe08b"	"Mitchell"	"112"	"female"	8.8	"White"	NA	"case"	"Blood"	NA	"TRB"	199970	230578
+"63641c14f5e323fae91fe08c"	"Mitchell"	"113"	"male"	13.7	"White"	NA	"case"	"Blood"	NA	"TRB"	146036	171593
+"63641c14f5e323fae91fe08d"	"Mitchell"	"115"	"male"	14.9	"White"	NA	"case"	"Blood"	NA	"TRB"	129346	149890
+"63641c14f5e323fae91fe08e"	"Mitchell"	"118"	"female"	9.7	"White"	NA	"case"	"Blood"	NA	"TRB"	241467	299710
+"63641c15f5e323fae91fe08f"	"Mitchell"	"119"	"female"	17.4	"White"	NA	"case"	"Blood"	NA	"TRB"	96450	145045
+"63641c15f5e323fae91fe090"	"Mitchell"	"121"	"male"	29.4	"White"	NA	"case"	"Blood"	NA	"TRB"	106466	190241
+"63641c16f5e323fae91fe091"	"Mitchell"	"122"	"female"	14.3	"White"	NA	"case"	"Blood"	NA	"TRB"	162947	193422
+"63641c16f5e323fae91fe092"	"Mitchell"	"129"	"female"	9.5	"White"	NA	"case"	"Blood"	NA	"TRB"	188560	226041
+"63641c16f5e323fae91fe093"	"Mitchell"	"139"	"female"	19.2	"White"	NA	"case"	"Blood"	NA	"TRB"	149676	186479
+"63641c17f5e323fae91fe094"	"Mitchell"	"168"	"male"	17.7	"White"	NA	"case"	"Blood"	NA	"TRB"	173382	221497
+"63641c17f5e323fae91fe095"	"Mitchell"	"170"	"male"	17.9	"White"	NA	"case"	"Blood"	NA	"TRB"	185202	234995
+"63641c18f5e323fae91fe096"	"Mitchell"	"179"	"male"	12.8	"White"	NA	"case"	"Blood"	NA	"TRB"	124104	148258
+"63641c18f5e323fae91fe097"	"Mitchell"	"184"	"male"	6.5	"White"	NA	"case"	"Blood"	NA	"TRB"	227745	281164
+"63641c18f5e323fae91fe098"	"Mitchell"	"191"	"male"	6.4	"White"	NA	"case"	"Blood"	NA	"TRB"	225896	265736
+"63641c19f5e323fae91fe099"	"Mitchell"	"194"	"female"	14.3	"Asian"	NA	"case"	"Blood"	NA	"TRB"	200359	252019
+"63641c19f5e323fae91fe09a"	"Mitchell"	"197"	"female"	9.7	"White"	NA	"case"	"Blood"	NA	"TRB"	261999	327198
+"63641c1af5e323fae91fe09b"	"Mitchell"	"202"	"female"	6.3	"White"	NA	"case"	"Blood"	NA	"TRB"	365121	415537
+"63641c1af5e323fae91fe09c"	"Mitchell"	"206"	"male"	8.9	"White"	NA	"case"	"Blood"	NA	"TRB"	271311	328324
+"63641c1bf5e323fae91fe09d"	"Mitchell"	"207"	"female"	17.3	"White"	NA	"case"	"Blood"	NA	"TRB"	347867	390963
+"63641c1bf5e323fae91fe09e"	"Mitchell"	"228"	"male"	13.5	"White"	NA	"case"	"Blood"	NA	"TRB"	196644	228599
+"63641c1bf5e323fae91fe09f"	"Mitchell"	"231"	"female"	10.6	"Asian"	NA	"case"	"Blood"	NA	"TRB"	285169	363943
+"63641c1cf5e323fae91fe0a0"	"Mitchell"	"232"	"male"	10.8	"White"	NA	"case"	"Blood"	NA	"TRB"	83725	92122
+"63641c1cf5e323fae91fe0a1"	"Mitchell"	"233"	"male"	4.6	"White"	NA	"case"	"Blood"	NA	"TRB"	88470	97375
+"63641c1df5e323fae91fe0a2"	"Mitchell"	"242"	"male"	12.6	"White"	NA	"case"	"Blood"	NA	"TRB"	173958	203347
+"63641c1df5e323fae91fe0a3"	"Mitchell"	"243"	"male"	15.9	"White"	NA	"case"	"Blood"	NA	"TRB"	161943	205546
+"63641c1df5e323fae91fe0a4"	"Mitchell"	"244"	"male"	5.7	"White"	NA	"case"	"Blood"	NA	"TRB"	149580	178246
+"63641c1ef5e323fae91fe0a5"	"Mitchell"	"245"	"male"	9.5	"White"	NA	"case"	"Blood"	NA	"TRB"	102355	124152
+"63641c1ef5e323fae91fe0a6"	"Mitchell"	"246"	"male"	8.5	"White"	NA	"case"	"Blood"	NA	"TRB"	419039	503899
+"63641c1ff5e323fae91fe0a7"	"Mitchell"	"247"	"female"	12.9	"nr"	NA	"case"	"Blood"	NA	"TRB"	268532	334451
+"63641c1ff5e323fae91fe0a8"	"Mitchell"	"248"	"male"	3.6	"White"	NA	"case"	"Blood"	NA	"TRB"	169126	195405
+"63641c1ff5e323fae91fe0a9"	"Mitchell"	"250"	"male"	12.8	"White"	NA	"case"	"Blood"	NA	"TRB"	120632	131757
+"63641c20f5e323fae91fe0aa"	"Mitchell"	"253"	"female"	13.6	"White"	NA	"case"	"Blood"	NA	"TRB"	225981	306130
+"63641c20f5e323fae91fe0ab"	"Mitchell"	"254"	"male"	14.3	"White"	NA	"case"	"Blood"	NA	"TRB"	455469	532670
+"63641c21f5e323fae91fe0ac"	"Mitchell"	"255"	"female"	12.3	"White"	NA	"case"	"Blood"	NA	"TRB"	173633	214422
+"63641c21f5e323fae91fe0ad"	"Mitchell"	"256"	"male"	16.1	"White"	NA	"case"	"Blood"	NA	"TRB"	237604	332253
+"63641c21f5e323fae91fe0ae"	"Mitchell"	"257"	"male"	15.2	"White"	NA	"case"	"Blood"	NA	"TRB"	201126	250990
+"63641c22f5e323fae91fe0af"	"Mitchell"	"258"	"male"	9.2	"White"	NA	"case"	"Blood"	NA	"TRB"	254711	345237
+"63641c22f5e323fae91fe0b0"	"Mitchell"	"259"	"male"	12.4	"White"	NA	"case"	"Blood"	NA	"TRB"	252713	305779
+"63641c23f5e323fae91fe0b1"	"Mitchell"	"260"	"female"	16.4	"White"	NA	"case"	"Blood"	NA	"TRB"	233083	268037
+"63641c23f5e323fae91fe0b2"	"Mitchell"	"261"	"male"	15	"White"	NA	"case"	"Blood"	NA	"TRB"	150569	192548
+"63641c24f5e323fae91fe0b3"	"Mitchell"	"262"	"female"	17	"White"	NA	"case"	"Blood"	NA	"TRB"	202086	286189
+"63641c24f5e323fae91fe0b4"	"Mitchell"	"263"	"male"	13.5	"White"	NA	"case"	"Blood"	NA	"TRB"	224733	285613
+"63641c24f5e323fae91fe0b5"	"Mitchell"	"265"	"male"	9.5	"White"	NA	"case"	"Blood"	NA	"TRB"	139307	163354
+"63641c25f5e323fae91fe0b6"	"Mitchell"	"267"	"female"	6.7	"White"	NA	"case"	"Blood"	NA	"TRB"	100139	113486
+"63641c25f5e323fae91fe0b7"	"Mitchell"	"268"	"male"	5.1	"Asian"	NA	"case"	"Blood"	NA	"TRB"	76921	98794
+"63641c26f5e323fae91fe0b8"	"Mitchell"	"269"	"male"	13.3	"White"	NA	"case"	"Blood"	NA	"TRB"	200105	242152
+"63641c26f5e323fae91fe0b9"	"Mitchell"	"270"	"female"	7.7	"White"	NA	"case"	"Blood"	NA	"TRB"	175578	200418
+"63641c26f5e323fae91fe0ba"	"Mitchell"	"271"	"male"	9.8	"White"	NA	"case"	"Blood"	NA	"TRB"	105683	118485
+"63641c27f5e323fae91fe0bb"	"Mitchell"	"272"	"male"	14.8	"White"	NA	"case"	"Blood"	NA	"TRB"	135414	162242
+"63641c27f5e323fae91fe0bc"	"Mitchell"	"273"	"male"	12.5	"White"	NA	"case"	"Blood"	NA	"TRB"	284503	331170
+"63641c28f5e323fae91fe0bd"	"Mitchell"	"274"	"male"	13.4	"White"	NA	"case"	"Blood"	NA	"TRB"	293183	364982
+"63641c28f5e323fae91fe0be"	"Mitchell"	"275"	"male"	13	"White"	NA	"case"	"Blood"	NA	"TRB"	227648	286786
+"63641c28f5e323fae91fe0bf"	"Mitchell"	"277"	"male"	12.3	"White"	NA	"case"	"Blood"	NA	"TRB"	198331	243197
+"63641c29f5e323fae91fe0c0"	"Mitchell"	"282"	"male"	8.4	"White"	NA	"case"	"Blood"	NA	"TRB"	164131	197165
+"63641c29f5e323fae91fe0c1"	"Mitchell"	"283"	"female"	6.1	"White"	NA	"case"	"Blood"	NA	"TRB"	167212	196994
+"63641c2af5e323fae91fe0c2"	"Mitchell"	"284"	"male"	9.8	"White"	NA	"case"	"Blood"	NA	"TRB"	243461	307568
+"63641c2af5e323fae91fe0c3"	"Mitchell"	"285"	"female"	9.6	"White"	NA	"case"	"Blood"	NA	"TRB"	231885	266461
+"63641c2bf5e323fae91fe0c4"	"Mitchell"	"286"	"female"	10.2	"White"	NA	"case"	"Blood"	NA	"TRB"	207267	234825
+"63641c2bf5e323fae91fe0c5"	"Mitchell"	"287"	"male"	4.2	"White"	NA	"case"	"Blood"	NA	"TRB"	17538	21398
+"63641c2bf5e323fae91fe0c6"	"Mitchell"	"288"	"male"	13.7	"White"	NA	"case"	"Blood"	NA	"TRB"	208591	258087
+"63641c2cf5e323fae91fe0c7"	"Mitchell"	"289"	"female"	10.4	"White"	NA	"case"	"Blood"	NA	"TRB"	312216	361237
+"63641c2cf5e323fae91fe0c8"	"Mitchell"	"291"	"male"	15.7	"White"	NA	"case"	"Blood"	NA	"TRB"	175654	211466
+"63641c2df5e323fae91fe0c9"	"Mitchell"	"297"	"female"	17.8	"White"	NA	"case"	"Blood"	NA	"TRB"	12860	14011
+"63641c2df5e323fae91fe0ca"	"Mitchell"	"310"	"male"	11.3	"White"	NA	"case"	"Blood"	NA	"TRB"	27332	31639
+"63641c2df5e323fae91fe0cb"	"Mitchell"	"313"	"male"	10.1	"White"	NA	"case"	"Blood"	NA	"TRB"	104566	121419
+"63641c2ef5e323fae91fe0cc"	"Mitchell"	"315"	"female"	12.9	"White"	NA	"case"	"Blood"	NA	"TRB"	102622	127610
+"63641c2ef5e323fae91fe0cd"	"Mitchell"	"319"	"male"	16.8	"Black"	NA	"case"	"Blood"	NA	"TRB"	80183	94987
+"63641c2ff5e323fae91fe0ce"	"Mitchell"	"325"	"female"	11.5	"White"	NA	"case"	"Blood"	NA	"TRB"	160496	193610
+"63641c2ff5e323fae91fe0cf"	"Mitchell"	"331"	"male"	15	"White"	NA	"case"	"Blood"	NA	"TRB"	53912	66729
+"63641c30f5e323fae91fe0d0"	"Mitchell"	"332"	"female"	8.1	"White"	NA	"case"	"Blood"	NA	"TRB"	276397	343225
+"63641c30f5e323fae91fe0d1"	"Mitchell"	"336"	"male"	9.1	"White"	NA	"case"	"Blood"	NA	"TRB"	217726	257342
+"63641c30f5e323fae91fe0d2"	"Mitchell"	"337"	"male"	17.1	"White"	NA	"case"	"Blood"	NA	"TRB"	29821	49353
+"63641c31f5e323fae91fe0d3"	"Mitchell"	"340"	"female"	11.6	"White"	NA	"case"	"Blood"	NA	"TRB"	16092	19637
+"63641c31f5e323fae91fe0d4"	"Mitchell"	"344"	"male"	17.2	"White"	NA	"case"	"Blood"	NA	"TRB"	223266	276602
+"63641c32f5e323fae91fe0d5"	"Mitchell"	"347"	"female"	17.2	"White"	NA	"case"	"Blood"	NA	"TRB"	77370	91030
+"63641c32f5e323fae91fe0d6"	"Mitchell"	"348"	"male"	15.9	"White"	NA	"case"	"Blood"	NA	"TRB"	140565	180963
+"63641c32f5e323fae91fe0d7"	"Mitchell"	"351"	"female"	8	"White"	NA	"case"	"Blood"	NA	"TRB"	324502	380944
+"63641c33f5e323fae91fe0d8"	"Mitchell"	"352"	"female"	14	"White"	NA	"case"	"Blood"	NA	"TRB"	188766	220032
+"63641c33f5e323fae91fe0d9"	"Mitchell"	"354"	"female"	12	"White"	NA	"case"	"Blood"	NA	"TRB"	383030	450551
+"63641c34f5e323fae91fe0da"	"Mitchell"	"357"	"female"	8.4	"White"	NA	"case"	"Blood"	NA	"TRB"	150321	175983
+"63641c34f5e323fae91fe0db"	"Mitchell"	"362"	"female"	15.4	"White"	NA	"case"	"Blood"	NA	"TRB"	180951	208568
+"63641c34f5e323fae91fe0dc"	"Mitchell"	"363"	"male"	10.9	"White"	NA	"case"	"Blood"	NA	"TRB"	24179	35444
+"63641c35f5e323fae91fe0dd"	"Mitchell"	"364"	"female"	8.2	"White"	NA	"case"	"Blood"	NA	"TRB"	407089	506101
+"63641c35f5e323fae91fe0de"	"Mitchell"	"370"	"female"	12.3	"White"	NA	"case"	"Blood"	NA	"TRB"	222368	254840
+"63641c36f5e323fae91fe0df"	"Mitchell"	"371"	"female"	18	"White"	NA	"case"	"Blood"	NA	"TRB"	122202	215588
+"63641c36f5e323fae91fe0e0"	"Mitchell"	"372"	"male"	11.6	"White"	NA	"case"	"Blood"	NA	"TRB"	259486	362582
+"63641c36f5e323fae91fe0e1"	"Mitchell"	"374"	"female"	11.6	"White"	NA	"case"	"Blood"	NA	"TRB"	279515	337786
+"63641c37f5e323fae91fe0e2"	"Mitchell"	"375"	"male"	12.3	"White"	NA	"case"	"Blood"	NA	"TRB"	195000	234250
+"63641c37f5e323fae91fe0e3"	"Mitchell"	"376"	"female"	14.7	"White"	NA	"case"	"Blood"	NA	"TRB"	257781	296600
+"63641c38f5e323fae91fe0e4"	"Mitchell"	"377"	"male"	14.6	"White"	NA	"case"	"Blood"	NA	"TRB"	93061	113261
+"63641c38f5e323fae91fe0e5"	"Mitchell"	"378"	"male"	15.8	"White"	NA	"case"	"Blood"	NA	"TRB"	143570	172037
+"63641c38f5e323fae91fe0e6"	"Mitchell"	"381"	"male"	10.6	"Hispanic"	NA	"case"	"Blood"	NA	"TRB"	16557	21433
+"63641c39f5e323fae91fe0e7"	"Mitchell"	"382"	"male"	11.8	"Black"	NA	"case"	"Blood"	NA	"TRB"	330952	371751
+"63641c39f5e323fae91fe0e8"	"Mitchell"	"383"	"female"	10.8	"White"	NA	"case"	"Blood"	NA	"TRB"	45769	52989
+"63641c3af5e323fae91fe0e9"	"Mitchell"	"384"	"male"	10.9	"White"	NA	"case"	"Blood"	NA	"TRB"	326637	411064
+"63641c3af5e323fae91fe0ea"	"Mitchell"	"386"	"female"	10.1	"White"	NA	"case"	"Blood"	NA	"TRB"	295963	348781
+"63641c3af5e323fae91fe0eb"	"Mitchell"	"397"	"male"	9.1	"White"	NA	"case"	"Blood"	NA	"TRB"	231919	284371
+"6623f3b6229fedfad25d821a"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	2810000	"case"	"Blood"	"CD8"	"TRB"	5526	0
+"6623f3b6229fedfad25d821b"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	2240000	"case"	"Blood"	"CD8"	"TRB"	68650	0
+"6623f3b7229fedfad25d821c"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	4060000	"case"	"Blood"	"CD4"	"TRB"	51136	0
+"6623f3b7229fedfad25d821d"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	8617000	"case"	"Blood"	"CD4"	"TRB"	79094	0
+"6623f3b7229fedfad25d821e"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	75737	"case"	"Blood"	"CD8"	"TRB"	25610	0
+"6623f3b8229fedfad25d821f"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	2732536	"case"	"Blood"	"CD8"	"TRB"	76244	0
+"6623f3b8229fedfad25d8220"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	2583864	"case"	"Blood"	"CD4"	"TRB"	72849	0
+"6623f3b8229fedfad25d8221"	"Culina"	"CerosalettiLab0145"	"male"	21	"White"	7967480	"case"	"Blood"	"CD4"	"TRB"	93257	0
+"6623f3b9229fedfad25d8222"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	15957232	"case"	"Blood"	"CD4"	"TRB"	58694	0
+"6623f3b9229fedfad25d8223"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	7980543	"case"	"Blood"	"CD4"	"TRB"	58524	0
+"6623f3b9229fedfad25d8224"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	5520608	"case"	"Blood"	"CD8"	"TRB"	56084	0
+"6623f3ba229fedfad25d8225"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	245549	"case"	"Blood"	"CD8"	"TRB"	17171	0
+"6623f3ba229fedfad25d8226"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	8621644	"case"	"Blood"	"CD4"	"TRB"	66114	0
+"6623f3ba229fedfad25d8227"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	2812669	"case"	"Blood"	"CD4"	"TRB"	60406	0
+"6623f3bb229fedfad25d8228"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	3224877	"case"	"Blood"	"CD8"	"TRB"	86068	0
+"6623f3bb229fedfad25d8229"	"Culina"	"CerosalettiLab0145"	"male"	22	"White"	49461	"case"	"Blood"	"CD8"	"TRB"	1999	0
+"6623f3bb229fedfad25d822a"	"Culina"	"CerosalettiLab0195"	"male"	38	"White"	295343	"case"	"Blood"	"CD8"	"TRB"	4615	0
+"6623f3bc229fedfad25d822b"	"Culina"	"CerosalettiLab0195"	"male"	38	"White"	1314592	"case"	"Blood"	"CD8"	"TRB"	19290	0
+"6623f3bc229fedfad25d822c"	"Culina"	"CerosalettiLab0195"	"male"	38	"White"	2776246	"case"	"Blood"	"CD4"	"TRB"	52933	0
+"6623f3bc229fedfad25d822d"	"Culina"	"CerosalettiLab0195"	"male"	38	"White"	2078328	"case"	"Blood"	"CD4"	"TRB"	30089	0
+"6623f3bd229fedfad25d822e"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	7176625	"case"	"Blood"	"CD4"	"TRB"	46812	0
+"6623f3bd229fedfad25d822f"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	4554212	"case"	"Blood"	"CD4"	"TRB"	54097	0
+"6623f3bd229fedfad25d8230"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	531102	"case"	"Blood"	"CD8"	"TRB"	7914	0
+"6623f3be229fedfad25d8231"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	2528817	"case"	"Blood"	"CD8"	"TRB"	64962	0
+"6623f3be229fedfad25d8232"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	4026461	"case"	"Blood"	"CD4"	"TRB"	69630	0
+"6623f3bf229fedfad25d8233"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	7440388	"case"	"Blood"	"CD4"	"TRB"	55419	0
+"6623f3bf229fedfad25d8234"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	2605974	"case"	"Blood"	"CD8"	"TRB"	58812	0
+"6623f3bf229fedfad25d8235"	"Culina"	"CerosalettiLab0195"	"male"	39	"White"	982599	"case"	"Blood"	"CD8"	"TRB"	12402	0
+"6623f3c0229fedfad25d8236"	"Culina"	"CerosalettiLab0195"	"male"	40	"White"	3394315	"case"	"Blood"	"CD4"	"TRB"	62641	0
+"6623f3c0229fedfad25d8237"	"Culina"	"CerosalettiLab0195"	"male"	40	"White"	6867697	"case"	"Blood"	"CD4"	"TRB"	132390	0
+"6623f3c0229fedfad25d8238"	"Culina"	"CerosalettiLab0195"	"male"	40	"White"	2552743	"case"	"Blood"	"CD8"	"TRB"	55524	0
+"6623f3c1229fedfad25d8239"	"Culina"	"CerosalettiLab0195"	"male"	40	"White"	685716	"case"	"Blood"	"CD8"	"TRB"	10195	0
+"6623f3c1229fedfad25d823a"	"Culina"	"CerosalettiLab0159"	"female"	50	"White"	182250	"case"	"Blood"	"CD8"	"TRB"	4023	0
+"6623f3c1229fedfad25d823b"	"Culina"	"CerosalettiLab0159"	"female"	50	"White"	2240636	"case"	"Blood"	"CD8"	"TRB"	40156	0
+"6623f3c2229fedfad25d823c"	"Culina"	"CerosalettiLab0159"	"female"	50	"White"	1473840	"case"	"Blood"	"CD4"	"TRB"	38205	0
+"6623f3c2229fedfad25d823d"	"Culina"	"CerosalettiLab0159"	"female"	50	"White"	8905601	"case"	"Blood"	"CD4"	"TRB"	73350	0
+"6623f3c2229fedfad25d823e"	"Culina"	"CerosalettiLab0159"	"female"	51	"White"	153651	"case"	"Blood"	"CD8"	"TRB"	5533	0
+"6623f3c3229fedfad25d823f"	"Culina"	"CerosalettiLab0159"	"female"	51	"White"	1487226	"case"	"Blood"	"CD8"	"TRB"	64725	0
+"6623f3c3229fedfad25d8240"	"Culina"	"CerosalettiLab0159"	"female"	51	"White"	820229	"case"	"Blood"	"CD4"	"TRB"	38573	0
+"6623f3c3229fedfad25d8241"	"Culina"	"CerosalettiLab0159"	"female"	51	"White"	4509408	"case"	"Blood"	"CD4"	"TRB"	84038	0
+"6623f3c4229fedfad25d8242"	"Culina"	"CerosalettiLab0197"	"male"	25	"Mixed"	4683321	"case"	"Blood"	"CD4"	"TRB"	96104	0
+"6623f3c4229fedfad25d8243"	"Culina"	"CerosalettiLab0197"	"male"	25	"Mixed"	4389455	"case"	"Blood"	"CD4"	"TRB"	4301	0
+"6623f3c4229fedfad25d8244"	"Culina"	"CerosalettiLab0197"	"male"	25	"Mixed"	10669215	"case"	"Blood"	"CD8"	"TRB"	58139	0
+"6623f3c5229fedfad25d8245"	"Culina"	"CerosalettiLab0197"	"male"	25	"Mixed"	1622045	"case"	"Blood"	"CD8"	"TRB"	19497	0
+"6623f3c5229fedfad25d8246"	"Culina"	"CerosalettiLab0197"	"male"	26	"Mixed"	6081881	"case"	"Blood"	"CD4"	"TRB"	77320	0
+"6623f3c5229fedfad25d8247"	"Culina"	"CerosalettiLab0197"	"male"	26	"Mixed"	3350859	"case"	"Blood"	"CD4"	"TRB"	54470	0
+"6623f3c6229fedfad25d8248"	"Culina"	"CerosalettiLab0197"	"male"	26	"Mixed"	13578033	"case"	"Blood"	"CD8"	"TRB"	140738	0
+"6623f3c6229fedfad25d8249"	"Culina"	"CerosalettiLab0197"	"male"	26	"Mixed"	174824	"case"	"Blood"	"CD8"	"TRB"	6340	0
+"6623f3c6229fedfad25d824a"	"Culina"	"CerosalettiLab0199"	"male"	44	"White"	2604039	"case"	"Blood"	"CD4"	"TRB"	95051	0
+"6623f3c7229fedfad25d824b"	"Culina"	"CerosalettiLab0199"	"male"	44	"White"	1598270	"case"	"Blood"	"CD4"	"TRB"	71619	0
+"6623f3c7229fedfad25d824c"	"Culina"	"CerosalettiLab0199"	"male"	44	"White"	928741	"case"	"Blood"	"CD8"	"TRB"	28067	0
+"6623f3c7229fedfad25d824d"	"Culina"	"CerosalettiLab0199"	"male"	44	"White"	126660	"case"	"Blood"	"CD8"	"TRB"	5457	0
+"6623f3c8229fedfad25d824e"	"Culina"	"CerosalettiLab0204"	"male"	16	"White"	10597250	"case"	"Blood"	"CD4"	"TRB"	70702	0
+"6623f3c8229fedfad25d824f"	"Culina"	"CerosalettiLab0204"	"male"	16	"White"	6121826	"case"	"Blood"	"CD4"	"TRB"	58143	0
+"6623f3c8229fedfad25d8250"	"Culina"	"CerosalettiLab0204"	"male"	16	"White"	6016297	"case"	"Blood"	"CD8"	"TRB"	72642	0
+"6623f3c9229fedfad25d8251"	"Culina"	"CerosalettiLab0204"	"male"	16	"White"	746121	"case"	"Blood"	"CD8"	"TRB"	11541	0
+"6623f3c9229fedfad25d8252"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	10451694	"case"	"Blood"	"CD4"	"TRB"	62051	0
+"6623f3c9229fedfad25d8253"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	2067566	"case"	"Blood"	"CD4"	"TRB"	77784	0
+"6623f3ca229fedfad25d8254"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	4105829	"case"	"Blood"	"CD8"	"TRB"	41876	0
+"6623f3ca229fedfad25d8255"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	139619	"case"	"Blood"	"CD8"	"TRB"	11812	0
+"6623f3ca229fedfad25d8256"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	11223277	"case"	"Blood"	"CD4"	"TRB"	68673	0
+"6623f3cb229fedfad25d8257"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	2253229	"case"	"Blood"	"CD4"	"TRB"	70210	0
+"6623f3cb229fedfad25d8258"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	5408841	"case"	"Blood"	"CD8"	"TRB"	84788	0
+"6623f3cb229fedfad25d8259"	"Culina"	"CerosalettiLab0206"	"female"	20	"White"	108233	"case"	"Blood"	"CD8"	"TRB"	8066	0
+"6623f3cc229fedfad25d825a"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	7839746	"case"	"Blood"	"CD4"	"TRB"	95354	0
+"6623f3cc229fedfad25d825b"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	4601914	"case"	"Blood"	"CD4"	"TRB"	63846	0
+"6623f3cc229fedfad25d825c"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	5097970	"case"	"Blood"	"CD8"	"TRB"	102118	0
+"6623f3cd229fedfad25d825d"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	763740	"case"	"Blood"	"CD8"	"TRB"	26736	0
+"6623f3cd229fedfad25d825e"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	4527394	"case"	"Blood"	"CD4"	"TRB"	58393	0
+"6623f3cd229fedfad25d825f"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	1529167	"case"	"Blood"	"CD4"	"TRB"	76924	0
+"6623f3ce229fedfad25d8260"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	3563201	"case"	"Blood"	"CD8"	"TRB"	90157	0
+"6623f3ce229fedfad25d8261"	"Culina"	"CerosalettiLab0277"	"female"	25	"White"	87048	"case"	"Blood"	"CD8"	"TRB"	4148	0
+"6623f3ce229fedfad25d8262"	"Culina"	"CerosalettiLab0312"	"male"	41	"White"	1979893	"case"	"Blood"	"CD4"	"TRB"	66745	0
+"6623f3cf229fedfad25d8263"	"Culina"	"CerosalettiLab0312"	"male"	41	"White"	3942947	"case"	"Blood"	"CD4"	"TRB"	45224	0
+"6623f3cf229fedfad25d8264"	"Culina"	"CerosalettiLab0312"	"male"	41	"White"	4414329	"case"	"Blood"	"CD8"	"TRB"	44923	0
+"6623f3cf229fedfad25d8265"	"Culina"	"CerosalettiLab0312"	"male"	41	"White"	1110545	"case"	"Blood"	"CD8"	"TRB"	24196	0
+"6623f3d0229fedfad25d8266"	"Culina"	"CerosalettiLab0312"	"male"	42	"White"	2075800	"case"	"Blood"	"CD4"	"TRB"	46320	0
+"6623f3d0229fedfad25d8267"	"Culina"	"CerosalettiLab0312"	"male"	42	"White"	2904947	"case"	"Blood"	"CD4"	"TRB"	71451	0
+"6623f3d0229fedfad25d8268"	"Culina"	"CerosalettiLab0312"	"male"	42	"White"	3229703	"case"	"Blood"	"CD8"	"TRB"	45703	0
+"6623f3d1229fedfad25d8269"	"Culina"	"CerosalettiLab0312"	"male"	42	"White"	748981	"case"	"Blood"	"CD8"	"TRB"	15313	0
+"6623f3d1229fedfad25d826a"	"Culina"	"CerosalettiLab0435"	"male"	17	"White"	3677023	"case"	"Blood"	"CD4"	"TRB"	56410	0
+"6623f3d1229fedfad25d826b"	"Culina"	"CerosalettiLab0435"	"male"	17	"White"	476266	"case"	"Blood"	"CD4"	"TRB"	40632	0
+"6623f3d2229fedfad25d826c"	"Culina"	"CerosalettiLab0435"	"male"	17	"White"	3051839	"case"	"Blood"	"CD8"	"TRB"	51042	0
+"6623f3d2229fedfad25d826d"	"Culina"	"CerosalettiLab0435"	"male"	17	"White"	68313	"case"	"Blood"	"CD8"	"TRB"	5902	0
+"6623f3d2229fedfad25d826e"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	1004269	"control"	"Blood"	"CD8"	"TRB"	48349	0
+"6623f3d3229fedfad25d826f"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	2333774	"control"	"Blood"	"CD4"	"TRB"	26335	0
+"6623f3d3229fedfad25d8270"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	6005650	"control"	"Blood"	"CD4"	"TRB"	58940	0
+"6623f3d3229fedfad25d8271"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	952158	"control"	"Blood"	"CD4"	"TRB"	38318	0
+"6623f3d4229fedfad25d8272"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	1608736	"control"	"Blood"	"CD4"	"TRB"	50634	0
+"6623f3d4229fedfad25d8273"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	280130	"control"	"Blood"	"CD8"	"TRB"	3109	0
+"6623f3d4229fedfad25d8274"	"Culina"	"CerosalettiLab0268"	"female"	44	"White"	1670178	"control"	"Blood"	"CD8"	"TRB"	41040	0
+"6623f3d5229fedfad25d8275"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	197393	"control"	"Blood"	"CD8"	"TRB"	1037	0
+"6623f3d5229fedfad25d8276"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	1953586	"control"	"Blood"	"CD8"	"TRB"	19820	0
+"6623f3d5229fedfad25d8277"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	877949	"control"	"Blood"	"CD4"	"TRB"	27055	0
+"6623f3d6229fedfad25d8278"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	2424891	"control"	"Blood"	"CD4"	"TRB"	31502	0
+"6623f3d6229fedfad25d8279"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	217104	"control"	"Blood"	"CD8"	"TRB"	5345	0
+"6623f3d6229fedfad25d827a"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	1850179	"control"	"Blood"	"CD8"	"TRB"	71226	0
+"6623f3d7229fedfad25d827b"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	4119576	"control"	"Blood"	"CD4"	"TRB"	41303	0
+"6623f3d7229fedfad25d827c"	"Culina"	"CerosalettiLab0209"	"female"	44	"White"	3475993	"control"	"Blood"	"CD4"	"TRB"	12565	0
+"6623f3d7229fedfad25d827d"	"Culina"	"CerosalettiLab0314"	"male"	59	"White"	3205597	"control"	"Blood"	"CD4"	"TRB"	24735	0
+"6623f3d8229fedfad25d827e"	"Culina"	"CerosalettiLab0314"	"male"	59	"White"	3132266	"control"	"Blood"	"CD4"	"TRB"	38458	0
+"6623f3d8229fedfad25d827f"	"Culina"	"CerosalettiLab0429"	"male"	29	"White"	2828821	"control"	"Blood"	"CD4"	"TRB"	54016	0
+"6623f3d8229fedfad25d8280"	"Culina"	"CerosalettiLab0429"	"male"	29	"White"	8338553	"control"	"Blood"	"CD4"	"TRB"	122931	0
+"6623f3d9229fedfad25d8281"	"Culina"	"CerosalettiLab0429"	"male"	29	"White"	160595	"control"	"Blood"	"CD8"	"TRB"	6979	0
+"6623f3d9229fedfad25d8282"	"Culina"	"CerosalettiLab0429"	"male"	29	"White"	4470731	"control"	"Blood"	"CD8"	"TRB"	66208	0
+"6623f3d9229fedfad25d8283"	"Culina"	"CerosalettiLab0431"	"female"	49	"White"	2753702	"control"	"Blood"	"CD4"	"TRB"	149696	0
+"6623f3da229fedfad25d8284"	"Culina"	"CerosalettiLab0431"	"female"	49	"White"	1415160	"control"	"Blood"	"CD4"	"TRB"	43150	0
+"6623f3da229fedfad25d8285"	"Culina"	"CerosalettiLab0431"	"female"	49	"White"	111802	"control"	"Blood"	"CD8"	"TRB"	7383	0
+"6623f3da229fedfad25d8286"	"Culina"	"CerosalettiLab0431"	"female"	49	"White"	384978	"control"	"Blood"	"CD8"	"TRB"	19394	0
+"6623f3db229fedfad25d8287"	"Culina"	"CerosalettiLab0437"	"male"	53	"White"	2514448	"control"	"Blood"	"CD4"	"TRB"	61764	0
+"6623f3db229fedfad25d8288"	"Culina"	"CerosalettiLab0437"	"male"	53	"White"	3502606	"control"	"Blood"	"CD4"	"TRB"	96514	0
+"6623f3db229fedfad25d8289"	"Culina"	"CerosalettiLab0437"	"male"	53	"White"	137131	"control"	"Blood"	"CD8"	"TRB"	5177	0
+"6623f3dc229fedfad25d828a"	"Culina"	"CerosalettiLab0437"	"male"	53	"White"	491201	"control"	"Blood"	"CD8"	"TRB"	40333	0
+"6623f3dc229fedfad25d828b"	"Culina"	"CerosalettiLab0438"	"female"	32	"White"	399637	"control"	"Blood"	"CD8"	"TRB"	15162	0
+"6623f3dc229fedfad25d828c"	"Culina"	"CerosalettiLab0438"	"female"	32	"White"	2501977	"control"	"Blood"	"CD8"	"TRB"	57915	0
+"6623f3dd229fedfad25d828d"	"Culina"	"CerosalettiLab0438"	"female"	32	"White"	2949567	"control"	"Blood"	"CD4"	"TRB"	70739	0
+"6623f3dd229fedfad25d828e"	"Culina"	"CerosalettiLab0438"	"female"	32	"White"	1839458	"control"	"Blood"	"CD4"	"TRB"	85652	0
+"6623f3dd229fedfad25d828f"	"Culina"	"CerosalettiLab0442"	"female"	17	"White"	115230	"control"	"Blood"	"CD8"	"TRB"	11471	0
+"6623f3de229fedfad25d8290"	"Culina"	"CerosalettiLab0442"	"female"	17	"White"	4220294	"control"	"Blood"	"CD8"	"TRB"	128100	0
+"6623f3de229fedfad25d8291"	"Culina"	"CerosalettiLab0442"	"female"	17	"White"	3559628	"control"	"Blood"	"CD4"	"TRB"	105725	0
+"6623f3de229fedfad25d8292"	"Culina"	"CerosalettiLab0442"	"female"	17	"White"	1790057	"control"	"Blood"	"CD4"	"TRB"	70788	0
+"6623f3df229fedfad25d8293"	"Culina"	"CerosalettiLab0161"	"female"	38	"White"	840100	"control"	"Blood"	"CD8"	"TRB"	19893	0
+"6623f3df229fedfad25d8294"	"Culina"	"CerosalettiLab0161"	"female"	38	"White"	2306000	"control"	"Blood"	"CD8"	"TRB"	15183	0
+"6623f3df229fedfad25d8295"	"Culina"	"CerosalettiLab0161"	"female"	38	"White"	3580000	"control"	"Blood"	"CD4"	"TRB"	62749	0
+"6623f3e0229fedfad25d8296"	"Culina"	"CerosalettiLab0161"	"female"	38	"White"	4830000	"control"	"Blood"	"CD4"	"TRB"	82510	0
+"6623f3e0229fedfad25d8297"	"Culina"	"CerosalettiLab0161"	"female"	39	"White"	74666	"control"	"Blood"	"CD8"	"TRB"	3093	0
+"6623f3e0229fedfad25d8298"	"Culina"	"CerosalettiLab0161"	"female"	39	"White"	1379963	"control"	"Blood"	"CD8"	"TRB"	24740	0
+"6623f3e1229fedfad25d8299"	"Culina"	"CerosalettiLab0161"	"female"	39	"White"	837615	"control"	"Blood"	"CD4"	"TRB"	23940	0
+"6623f3e1229fedfad25d829a"	"Culina"	"CerosalettiLab0161"	"female"	39	"White"	3482745	"control"	"Blood"	"CD4"	"TRB"	48897	0
+"6623f3e1229fedfad25d829b"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	377800	"control"	"Blood"	"CD8"	"TRB"	34219	0
+"6623f3e2229fedfad25d829c"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	3634000	"control"	"Blood"	"CD8"	"TRB"	80919	0
+"6623f3e2229fedfad25d829d"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	3168000	"control"	"Blood"	"CD4"	"TRB"	70069	0
+"6623f3e2229fedfad25d829e"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	5450000	"control"	"Blood"	"CD4"	"TRB"	234786	0
+"6623f3e3229fedfad25d829f"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	332503	"control"	"Blood"	"CD8"	"TRB"	6432	0
+"6623f3e3229fedfad25d82a0"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	3768075	"control"	"Blood"	"CD8"	"TRB"	52638	0
+"6623f3e3229fedfad25d82a1"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	2754857	"control"	"Blood"	"CD4"	"TRB"	37321	0
+"6623f3e4229fedfad25d82a2"	"Culina"	"CerosalettiLab0168"	"female"	24	"White"	4288719	"control"	"Blood"	"CD4"	"TRB"	68655	0
+"6623f3e4229fedfad25d82a3"	"Culina"	"CerosalettiLab0207"	"female"	22	"White"	165231	"control"	"Blood"	"CD8"	"TRB"	9857	0
+"6623f3e4229fedfad25d82a4"	"Culina"	"CerosalettiLab0207"	"female"	22	"White"	6740572	"control"	"Blood"	"CD8"	"TRB"	50931	0
+"6623f3e5229fedfad25d82a5"	"Culina"	"CerosalettiLab0207"	"female"	22	"White"	3066599	"control"	"Blood"	"CD4"	"TRB"	40436	0
+"6623f3e5229fedfad25d82a6"	"Culina"	"CerosalettiLab0207"	"female"	22	"White"	10996295	"control"	"Blood"	"CD4"	"TRB"	71858	0
+"6623f3e5229fedfad25d82a7"	"Culina"	"CerosalettiLab0207"	"female"	23	"White"	3388842	"control"	"Blood"	"CD4"	"TRB"	61327	0
+"6623f3e6229fedfad25d82a8"	"Culina"	"CerosalettiLab0207"	"female"	23	"White"	10707442	"control"	"Blood"	"CD4"	"TRB"	92942	0
+"6623f3e6229fedfad25d82a9"	"Culina"	"CerosalettiLab0207"	"female"	23	"White"	270327	"control"	"Blood"	"CD8"	"TRB"	17575	0
+"6623f3e6229fedfad25d82aa"	"Culina"	"CerosalettiLab0207"	"female"	23	"White"	6210504	"control"	"Blood"	"CD8"	"TRB"	90400	0
+"6623f3e7229fedfad25d82ab"	"Culina"	"CerosalettiLab0208"	"male"	22	"White"	5063040	"control"	"Blood"	"CD4"	"TRB"	63414	0
+"6623f3e7229fedfad25d82ac"	"Culina"	"CerosalettiLab0208"	"male"	22	"White"	16389041	"control"	"Blood"	"CD4"	"TRB"	NA	NA
+"6623f3e7229fedfad25d82ad"	"Culina"	"CerosalettiLab0208"	"male"	22	"White"	1108532	"control"	"Blood"	"CD8"	"TRB"	3382	0
+"6623f3e8229fedfad25d82ae"	"Culina"	"CerosalettiLab0208"	"male"	22	"White"	16112593	"control"	"Blood"	"CD8"	"TRB"	35321	0
+"6623f3e8229fedfad25d82af"	"Culina"	"CerosalettiLab0030"	"male"	27	"White"	2184730	"control"	"Blood"	"CD4"	"TRB"	80719	0
+"6623f3e8229fedfad25d82b0"	"Culina"	"CerosalettiLab0030"	"male"	27	"White"	4819216	"control"	"Blood"	"CD4"	"TRB"	91914	0
+"6623f3e9229fedfad25d82b1"	"Culina"	"CerosalettiLab0030"	"male"	27	"White"	126662	"control"	"Blood"	"CD8"	"TRB"	1964	0
+"6623f3e9229fedfad25d82b2"	"Culina"	"CerosalettiLab0030"	"male"	27	"White"	1648602	"control"	"Blood"	"CD8"	"TRB"	73434	0
+"6623f3e9229fedfad25d82b3"	"Culina"	"CerosalettiLab0245"	"female"	25	"White"	4373464	"control"	"Blood"	"CD4"	"TRB"	69649	0
+"6623f3ea229fedfad25d82b4"	"Culina"	"CerosalettiLab0245"	"female"	25	"White"	5178327	"control"	"Blood"	"CD4"	"TRB"	97911	0
+"6623f3ea229fedfad25d82b5"	"Culina"	"CerosalettiLab0245"	"female"	25	"White"	776980	"control"	"Blood"	"CD8"	"TRB"	26975	0
+"6623f3ea229fedfad25d82b6"	"Culina"	"CerosalettiLab0245"	"female"	25	"White"	4809462	"control"	"Blood"	"CD8"	"TRB"	84827	0
+"6623f3eb229fedfad25d82b7"	"Culina"	"CerosalettiLab0092"	"male"	40	"White"	7336745	"control"	"Blood"	"CD4"	"TRB"	69302	0
+"6623f3eb229fedfad25d82b8"	"Culina"	"CerosalettiLab0092"	"male"	40	"White"	7782429	"control"	"Blood"	"CD4"	"TRB"	91479	0
+"6623f3eb229fedfad25d82b9"	"Culina"	"CerosalettiLab0092"	"male"	40	"White"	411216	"control"	"Blood"	"CD8"	"TRB"	12709	0
+"6623f3ec229fedfad25d82ba"	"Culina"	"CerosalettiLab0092"	"male"	40	"White"	2200374	"control"	"Blood"	"CD8"	"TRB"	48141	0
+"6623f3ec229fedfad25d82bb"	"Culina"	"CerosalettiLab0246"	"male"	33	"White"	3747172	"control"	"Blood"	"CD4"	"TRB"	62811	0
+"6623f3ec229fedfad25d82bc"	"Culina"	"CerosalettiLab0246"	"male"	33	"White"	6079203	"control"	"Blood"	"CD4"	"TRB"	109203	0
+"6623f3ed229fedfad25d82bd"	"Culina"	"CerosalettiLab0246"	"male"	33	"White"	770130	"control"	"Blood"	"CD8"	"TRB"	15429	0
+"6623f3ed229fedfad25d82be"	"Culina"	"CerosalettiLab0246"	"male"	33	"White"	3599935	"control"	"Blood"	"CD8"	"TRB"	89943	0
+"6623f3ed229fedfad25d82bf"	"Culina"	"CerosalettiLab0246"	"male"	34	"White"	8039784	"control"	"Blood"	"CD4"	"TRB"	88776	0
+"6623f3ee229fedfad25d82c0"	"Culina"	"CerosalettiLab0246"	"male"	34	"White"	6061762	"control"	"Blood"	"CD4"	"TRB"	78841	0
+"6623f3ee229fedfad25d82c1"	"Culina"	"CerosalettiLab0246"	"male"	34	"White"	5924411	"control"	"Blood"	"CD8"	"TRB"	78887	0
+"6623f3ee229fedfad25d82c2"	"Culina"	"CerosalettiLab0246"	"male"	34	"White"	1077402	"control"	"Blood"	"CD8"	"TRB"	13462	0
+"6623f3ef229fedfad25d82c3"	"Culina"	"CerosalettiLab0247"	"male"	37	"White"	4239404	"control"	"Blood"	"CD4"	"TRB"	76680	0
+"6623f3ef229fedfad25d82c4"	"Culina"	"CerosalettiLab0247"	"male"	37	"White"	4106170	"control"	"Blood"	"CD4"	"TRB"	90913	0
+"6623f3f0229fedfad25d82c5"	"Culina"	"CerosalettiLab0247"	"male"	37	"White"	466428	"control"	"Blood"	"CD8"	"TRB"	11536	0
+"6623f3f0229fedfad25d82c6"	"Culina"	"CerosalettiLab0247"	"male"	37	"White"	4650754	"control"	"Blood"	"CD8"	"TRB"	45519	0
+"6623f3f0229fedfad25d82c7"	"Culina"	"CerosalettiLab0247"	"male"	38	"White"	1362170	"control"	"Blood"	"CD4"	"TRB"	42257	0
+"6623f3f1229fedfad25d82c8"	"Culina"	"CerosalettiLab0247"	"male"	38	"White"	896600	"control"	"Blood"	"CD4"	"TRB"	52366	0
+"6623f3f1229fedfad25d82c9"	"Culina"	"CerosalettiLab0247"	"male"	38	"White"	2304314	"control"	"Blood"	"CD8"	"TRB"	33959	0
+"6623f3f1229fedfad25d82ca"	"Culina"	"CerosalettiLab0247"	"male"	38	"White"	73064	"control"	"Blood"	"CD8"	"TRB"	3949	0
+"6623f3f2229fedfad25d82cb"	"Culina"	"CerosalettiLab0088"	"male"	21	"White"	2282200	"control"	"Blood"	"CD4"	"TRB"	57037	0
+"6623f3f2229fedfad25d82cc"	"Culina"	"CerosalettiLab0088"	"male"	21	"White"	5111157	"control"	"Blood"	"CD4"	"TRB"	82335	0
+"6623f3f2229fedfad25d82cd"	"Culina"	"CerosalettiLab0088"	"male"	21	"White"	319356	"control"	"Blood"	"CD8"	"TRB"	66242	0
+"6623f3f3229fedfad25d82ce"	"Culina"	"CerosalettiLab0088"	"male"	21	"White"	3840905	"control"	"Blood"	"CD8"	"TRB"	16231	0
+"6623f3f3229fedfad25d82cf"	"Culina"	"CerosalettiLab0244"	"male"	35	"White"	3647135	"control"	"Blood"	"CD4"	"TRB"	52746	0
+"6623f3f3229fedfad25d82d0"	"Culina"	"CerosalettiLab0244"	"male"	35	"White"	3554285	"control"	"Blood"	"CD4"	"TRB"	47671	0
+"6623f3f4229fedfad25d82d1"	"Culina"	"CerosalettiLab0244"	"male"	35	"White"	4182616	"control"	"Blood"	"CD8"	"TRB"	48719	0
+"6623f3f4229fedfad25d82d2"	"Culina"	"CerosalettiLab0244"	"male"	35	"White"	377011	"control"	"Blood"	"CD8"	"TRB"	7914	0
+"6623f3f4229fedfad25d82d3"	"Culina"	"CerosalettiLab0198"	"female"	27	"White"	2180000	"control"	"Blood"	"CD4"	"TRB"	47757	0
+"6623f3f5229fedfad25d82d4"	"Culina"	"CerosalettiLab0198"	"female"	27	"White"	4820000	"control"	"Blood"	"CD4"	"TRB"	49409	0
+"6623f3f5229fedfad25d82d5"	"Culina"	"CerosalettiLab0198"	"female"	27	"White"	127000	"control"	"Blood"	"CD8"	"TRB"	903	0
+"6623f3f5229fedfad25d82d6"	"Culina"	"CerosalettiLab0198"	"female"	27	"White"	1650000	"control"	"Blood"	"CD8"	"TRB"	62765	0
+"6695986dc7b849b5bfc49c9b"	"Kent"	"n6551"	"male"	20.7	"White"	20000	"case"	"Islets"	NA	"TRA"	13837	416720
+"6695986dc7b849b5bfc49c9c"	"Kent"	"n6551"	"male"	20.7	"White"	20000	"case"	"Islets"	NA	"TRA"	2356	33231
+"6695986ec7b849b5bfc49c9d"	"Kent"	"n6551"	"male"	20.7	"White"	20000	"case"	"Islets"	NA	"TRA"	11711	191697
+"6695986ec7b849b5bfc49c9e"	"Kent"	"n6551"	"male"	20.7	"White"	20000	"case"	"Islets"	NA	"TRB"	15306	570981
+"6695986ec7b849b5bfc49c9f"	"Kent"	"n6551"	"male"	20.7	"White"	20000	"case"	"Islets"	NA	"TRB"	2300	54888
+"6695986fc7b849b5bfc49ca0"	"Kent"	"n6551"	"male"	20.7	"White"	20000	"case"	"Islets"	NA	"TRB"	12013	462051
+"6695986fc7b849b5bfc49ca1"	"Kent"	"n6550"	"male"	25.06	"White"	20000	"case"	"Islets"	NA	"TRA"	9492	114735
+"6695986fc7b849b5bfc49ca2"	"Kent"	"n6550"	"male"	25.06	"White"	20000	"case"	"Islets"	NA	"TRA"	8002	81280
+"6695986fc7b849b5bfc49ca3"	"Kent"	"n6550"	"male"	25.06	"White"	20000	"case"	"Islets"	NA	"TRA"	9141	98821
+"66959870c7b849b5bfc49ca4"	"Kent"	"n6550"	"male"	25.06	"White"	20000	"case"	"Islets"	NA	"TRB"	9453	216742
+"66959870c7b849b5bfc49ca5"	"Kent"	"n6550"	"male"	25.06	"White"	20000	"case"	"Islets"	NA	"TRB"	7848	119916
+"66959870c7b849b5bfc49ca6"	"Kent"	"n6550"	"male"	25.06	"White"	20000	"case"	"Islets"	NA	"TRB"	10196	283688
+"66959871c7b849b5bfc49ca7"	"Kent"	"n6563"	"female"	14.56	"White"	20000	"case"	"Islets"	NA	"TRA"	11995	184132
+"66959871c7b849b5bfc49ca8"	"Kent"	"n6563"	"female"	14.56	"White"	20000	"case"	"Islets"	NA	"TRA"	6532	124666
+"66959871c7b849b5bfc49ca9"	"Kent"	"n6563"	"female"	14.56	"White"	20000	"case"	"Islets"	NA	"TRA"	13234	163421
+"66959872c7b849b5bfc49caa"	"Kent"	"n6563"	"female"	14.56	"White"	20000	"case"	"Islets"	NA	"TRB"	11995	278427
+"66959872c7b849b5bfc49cab"	"Kent"	"n6563"	"female"	14.56	"White"	20000	"case"	"Islets"	NA	"TRB"	4689	160889
+"66959872c7b849b5bfc49cac"	"Kent"	"n6563"	"female"	14.56	"White"	20000	"case"	"Islets"	NA	"TRB"	10097	247322
+"66959873c7b849b5bfc49cad"	"Kent"	"n6566"	"male"	15.68	"White"	20000	"case"	"Islets"	NA	"TRA"	6378	138455
+"66959873c7b849b5bfc49cae"	"Kent"	"n6566"	"male"	15.68	"White"	20000	"case"	"Islets"	NA	"TRA"	6110	113274
+"66959873c7b849b5bfc49caf"	"Kent"	"n6566"	"male"	15.68	"White"	20000	"case"	"Islets"	NA	"TRB"	6415	279350
+"66959874c7b849b5bfc49cb0"	"Kent"	"n6566"	"male"	15.68	"White"	20000	"case"	"Islets"	NA	"TRB"	6746	208572
+"671a7a712820f084c2be9b80"	"Eugster"	"HD_016"	"male"	29	"White"	14	"control"	"Blood"	"CD4"	"TRB"	14	0
+"671a7a712820f084c2be9b81"	"Eugster"	"HD_018"	"female"	28	"Asian"	48	"control"	"Blood"	"CD4"	"TRB"	48	0
+"671a7a712820f084c2be9b82"	"Eugster"	"HD_027"	"male"	26	"White"	52	"control"	"Blood"	"CD4"	"TRB"	52	0
+"671a7a712820f084c2be9b83"	"Eugster"	"HD_034"	"female"	47	"White"	19	"control"	"Blood"	"CD4"	"TRB"	19	0
+"671a7a722820f084c2be9b84"	"Eugster"	"HD_035"	"male"	30	"Hispanic"	8	"control"	"Blood"	"CD4"	"TRB"	8	0
+"671a7a722820f084c2be9b85"	"Eugster"	"T1D_024"	"male"	32	"White"	17	"case"	"Blood"	"CD4"	"TRB"	17	0
+"671a7a722820f084c2be9b86"	"Eugster"	"T1D_033"	"male"	34	"nr"	59	"case"	"Blood"	"CD4"	"TRB"	59	0
+"671a7a732820f084c2be9b87"	"Eugster"	"T1D_034"	"female"	19	"White"	61	"case"	"Blood"	"CD4"	"TRB"	61	0
+"671a7a732820f084c2be9b88"	"Eugster"	"T1D_035"	"male"	22	"White"	29	"case"	"Blood"	"CD4"	"TRB"	29	0
+"671a7a732820f084c2be9b89"	"Eugster"	"T1D_036"	"female"	27	"White"	13	"case"	"Blood"	"CD4"	"TRB"	13	0
+"671a7a742820f084c2be9b8a"	"Eugster"	"T1D_038"	"male"	30	"White"	25	"case"	"Blood"	"CD4"	"TRB"	25	0
+"671a7a742820f084c2be9b8b"	"Eugster"	"T1D_040"	"male"	34	"White"	15	"case"	"Blood"	"CD4"	"TRB"	15	0
+"671a7a742820f084c2be9b8c"	"Eugster"	"HD_035"	"male"	30	"Hispanic"	50	"control"	"Blood"	"CD4"	"TRB"	50	0
+"671a7a742820f084c2be9b8d"	"Eugster"	"T1D_029"	"female"	46	"White"	34	"case"	"Blood"	"CD4"	"TRB"	34	0
+"671a7a752820f084c2be9b8e"	"Eugster"	"T1D_034"	"female"	19	"White"	38	"case"	"Blood"	"CD4"	"TRB"	38	0
+"671a7a752820f084c2be9b8f"	"Eugster"	"HD_016"	"male"	29	"White"	7	"control"	"Blood"	"CD4"	"TRA"	7	0
+"671a7a752820f084c2be9b90"	"Eugster"	"HD_018"	"female"	28	"Asian"	23	"control"	"Blood"	"CD4"	"TRA"	24	0
+"671a7a762820f084c2be9b91"	"Eugster"	"HD_027"	"male"	26	"White"	26	"control"	"Blood"	"CD4"	"TRA"	27	0
+"671a7a762820f084c2be9b92"	"Eugster"	"HD_034"	"female"	47	"White"	3	"control"	"Blood"	"CD4"	"TRA"	3	0
+"671a7a762820f084c2be9b93"	"Eugster"	"HD_035"	"male"	30	"Hispanic"	3	"control"	"Blood"	"CD4"	"TRA"	4	0
+"671a7a772820f084c2be9b94"	"Eugster"	"T1D_024"	"male"	32	"White"	6	"case"	"Blood"	"CD4"	"TRA"	8	0
+"671a7a772820f084c2be9b95"	"Eugster"	"T1D_033"	"male"	34	"nr"	21	"case"	"Blood"	"CD4"	"TRA"	25	0
+"671a7a772820f084c2be9b96"	"Eugster"	"T1D_034"	"female"	19	"White"	25	"case"	"Blood"	"CD4"	"TRA"	32	0
+"671a7a782820f084c2be9b97"	"Eugster"	"T1D_035"	"male"	22	"White"	8	"case"	"Blood"	"CD4"	"TRA"	10	0
+"671a7a782820f084c2be9b98"	"Eugster"	"T1D_036"	"female"	27	"White"	5	"case"	"Blood"	"CD4"	"TRA"	5	0
+"671a7a782820f084c2be9b99"	"Eugster"	"T1D_038"	"male"	30	"White"	7	"case"	"Blood"	"CD4"	"TRA"	11	0
+"671a7a782820f084c2be9b9a"	"Eugster"	"T1D_040"	"male"	34	"White"	6	"case"	"Blood"	"CD4"	"TRA"	7	0
+"671a7a792820f084c2be9b9b"	"Eugster"	"HD_035"	"male"	30	"Hispanic"	10	"control"	"Blood"	"CD4"	"TRA"	13	0
+"671a7a792820f084c2be9b9c"	"Eugster"	"T1D_029"	"female"	46	"White"	10	"case"	"Blood"	"CD4"	"TRA"	14	0
+"671a7a792820f084c2be9b9d"	"Eugster"	"T1D_034"	"female"	19	"White"	16	"case"	"Blood"	"CD4"	"TRA"	16	0
